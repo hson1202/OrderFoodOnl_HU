@@ -452,7 +452,7 @@ const Admin = () => {
                 name="name"
                 value={locationForm.name}
                 onChange={handleLocationChange}
-                placeholder="Ví dụ: VietBowls Budapest"
+                placeholder="Ví dụ: Tên nhà hàng"
               />
             </div>
             <div className="form-group">

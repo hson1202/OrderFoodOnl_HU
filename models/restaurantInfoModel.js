@@ -4,23 +4,23 @@ const restaurantInfoSchema = new mongoose.Schema({
   // Basic Information
   restaurantName: {
     type: String,
-    default: 'Viet Bowls'
+    default: ''
   },
   
   // Contact Information
   phone: {
     type: String,
-    default: '+421 123 456 789'
+    default: ''
   },
   email: {
     type: String,
-    default: 'info@vietbowls.sk'
+    default: ''
   },
   
   // Address
   address: {
     type: String,
-    default: 'Budapest, Hungary'
+    default: ''
   },
   
   // Opening Hours

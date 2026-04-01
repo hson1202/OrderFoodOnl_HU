@@ -28,7 +28,7 @@ const DeliveryZones = ({ url }) => {
 
   // Restaurant location form state
   const [locationForm, setLocationForm] = useState({
-    name: 'VietBowls Restaurant',
+    name: '',
     address: '',
     latitude: '',
     longitude: '',

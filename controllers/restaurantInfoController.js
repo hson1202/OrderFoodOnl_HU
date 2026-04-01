@@ -62,10 +62,10 @@ const resetToDefaults = async (req, res) => {
     const info = await RestaurantInfo.getSingleton();
     
     // Reset to default values
-    info.restaurantName = 'Viet Bowls';
-    info.phone = '+421 123 456 789';
-    info.email = 'info@vietbowls.sk';
-    info.address = 'Budapest, Hungary';
+    info.restaurantName = '';
+    info.phone = '';
+    info.email = '';
+    info.address = '';
     info.openingHours = {
       weekdays: 'Thứ 2 - Thứ 7: 11:00 - 20:00',
       sunday: 'Chủ nhật: 11:00 - 17:00'

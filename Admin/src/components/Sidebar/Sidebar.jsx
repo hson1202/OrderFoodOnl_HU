@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Sidebar.css'
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import axios from 'axios'
+import config from '../../config/config'
 
 const Sidebar = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
+  const [restaurantName, setRestaurantName] = useState('');
+
+  useEffect(() => {
+    axios.get(`${config.BACKEND_URL}/api/restaurant-info`)
+      .then(res => {
+        if (res.data.success && res.data.data?.restaurantName) {
+          setRestaurantName(res.data.data.restaurantName);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const menuItems = [
     {
@@ -138,7 +151,7 @@ const Sidebar = ({ isOpen, onClose }) => {
   return (
     <div className="sidebar-container">
       <div className="sidebar-header">
-        <h2 className="brand-logo">View Bowls</h2>
+        <h2 className="brand-logo">{restaurantName || 'Admin'}</h2>
         <span className="brand-subtitle">Admin Panel</span>
       </div>
 
@@ -159,7 +172,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
       <div className="sidebar-footer">
         <div className="footer-info">
-          <span>© {new Date().getFullYear()} Viet Bowls</span>
+          <span>© {new Date().getFullYear()} {restaurantName || 'Restaurant'}</span>
           <span className="version">v1.2.0</span>
         </div>
       </div>
