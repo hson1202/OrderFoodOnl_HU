@@ -1,0 +1,327 @@
+.delivery-address-input {
+  position: relative;
+  width: 100%;
+}
+
+.address-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.address-input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.address-input:focus {
+  outline: none;
+  border-color: #ff6347;
+  box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.1);
+}
+
+.loading-spinner {
+  position: absolute;
+  right: 12px;
+  font-size: 14px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Suggestions dropdown */
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background-color: #f8f8f8;
+}
+
+.suggestion-icon {
+  font-size: 18px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.suggestion-text {
+  flex: 1;
+}
+
+.suggestion-main {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.suggestion-detail {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Warning styles for addresses without house number */
+.suggestion-item-warning {
+  background-color: #fff9e6;
+  border-left: 3px solid #ffc107;
+}
+
+.suggestion-item-warning:hover {
+  background-color: #fff3cd;
+}
+
+.suggestion-warning-badge {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.suggestion-warning-text {
+  font-size: 11px;
+  color: #856404;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Delivery info card */
+.delivery-info-card {
+  margin-top: 15px;
+  padding: 15px;
+  background: darkseagreen;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.delivery-info-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.delivery-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.delivery-zone-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.delivery-info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.info-label {
+  color: #000000;
+}
+
+.info-value {
+  font-weight: 600;
+}
+
+.delivery-fee {
+  font-size: 16px;
+  color: #ffd700;
+}
+
+/* Error message - Improved visibility */
+.delivery-error {
+  margin-top: 15px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, #ffe6e6 0%, #fff0f0 100%);
+  border: 2px solid #ff4444;
+  border-radius: 12px;
+  color: #cc0000;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(255, 68, 68, 0.2);
+  animation: slideInError 0.3s ease-out;
+}
+
+@keyframes slideInError {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.manual-pin-trigger {
+  margin-top: 12px;
+  width: 100%;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: #fafafa;
+  color: #1a1a1a;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.manual-pin-trigger:hover {
+  background: #f5f5f5;
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+.manual-pin-trigger:active {
+  transform: scale(0.98);
+  background: #f0f0f0;
+}
+
+/* Village / surrounding area hint banner */
+.village-hint-banner {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.village-hint-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.village-hint-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #1e40af;
+  line-height: 1.5;
+}
+
+.village-hint-text strong {
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.village-hint-text span {
+  color: #1d4ed8;
+  font-size: 12.5px;
+}
+
+/* Prominent blue pin button */
+.manual-pin-trigger.manual-pin-prominent {
+  margin-top: 10px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 13px 18px;
+  gap: 8px;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3);
+}
+
+.manual-pin-trigger.manual-pin-prominent:hover {
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+  transform: translateY(-1px);
+}
+
+.manual-pin-trigger.manual-pin-prominent:active {
+  background: #1e40af;
+  transform: scale(0.99) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .address-input {
+    font-size: 13px;
+    padding: 10px 35px 10px 12px;
+  }
+
+  .delivery-info-card {
+    padding: 12px;
+  }
+
+  .delivery-zone-name {
+    font-size: 16px;
+  }
+
+  .info-row {
+    font-size: 13px;
+  }
+
+  .delivery-fee {
+    font-size: 15px;
+  }
+}

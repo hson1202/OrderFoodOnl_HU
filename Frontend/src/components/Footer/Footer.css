@@ -1,0 +1,159 @@
+/* Clean Footer - No Fancy Colors, No Hover Effects */
+.footer {
+    background: #1a1a1a;
+    color: #cccccc;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* 4 Column Grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-list li {
+    font-size: 14px;
+}
+
+.footer-list a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.footer-label {
+    color: #999999;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.footer-value {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footer-text {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+/* Reserve Button - Simple, No Gradient */
+.footer-reserve-btn {
+    background: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+/* Social Icons - Simple, No Hover */
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333333;
+    border: 1px solid #555555;
+}
+
+.footer-social img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    border-top: 1px solid #333333;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #999999;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 0 20px;
+        margin-top: 40px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Button Đặt Bàn lên đầu tiên trên mobile */
+    .footer-col:nth-child(4) {
+        order: -1;
+    }
+
+    .footer-title {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .footer-list li {
+        font-size: 13px;
+    }
+
+    .footer-reserve-btn {
+        width: 100%;
+    }
+}
