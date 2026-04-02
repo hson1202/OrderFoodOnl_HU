@@ -674,7 +674,7 @@ const Admin = () => {
               <div className="food-details">
                 <h3>{food.name}</h3>
                 <p><strong>SKU:</strong> {food.sku}</p>
-                <p><strong>Price:</strong> ${food.price}</p>
+                <p><strong>Price:</strong> {food.price} Ft</p>
                 <p><strong>Category:</strong> {food.category}</p>
                 <p><strong>Description:</strong> {food.description}</p>
               </div>

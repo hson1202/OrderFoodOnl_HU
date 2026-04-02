@@ -171,7 +171,7 @@ const MyOrders = () => {
                                         </div>
                                         <div className="order-info">
                                             <div className="order-top-row">
-                                                <p className="order-amount">€{order.amount}.00</p>
+                                                <p className="order-amount">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(order.amount)}</p>
                                                 <div className="order-status">
                                                     <span className={getStatusClass(order.status)}>
                                                         {getStatusLabel(order.status)}
@@ -221,7 +221,7 @@ const MyOrders = () => {
                                                             </div>
                                                             <div className="details-item-meta">
                                                                 <span>×{item.quantity}</span>
-                                                                <span>€{item.price}</span>
+                                                                <span>{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(item.price)}</span>
                                                             </div>
                                                         </div>
                                                     ))}

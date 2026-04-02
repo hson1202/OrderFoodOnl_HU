@@ -159,14 +159,14 @@ const placeOrder = async (req, res) => {
         const deliveryFee = req.body.deliveryInfo?.deliveryFee || 0;
         const calculationResult = await calculateOrderTotal(processedItems, deliveryFee);
 
-        const validation = validatePrice(amount, calculationResult.total, 1); // 1€ tolerance
+        const validation = validatePrice(amount, calculationResult.total, 1); // 1 Ft tolerance
 
         if (!validation.isValid) {
             console.error('❌ PRICE MISMATCH DETECTED!');
-            console.error(`   Client amount: €${validation.clientAmount.toFixed(2)}`);
-            console.error(`   Server amount: €${validation.serverAmount.toFixed(2)}`);
-            console.error(`   Difference: €${validation.difference.toFixed(2)}`);
-            console.error(`   Tolerance: €${validation.tolerance}`);
+            console.error(`   Client amount: ${Math.round(validation.clientAmount)} Ft`);
+            console.error(`   Server amount: ${Math.round(validation.serverAmount)} Ft`);
+            console.error(`   Difference: ${Math.round(validation.difference)} Ft`);
+            console.error(`   Tolerance: ${validation.tolerance} Ft`);
 
             return res.status(400).json({
                 success: false,
@@ -183,12 +183,12 @@ const placeOrder = async (req, res) => {
         }
 
         console.log(`✅ Price validated successfully:`);
-        console.log(`   Client: €${validation.clientAmount.toFixed(2)}`);
-        console.log(`   Server: €${validation.serverAmount.toFixed(2)}`);
-        console.log(`   Diff: €${validation.difference.toFixed(2)}`);
-        console.log(`   Items total: €${calculationResult.itemsTotal.toFixed(2)}`);
-        console.log(`   Box fee total: €${calculationResult.boxFeeTotal.toFixed(2)}`);
-        console.log(`   Delivery fee: €${calculationResult.deliveryFee.toFixed(2)}`);
+        console.log(`   Client: ${Math.round(validation.clientAmount)} Ft`);
+        console.log(`   Server: ${Math.round(validation.serverAmount)} Ft`);
+        console.log(`   Diff: ${Math.round(validation.difference)} Ft`);
+        console.log(`   Items total: ${Math.round(calculationResult.itemsTotal)} Ft`);
+        console.log(`   Box fee total: ${Math.round(calculationResult.boxFeeTotal)} Ft`);
+        console.log(`   Delivery fee: ${Math.round(calculationResult.deliveryFee)} Ft`);
 
         // Tạo đơn hàng mới
         const newOrder = new orderModel({

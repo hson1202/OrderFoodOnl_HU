@@ -155,14 +155,13 @@ const ProductDetail = ({ product, onClose }) => {
 
   const formatPrice = (price) => {
     const n = Number(price);
-    if (isNaN(n) || n < 0) return '€0';
-    const formatted = new Intl.NumberFormat('en-US', {
+    if (isNaN(n) || n < 0) return '0 Ft';
+    return new Intl.NumberFormat('hu-HU', {
       style: 'currency',
-      currency: 'EUR',
+      currency: 'HUF',
       minimumFractionDigits: 0,
-      maximumFractionDigits: 2
+      maximumFractionDigits: 0
     }).format(n);
-    return formatted.replace(/\.00$/, '');
   };
 
   const calculateDiscount = () => {

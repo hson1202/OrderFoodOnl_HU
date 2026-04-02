@@ -127,7 +127,7 @@ const List = ({url}) => {
               />
               <p>{item.name}</p>
               <p>{item.category}</p>
-              <p>€{item.price}</p>
+              <p>{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(item.price)}</p>
               <div className="action-buttons">
                 <button onClick={() => handleEdit(item)} className="edit-btn">Edit</button>
                 <button onClick={()=>removeFood(item._id)} className='delete-btn'>X</button>

@@ -195,7 +195,7 @@ const TrackOrder = () => {
                 <h3>💰 {t('trackOrder.result.paymentInfo')}</h3>
                 <div className="info-item">
                   <span className="label">{t('trackOrder.result.total')}:</span>
-                  <span className="value price">€{order.amount}</span>
+                  <span className="value price">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(order.amount)}</span>
                 </div>
                 <div className="info-item">
                   <span className="label">{t('trackOrder.result.payment')}:</span>
@@ -227,7 +227,7 @@ const TrackOrder = () => {
                   <div key={index} className="item-card">
                     <div className="item-info">
                       <h4>{item.name}</h4>
-                      <p className="item-price">€{item.price}</p>
+                      <p className="item-price">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(item.price)}</p>
                     </div>
                     <div className="item-quantity">
                       {t('trackOrder.result.quantity')}: {item.quantity}

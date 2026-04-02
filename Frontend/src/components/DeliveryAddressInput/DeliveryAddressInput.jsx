@@ -379,12 +379,12 @@ const DeliveryAddressInput = ({
             <div className="info-row">
               <span className="info-label">{t('placeOrder.form.deliveryInfo.deliveryFee')}</span>
               <span className="info-value delivery-fee">
-                €{deliveryInfo.zone.deliveryFee === 0 ? t('placeOrder.form.deliveryInfo.free') : deliveryInfo.zone.deliveryFee.toFixed(2)}
+                {deliveryInfo.zone.deliveryFee === 0 ? t('placeOrder.form.deliveryInfo.free') : new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(deliveryInfo.zone.deliveryFee)}
               </span>
             </div>
             <div className="info-row">
               <span className="info-label">{t('placeOrder.form.deliveryInfo.minOrder')}</span>
-              <span className="info-value">€{deliveryInfo.zone.minOrder.toFixed(2)}</span>
+              <span className="info-value">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(deliveryInfo.zone.minOrder)}</span>
             </div>
             <div className="info-row">
               <span className="info-label">{t('placeOrder.form.deliveryInfo.estimatedTime')}</span>

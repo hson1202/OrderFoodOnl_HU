@@ -358,9 +358,11 @@ const Dashboard = ({ url }) => {
   }
 
   const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('hu-HU', {
       style: 'currency',
-      currency: 'EUR'
+      currency: 'HUF',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
     }).format(amount)
   }
 
@@ -718,7 +720,7 @@ const Dashboard = ({ url }) => {
                     tick={{ fontSize: 12 }}
                     tickFormatter={(value) =>
                       chartFilters.metric === 'revenue'
-                        ? (value >= 1000 ? `${(value / 1000).toFixed(1)}k` : `€${value}`)
+                        ? (value >= 1000 ? `${(value / 1000).toFixed(0)}k Ft` : `${value} Ft`)
                         : value
                     }
                   />

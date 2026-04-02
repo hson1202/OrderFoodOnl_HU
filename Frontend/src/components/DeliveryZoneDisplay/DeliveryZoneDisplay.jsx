@@ -48,13 +48,13 @@ const DeliveryZoneDisplay = ({ url }) => {
                   {zone.deliveryFee === 0 ? (
                     <span className="free-badge">FREE</span>
                   ) : (
-                    `€${zone.deliveryFee.toFixed(2)}`
+                    new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(zone.deliveryFee)
                   )}
                 </span>
               </div>
               <div className="zone-detail-row">
                 <span className="detail-label">Min. Order:</span>
-                <span className="detail-value">€{zone.minOrder.toFixed(2)}</span>
+                <span className="detail-value">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(zone.minOrder)}</span>
               </div>
             </div>
           </div>

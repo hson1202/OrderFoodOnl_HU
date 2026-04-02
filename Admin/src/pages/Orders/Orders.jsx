@@ -32,7 +32,7 @@ const getFulfillmentLabel = (type, t) => {
   }
 };
 
-const formatMoney = (value = 0) => `€${Number(value || 0).toFixed(2)}`;
+const formatMoney = (value = 0) => new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(Number(value || 0)));
 const formatDateTime = (value) => {
   if (!value) return '';
   return new Intl.DateTimeFormat('vi-VN', {

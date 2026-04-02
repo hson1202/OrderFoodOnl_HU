@@ -1252,7 +1252,7 @@ const calculateItemPrice = (item) => {
     basePrice = 0;
   }
   
-  // Thêm tiền hộp 0.3€ nếu không tắt
+  // Thêm tiền hộp 30 Ft nếu không tắt
   const isBoxFeeDisabled = item.disableBoxFee === true || 
                          item.disableBoxFee === "true" || 
                          item.disableBoxFee === 1 || 
@@ -1283,17 +1283,13 @@ const generateOrderConfirmationEmailHTML = (order) => {
   
   const formatCurrency = (amount) => {
     const n = Number(amount);
-    if (isNaN(n) || n < 0) return '€0';
-    
-    // Luôn dùng EUR và format giống frontend
-    const formatted = new Intl.NumberFormat('en-US', {
+    if (isNaN(n) || n < 0) return '0 Ft';
+    return new Intl.NumberFormat('hu-HU', {
       style: 'currency',
-      currency: 'EUR',
+      currency: 'HUF',
       minimumFractionDigits: 0,
-      maximumFractionDigits: 2
-    }).format(n);
-    
-    return formatted.replace(/\.00$/, '');
+      maximumFractionDigits: 0
+    }).format(Math.round(n));
   }
   
   // Get delivery fee from order.deliveryInfo, fallback to 0 if not available
@@ -1490,14 +1486,16 @@ const generateOrderConfirmationEmailText = (order) => {
   }
   
   const formatCurrency = (amount) => {
-    const currencyMap = { vi: 'VND', en: 'EUR', hu: 'EUR' };
-    const currency = currencyMap[lang?.split('-')[0]] || 'VND';
-    const localeMap = { vi: 'vi-VN', en: 'en-US', hu: 'hu-HU' };
-    const locale = localeMap[lang?.split('-')[0]] || 'vi-VN';
+    const currencyMap = { vi: 'VND', en: 'HUF', hu: 'HUF' };
+    const currency = currencyMap[lang?.split('-')[0]] || 'HUF';
+    const localeMap = { vi: 'vi-VN', en: 'hu-HU', hu: 'hu-HU' };
+    const locale = localeMap[lang?.split('-')[0]] || 'hu-HU';
     return new Intl.NumberFormat(locale, {
       style: 'currency',
-      currency: currency
-    }).format(amount)
+      currency: currency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(Math.round(Number(amount)))
   }
   
   // Get delivery fee from order.deliveryInfo, fallback to 0 if not available

@@ -45,10 +45,13 @@ const PlaceOrder = () => {
 
   const formatPrice = (price) => {
     const n = Number(price);
-    if (isNaN(n) || n < 0) return '0';
-    // Format với 2 số thập phân, sau đó loại bỏ .00 nếu không cần
-    const formatted = n.toFixed(2);
-    return formatted.replace(/\.00$/, '');
+    if (isNaN(n) || n < 0) return '0 Ft';
+    return new Intl.NumberFormat('hu-HU', {
+      style: 'currency',
+      currency: 'HUF',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(n);
   }
 
   // Helper function to check if box fee is disabled for an item
@@ -964,7 +967,7 @@ const PlaceOrder = () => {
             <div>
               <div className='cart-total-details'>
                 <p>{t('placeOrder.cart.subtotal')}</p>
-                <p>€{formatPrice(getTotalCartAmount())}</p>
+                <p>{formatPrice(getTotalCartAmount())}</p>
               </div>
               {hasItemsWithBoxFee() && (
                 <div className='cart-total-details box-fee-note'>
@@ -976,8 +979,8 @@ const PlaceOrder = () => {
                 <p>{t('placeOrder.cart.deliveryFee')}</p>
                 <p>
               {isDelivery
-                ? (deliveryInfo && deliveryInfo.zone ? `€${formatPrice(getDeliveryFee())}` : '--')
-                : '€0'}
+                ? (deliveryInfo && deliveryInfo.zone ? formatPrice(getDeliveryFee()) : '--')
+                : '0 Ft'}
                 </p>
               </div>
           {isDelivery && !deliveryInfo && !hasAnyAddressSelected && (
@@ -1005,7 +1008,7 @@ const PlaceOrder = () => {
               <hr />
               <div className='cart-total-details'>
                 <b>{t('placeOrder.cart.total')}</b>
-                <b>€{formatPrice(getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + getDeliveryFee())}</b>
+                <b>{formatPrice(getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + getDeliveryFee())}</b>
               </div>
             </div>
             <button type='submit' disabled={isSubmitting} className="desktop-submit-btn">

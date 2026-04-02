@@ -138,7 +138,7 @@ const AccountOrdersPage = () => {
                                     </div>
                                     <div className="order-info">
                                         <div className="order-top-row">
-                                            <p className="order-amount">€{order.amount}.00</p>
+                                            <p className="order-amount">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(order.amount)}</p>
                                             <div className="order-status">
                                                 <span className={getStatusClass(order.status)}>
                                                     {getStatusLabel(order.status)}
@@ -177,7 +177,7 @@ const AccountOrdersPage = () => {
                                                 {order.items.map((item, idx) => (
                                                     <div key={idx} className="order-item-detail">
                                                         <span className="item-name">{item.name} × {item.quantity}</span>
-                                                        <span className="item-price">€{(item.price * item.quantity).toFixed(2)}</span>
+                                                        <span className="item-price">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(item.price * item.quantity)}</span>
                                                         {item.options && formatOptionText(item.options) && (
                                                             <p className="item-options">{formatOptionText(item.options)}</p>
                                                         )}

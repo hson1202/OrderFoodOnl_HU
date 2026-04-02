@@ -449,14 +449,14 @@ const calculateDeliveryFee = async (req, res) => {
     console.log(`📦 Available zones (${zones.length}):`, zones.map(z => ({
       name: z.name,
       range: `${z.minDistance}-${z.maxDistance}km`,
-      fee: `€${z.deliveryFee}`
+      fee: `${z.deliveryFee} Ft`
     })));
 
     let matchedZone = null;
     for (const zone of zones) {
       if (distance >= zone.minDistance && distance <= zone.maxDistance) {
         matchedZone = zone;
-        console.log(`✅ Matched zone: ${zone.name} (${zone.minDistance}-${zone.maxDistance}km) - Fee: €${zone.deliveryFee}`);
+        console.log(`✅ Matched zone: ${zone.name} (${zone.minDistance}-${zone.maxDistance}km) - Fee: ${zone.deliveryFee} Ft`);
         break;
       }
     }

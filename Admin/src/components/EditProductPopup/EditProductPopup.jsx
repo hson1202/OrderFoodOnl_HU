@@ -502,7 +502,7 @@ const EditProductPopup = ({
                               >
                                 <div className="choice-code">{choice.code}</div>
                                 <div className="choice-label">{choice.label}</div>
-                                <div className="choice-price">€{choice.price}</div>
+                                <div className="choice-price">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Number(choice.price))}</div>
                                 {choice.image && <div className="choice-image">📷</div>}
                                 {option.defaultChoiceCode === choice.code && (
                                   <div className="default-badge">{t('editProduct.default')}</div>
@@ -596,7 +596,7 @@ const EditProductPopup = ({
                             <div key={index} className="choice-card">
                               <div className="choice-code">{choice.code}</div>
                               <div className="choice-label">{choice.label}</div>
-                              <div className="choice-price">€{choice.price}</div>
+                              <div className="choice-price">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Number(choice.price))}</div>
                               {choice.image && <div className="choice-image">📷</div>}
                               <div className="choice-actions">
                                 <button 
@@ -724,7 +724,7 @@ const EditProductPopup = ({
                             <option value="">{t('editProduct.selectDefaultChoice')}</option>
                             {currentOption.choices.map((choice) => (
                               <option key={choice.code} value={choice.code}>
-                                {choice.code} - {choice.label} (€{choice.price})
+                                {choice.code} - {choice.label} ({choice.price} Ft)
                               </option>
                             ))}
                           </select>
@@ -800,7 +800,7 @@ const EditProductPopup = ({
                       
                       {discountAmount > 0 && (
                         <div className="discount-badge-inline">
-                          💸 -{discountAmount.toFixed(2)}€
+                          💸 -{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(discountAmount))}
                         </div>
                       )}
                     </div>
@@ -828,12 +828,8 @@ const EditProductPopup = ({
                   </div>
                   <div className="price-preview-compact">
                     <strong>Final Price: </strong>
-                    €{(() => {
-                      const basePrice = Number(editForm.price) || 0;
-                      const boxFee = editForm.disableBoxFee ? 0 : 0.3;
-                      return (basePrice + boxFee).toFixed(2);
-                    })()} 
-                    {!editForm.disableBoxFee && <small>(+€0.30 box)</small>}
+                    {new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round((Number(editForm.price) || 0) + (editForm.disableBoxFee ? 0 : 30)))}
+                    {!editForm.disableBoxFee && <small>(+30 Ft box)</small>}
                   </div>
                 </div>
 

@@ -1445,17 +1445,14 @@ const generateOrderConfirmationEmailHTML = (order, branding = {}) => {
   
   const formatCurrency = (amount) => {
     const n = Number(amount);
-    if (isNaN(n) || n < 0) return '€0';
+    if (isNaN(n) || n < 0) return '0 Ft';
     
-    // Luôn dùng EUR và format giống frontend
-    const formatted = new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('hu-HU', {
       style: 'currency',
-      currency: 'EUR',
+      currency: 'HUF',
       minimumFractionDigits: 0,
-      maximumFractionDigits: 2
-    }).format(n);
-    
-    return formatted.replace(/\.00$/, '');
+      maximumFractionDigits: 0
+    }).format(Math.round(n));
   }
   
   // Get delivery fee from order.deliveryInfo, fallback to 0 if not available
@@ -1641,17 +1638,14 @@ const generateOrderConfirmationEmailText = (order, branding = {}) => {
   
   const formatCurrency = (amount) => {
     const n = Number(amount);
-    if (isNaN(n) || n < 0) return '€0';
+    if (isNaN(n) || n < 0) return '0 Ft';
     
-    // Luôn dùng EUR và format giống frontend
-    const formatted = new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('hu-HU', {
       style: 'currency',
-      currency: 'EUR',
+      currency: 'HUF',
       minimumFractionDigits: 0,
-      maximumFractionDigits: 2
-    }).format(n);
-    
-    return formatted.replace(/\.00$/, '');
+      maximumFractionDigits: 0
+    }).format(Math.round(n));
   }
   
   // Get delivery fee from order.deliveryInfo, fallback to 0 if not available
@@ -1873,17 +1867,14 @@ const generateAdminOrderNotificationEmailHTML = async (order, branding = {}) => 
   
   const formatCurrency = (amount) => {
     const n = Number(amount);
-    if (isNaN(n) || n < 0) return '€0';
+    if (isNaN(n) || n < 0) return '0 Ft';
     
-    // Format EUR giống customer email
-    const formatted = new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('hu-HU', {
       style: 'currency',
-      currency: 'EUR',
+      currency: 'HUF',
       minimumFractionDigits: 0,
-      maximumFractionDigits: 2
-    }).format(n);
-    
-    return formatted.replace(/\.00$/, '');
+      maximumFractionDigits: 0
+    }).format(Math.round(n));
   }
   
   // Get delivery fee from order.deliveryInfo, fallback to 0 if not available
@@ -2080,17 +2071,14 @@ const generateAdminOrderNotificationEmailText = async (order, branding = {}) => 
   
   const formatCurrency = (amount) => {
     const n = Number(amount);
-    if (isNaN(n) || n < 0) return '€0';
+    if (isNaN(n) || n < 0) return '0 Ft';
     
-    // Format EUR giống customer email
-    const formatted = new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('hu-HU', {
       style: 'currency',
-      currency: 'EUR',
+      currency: 'HUF',
       minimumFractionDigits: 0,
-      maximumFractionDigits: 2
-    }).format(n);
-    
-    return formatted.replace(/\.00$/, '');
+      maximumFractionDigits: 0
+    }).format(Math.round(n));
   }
   
   // Get delivery fee from order.deliveryInfo, fallback to 0 if not available

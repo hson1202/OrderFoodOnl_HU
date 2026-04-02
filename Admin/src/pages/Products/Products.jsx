@@ -1343,7 +1343,7 @@ const handleQuickEditCancel = () => {
                     checked={newProduct.disableBoxFee}
                     onChange={(e) => setNewProduct({ ...newProduct, disableBoxFee: e.target.checked })}
                   />
-                  Tắt tiền hộp (0.3€)
+                  Tắt tiền hộp (30 Ft)
                 </label>
                 <div style={{ 
                   marginTop: '10px', 
@@ -1355,15 +1355,10 @@ const handleQuickEditCancel = () => {
                 }}>
                   <strong>Giá hiển thị cho khách hàng:</strong>
                   <div style={{ fontSize: '18px', fontWeight: 'bold', color: '#1976d2', marginTop: '5px' }}>
-                    €{(() => {
-                      const basePrice = Number(newProduct.price) || 0;
-                      const boxFee = newProduct.disableBoxFee ? 0 : 0.3;
-                      const finalPrice = basePrice + boxFee;
-                      return finalPrice.toFixed(2);
-                    })()}
+                    {new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round((Number(newProduct.price) || 0) + (newProduct.disableBoxFee ? 0 : 30)))}
                     {!newProduct.disableBoxFee && newProduct.price && (
                       <span style={{ fontSize: '12px', color: '#666', fontWeight: 'normal', marginLeft: '5px' }}>
-                        (Giá gốc: €{(Number(newProduct.price) || 0).toFixed(2)} + Phí hộp: €0.30)
+                        (Giá gốc: {new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Number(newProduct.price) || 0)} + Phí hộp: 30 Ft)
                       </span>
                     )}
                     {newProduct.disableBoxFee && newProduct.price && (
@@ -1396,7 +1391,7 @@ const handleQuickEditCancel = () => {
                   {newProduct.promotionPrice && (
                     <div className="discount-info">
                       <span className="discount-badge">
-                        Promotion Active! Save €{(parseFloat(newProduct.price) - parseFloat(newProduct.promotionPrice)).toFixed(2)}
+                        Promotion Active! Save {new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(parseFloat(newProduct.price) - parseFloat(newProduct.promotionPrice)))}
                       </span>
                     </div>
                   )}
@@ -1668,7 +1663,7 @@ const handleQuickEditCancel = () => {
                           <div key={choiceIndex} className="choice-item">
                             <span className="choice-code">{choice.code}</span>
                             <span className="choice-label">{choice.label}</span>
-                            <span className="choice-price">€{Number(choice.price).toFixed(2)}</span>
+                            <span className="choice-price">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Number(choice.price))}</span>
                             {choice.image && (
                               <div className="choice-image">
                                 <img 
@@ -1905,7 +1900,7 @@ const handleQuickEditCancel = () => {
                           <option value="">Select default choice</option>
                           {currentOption.choices.map((choice) => (
                             <option key={choice.code} value={choice.code}>
-                              {choice.code} - {choice.label} (€{choice.price})
+                              {choice.code} - {choice.label} ({choice.price} Ft)
                             </option>
                           ))}
                         </select>
@@ -1973,7 +1968,7 @@ const handleQuickEditCancel = () => {
                           <div key={index} className="choice-item">
                                                     <span className="choice-code">{choice.code}</span>
                         <span className="choice-label">{choice.label}</span>
-                        <span className="choice-price">€{Number(choice.price).toFixed(2)}</span>
+                        <span className="choice-price">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Number(choice.price))}</span>
                         {choice.image && (
                           <div className="choice-image">
                             <img 
@@ -2089,7 +2084,7 @@ const handleQuickEditCancel = () => {
                           <option value="">Select default choice</option>
                           {currentOption.choices.map((choice) => (
                             <option key={choice.code} value={choice.code}>
-                              {choice.code} - {choice.label} (€{choice.price})
+                              {choice.code} - {choice.label} ({choice.price} Ft)
                             </option>
                           ))}
                         </select>
@@ -2444,20 +2439,19 @@ const handleQuickEditCancel = () => {
                   <div className="product-pricing">
                     {product.isPromotion && product.promotionPrice ? (
                       <div className="promotion-pricing">
-                        <div className="original-price">€{Number(product.price).toFixed(2)}</div>
-                        <div className="promotion-price">€{Number(product.promotionPrice).toFixed(2)}</div>
+                        <div className="original-price">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Number(product.price))}</div>
+                        <div className="promotion-price">{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Number(product.promotionPrice))}</div>
                         <div className="discount-badge">
-                          Save €{(parseFloat(product.price) - parseFloat(product.promotionPrice)).toFixed(2)}
+                          Save {new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(parseFloat(product.price) - parseFloat(product.promotionPrice)))}
                         </div>
                       </div>
                     ) : (
                       <div className="regular-price-wrapper quick-edit-field">
                         {quickEditing?.productId === product._id && quickEditing?.field === 'price' ? (
                           <div className="quick-edit-input-group">
-                            <span className="currency-symbol">€</span>
                             <input
                               type="number"
-                              step="0.01"
+                              step="1"
                               value={quickEditValue}
                               onChange={(e) => setQuickEditValue(e.target.value)}
                               className="quick-edit-input price-input"
@@ -2467,6 +2461,7 @@ const handleQuickEditCancel = () => {
                                 if (e.key === 'Escape') handleQuickEditCancel();
                               }}
                             />
+                            <span className="currency-symbol">Ft</span>
                             <button onClick={() => handleQuickEditSave(product._id)} className="quick-edit-save" title="Save">✓</button>
                             <button onClick={handleQuickEditCancel} className="quick-edit-cancel" title="Cancel">✕</button>
                           </div>
@@ -2476,7 +2471,7 @@ const handleQuickEditCancel = () => {
                             onClick={() => handleQuickEdit(product._id, 'price', product.price)}
                             title="Click to edit"
                           >
-                            €{(Number(product.price) || 0).toFixed(2)} ✏️
+                            {new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Number(product.price) || 0)} ✏️
                           </div>
                         )}
                       </div>
@@ -2494,7 +2489,7 @@ const handleQuickEditCancel = () => {
                                 <div key={choiceIndex} className="variant-choice">
                                   <span className="choice-label">{choice.label}</span>
                                   {Number(choice.price) !== 0 && (
-                                    <span className="choice-price">+€{Number(choice.price).toFixed(2)}</span>
+                                    <span className="choice-price">+{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Number(choice.price))}</span>
                                   )}
                                 </div>
                               ))}
@@ -2684,26 +2679,22 @@ const handleQuickEditCancel = () => {
                 <div className="summary-card">
           <h3>{t('dashboard.averagePrice', { defaultValue: 'Average Price' })}</h3>
           <p>
-€{
+{new Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(
   foodList.length
-    ? (
-        foodList.reduce((s, p) => {
-          // Calculate average considering variants
-          let totalPrice = Number(p.price) || 0;
-          if (p.options && p.options.length > 0) {
-            // Add variant prices to calculation
-            p.options.forEach(option => {
-              if (option.choices && option.choices.length > 0) {
-                const avgVariantPrice = option.choices.reduce((sum, choice) => sum + (Number(choice.price) || 0), 0) / option.choices.length;
-                totalPrice += avgVariantPrice;
-              }
-            });
-          }
-          return s + totalPrice;
-        }, 0) / foodList.length
-      ).toFixed(2)
-    : '0.00'
-}
+    ? Math.round(foodList.reduce((s, p) => {
+        let totalPrice = Number(p.price) || 0;
+        if (p.options && p.options.length > 0) {
+          p.options.forEach(option => {
+            if (option.choices && option.choices.length > 0) {
+              const avgVariantPrice = option.choices.reduce((sum, choice) => sum + (Number(choice.price) || 0), 0) / option.choices.length;
+              totalPrice += avgVariantPrice;
+            }
+          });
+        }
+        return s + totalPrice;
+      }, 0) / foodList.length)
+    : 0
+)}
 </p>
         </div>
       </div>

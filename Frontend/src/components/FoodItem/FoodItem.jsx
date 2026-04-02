@@ -32,17 +32,14 @@ const FoodItem = ({id, name, nameVI, nameEN, nameHU, price, description, image, 
 
   const formatPrice = (price) => {
     if (!price || isNaN(Number(price)) || Number(price) <= 0) {
-      return '€0';
+      return '0 Ft';
     }
-    
-    const formatted = new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('hu-HU', {
       style: 'currency',
-      currency: 'EUR',
+      currency: 'HUF',
       minimumFractionDigits: 0,
-      maximumFractionDigits: 2
+      maximumFractionDigits: 0
     }).format(Number(price));
-    
-    return formatted.replace(/\.00$/, '');
   };
 
   // Calculate price range for products with options
