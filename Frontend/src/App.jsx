@@ -36,7 +36,9 @@ const App = () => {
     if (restaurantInfo.restaurantName) {
       document.title = restaurantInfo.restaurantName;
     }
-    const faviconHref = restaurantInfo.faviconUrl || restaurantInfo.logoUrl;
+    // Keep browser tab icon aligned with current restaurant information.
+    // Prefer logoUrl from restaurant info and fall back to faviconUrl.
+    const faviconHref = restaurantInfo.logoUrl || restaurantInfo.faviconUrl;
     if (faviconHref) {
       let link = document.getElementById('favicon');
       if (!link) {
@@ -45,7 +47,9 @@ const App = () => {
         link.rel = 'icon';
         document.head.appendChild(link);
       }
-      link.href = faviconHref;
+      const version = restaurantInfo.updatedAt || restaurantInfo.logoUrl || restaurantInfo.faviconUrl;
+      const separator = faviconHref.includes('?') ? '&' : '?';
+      link.href = `${faviconHref}${separator}v=${encodeURIComponent(version)}`;
     }
   }, [restaurantInfo]);
 
