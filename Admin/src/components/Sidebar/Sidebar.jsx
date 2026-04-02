@@ -13,7 +13,9 @@ const Sidebar = ({ isOpen, onClose }) => {
     axios.get(`${config.BACKEND_URL}/api/restaurant-info`)
       .then(res => {
         if (res.data.success && res.data.data?.restaurantName) {
-          setRestaurantName(res.data.data.restaurantName);
+          const name = res.data.data.restaurantName;
+          setRestaurantName(name);
+          document.title = `${name} Admin`;
         }
       })
       .catch(() => {});
