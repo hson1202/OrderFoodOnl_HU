@@ -1,0 +1,348 @@
+{
+  "info": {
+    "_postman_id": "menu-page8-sushiset-futomaki-temaki",
+    "name": "🍣 Menu Trang 8 - Sushi Set, Futo Maki, Sajtos Maki & Tea Maki",
+    "description": "SS5-SS8 + F1-F4 (Futo Maki có size) + SM1-SM5 (Sajtos Sült Maki) + T1-T3 (Tea Maki/Temaki)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "https://food-del-clnf.onrender.com" }],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Categories mới",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Futo Maki",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Futo Maki", "type": "text" },
+              { "key": "description", "value": "Töltelék: tojás, avokádó, uborka, szárított gomba / Nhân: trứng, bơ, dưa leo, nấm khô", "type": "text" },
+              { "key": "sortOrder", "value": "18", "type": "text" },
+              { "key": "language", "value": "en", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1b ▶ Tạo category: Sajtos Sült Maki",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Sajtos Sült Maki", "type": "text" },
+              { "key": "description", "value": "Cheesy Baked Maki (8 db / 8 miếng)", "type": "text" },
+              { "key": "sortOrder", "value": "19", "type": "text" },
+              { "key": "language", "value": "hu", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1c ▶ Tạo category: Tea Maki (Temaki)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Tea Maki", "type": "text" },
+              { "key": "description", "value": "Temaki - Töltelék: avokádó, garnéla ikra / Nhân: bơ, trứng tôm", "type": "text" },
+              { "key": "sortOrder", "value": "20", "type": "text" },
+              { "key": "language", "value": "en", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍣 BƯỚC 2 - SUSHI SZETT (SS5-SS8)",
+      "item": [
+        {
+          "name": "SS5 - Vega szett (26 miếng) — 4890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS5", "type": "text" },
+              { "key": "name", "value": "Vega Sushi Szett", "type": "text" },
+              { "key": "nameVI", "value": "Vega Sushi Set (26 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Vegan Sushi Set (26 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Vega Szett (26 db)", "type": "text" },
+              { "key": "description", "value": "26 pcs: Avocado maki 8, cucumber maki 8, vegan avocado uramaki 4, sesame uramaki 4, avocado nigiri 2 | Maki bơ 8, maki dưa leo 8, cuộn phô bơ chay 4, cuộn phô vừng 4, nigiri bơ 2", "type": "text" },
+              { "key": "price", "value": "4890", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SS6 - Han'Ei Sushi Set 1 (25 miếng) — 8990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS6", "type": "text" },
+              { "key": "name", "value": "Han'Ei Sushi Set 1", "type": "text" },
+              { "key": "nameVI", "value": "Han'Ei Sushi Set 1 (25 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Han'Ei Sushi Set 1 (25 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Han'Ei Sushi Set 1 (25 db)", "type": "text" },
+              { "key": "description", "value": "25 pcs: Fried salmon roll 5, shrimp roe uramaki 4, salmon uramaki 4, cucumber maki 4, avocado maki 4, nigiri: 2 salmon, 2 tuna | Cuộn chiên cá hồi 5, cuộn phô trứng tôm 4, cuộn phô cá hồi 4, maki dưa leo 4, maki bơ 4, nigiri: 2 cá hồi, 2 cá ngừ", "type": "text" },
+              { "key": "price", "value": "8990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SS7 - Han'Ei Sushi Set 3 (48 miếng) — 15990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS7", "type": "text" },
+              { "key": "name", "value": "Han'Ei Sushi Set 3", "type": "text" },
+              { "key": "nameVI", "value": "Han'Ei Sushi Set 3 (48 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Han'Ei Sushi Set 3 (48 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Han'Ei Sushi Set 3 (48 db)", "type": "text" },
+              { "key": "description", "value": "48 pcs: Salmon maki 8, tuna maki 8, cucumber maki 8, sesame uramaki 4, avocado uramaki 4, fried salmon roll 5, fried tuna roll 5, nigiri: 2 salmon, 2 tuna, 2 shrimp | Maki cá hồi 8, cá ngừ 8, dưa leo 8, cuộn phô vừng 4, phô bơ 4, cuộn chiên cá hồi 5, chiên cá ngừ 5, nigiri: 2 cá hồi, 2 cá ngừ, 2 tôm", "type": "text" },
+              { "key": "price", "value": "15990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SS8 - Han'Ei Sushi Set 4 (25 miếng) — 10990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS8", "type": "text" },
+              { "key": "name", "value": "Han'Ei Sushi Set 4", "type": "text" },
+              { "key": "nameVI", "value": "Han'Ei Sushi Set 4 (25 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Han'Ei Sushi Set 4 (25 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Han'Ei Sushi Set 4 (25 db)", "type": "text" },
+              { "key": "description", "value": "25 pcs: Fried shrimp maki 8, eel uramaki 8, fried chicken roll 5, nigiri: 2 salmon, 2 tuna | Maki tôm chiên 8, cuộn phô lươn 8, cuộn chiên gà 5, nigiri: 2 cá hồi, 2 cá ngừ", "type": "text" },
+              { "key": "price", "value": "10990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🌯 BƯỚC 3 - FUTO MAKI (F1-F4) — có 2 size",
+      "item": [
+        {
+          "name": "F1 - Futo Maki Lazac / Cá hồi (5db=3390 / 10db=5990)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "F1", "type": "text" },
+              { "key": "name", "value": "Futo Maki Lazac", "type": "text" },
+              { "key": "nameVI", "value": "Futo Maki cá hồi", "type": "text" },
+              { "key": "nameEN", "value": "Futo Maki Salmon", "type": "text" },
+              { "key": "nameHU", "value": "Futo Maki Lazac", "type": "text" },
+              { "key": "description", "value": "Futo Maki - Nhân: trứng, bơ, dưa leo, nấm khô + cá hồi | Töltelék: tojás, avokádó, uborka, szárított gomba + lazac", "type": "text" },
+              { "key": "price", "value": "3390", "type": "text" },
+              { "key": "category", "value": "Futo Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 pcs / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":3390},{\"code\":\"10db\",\"label\":\"10 db / 10 pcs / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":5990}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "F2 - Futo Maki Tonhal / Cá ngừ (5db=3490 / 10db=5990)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "F2", "type": "text" },
+              { "key": "name", "value": "Futo Maki Tonhal", "type": "text" },
+              { "key": "nameVI", "value": "Futo Maki cá ngừ", "type": "text" },
+              { "key": "nameEN", "value": "Futo Maki Tuna", "type": "text" },
+              { "key": "nameHU", "value": "Futo Maki Tonhal", "type": "text" },
+              { "key": "description", "value": "Futo Maki - Nhân: trứng, bơ, dưa leo, nấm khô + cá ngừ | Töltelék: tojás, avokádó, uborka, szárított gomba + tonhal", "type": "text" },
+              { "key": "price", "value": "3490", "type": "text" },
+              { "key": "category", "value": "Futo Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":3490},{\"code\":\"10db\",\"label\":\"10 db / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":5990}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "F3 - Futo Maki Tempura rák / Tôm chiên (5db=3390 / 10db=5990)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "F3", "type": "text" },
+              { "key": "name", "value": "Futo Maki Tempura rák", "type": "text" },
+              { "key": "nameVI", "value": "Futo Maki tôm chiên", "type": "text" },
+              { "key": "nameEN", "value": "Futo Maki Shrimp Tempura", "type": "text" },
+              { "key": "nameHU", "value": "Futo Maki Tempura rák", "type": "text" },
+              { "key": "description", "value": "Futo Maki - Nhân: trứng, bơ, dưa leo, nấm khô + tôm chiên | Töltelék: tojás, avokádó, uborka, szárított gomba + tempura rák", "type": "text" },
+              { "key": "price", "value": "3390", "type": "text" },
+              { "key": "category", "value": "Futo Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":3390},{\"code\":\"10db\",\"label\":\"10 db / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":5990}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "F4 - Futo Maki Speciális / Đặc biệt (5db=3690 / 10db=6290)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "F4", "type": "text" },
+              { "key": "name", "value": "Futo Maki Speciális", "type": "text" },
+              { "key": "nameVI", "value": "Futo Maki đặc biệt", "type": "text" },
+              { "key": "nameEN", "value": "Futo Maki Special", "type": "text" },
+              { "key": "nameHU", "value": "Futo Maki Speciális", "type": "text" },
+              { "key": "description", "value": "Futo Maki Đặc biệt - Nhân: trứng, bơ, dưa leo, nấm khô + đặc biệt | Speciális töltelékkel", "type": "text" },
+              { "key": "price", "value": "3690", "type": "text" },
+              { "key": "category", "value": "Futo Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":3690},{\"code\":\"10db\",\"label\":\"10 db / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":6290}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🧀 BƯỚC 4 - SAJTOS SÜLT MAKI (SM1-SM5) — 8 miếng/phần",
+      "item": [
+        {
+          "name": "SM1 - Sajtos Sült Maki Lazac / Cá hồi — 2350Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SM1", "type": "text" },
+              { "key": "name", "value": "Sajtos Sült Maki Lazac", "type": "text" },
+              { "key": "nameVI", "value": "Maki nướng phô mai cá hồi (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Cheesy Baked Maki Salmon (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Sajtos Sült Maki Lazac (8 db)", "type": "text" },
+              { "key": "description", "value": "Cheesy baked maki with salmon (8 pcs) / Maki nướng phô mai cá hồi (8 miếng)", "type": "text" },
+              { "key": "price", "value": "2350", "type": "text" },
+              { "key": "category", "value": "Sajtos Sült Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SM2 - Sajtos Sült Maki Tonhal / Cá ngừ — 2450Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SM2", "type": "text" },
+              { "key": "name", "value": "Sajtos Sült Maki Tonhal", "type": "text" },
+              { "key": "nameVI", "value": "Maki nướng phô mai cá ngừ (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Cheesy Baked Maki Tuna (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Sajtos Sült Maki Tonhal (8 db)", "type": "text" },
+              { "key": "description", "value": "Cheesy baked maki with tuna (8 pcs) / Maki nướng phô mai cá ngừ (8 miếng)", "type": "text" },
+              { "key": "price", "value": "2450", "type": "text" },
+              { "key": "category", "value": "Sajtos Sült Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SM3 - Sajtos Sült Maki Tempura rák / Tôm chiên — 2350Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SM3", "type": "text" },
+              { "key": "name", "value": "Sajtos Sült Maki Tempura rák", "type": "text" },
+              { "key": "nameVI", "value": "Maki nướng phô mai tôm chiên (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Cheesy Baked Maki Shrimp Tempura (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Sajtos Sült Maki Tempura rák (8 db)", "type": "text" },
+              { "key": "description", "value": "Cheesy baked maki with shrimp tempura (8 pcs) / Maki nướng phô mai tôm chiên (8 miếng)", "type": "text" },
+              { "key": "price", "value": "2350", "type": "text" },
+              { "key": "category", "value": "Sajtos Sült Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SM4 - Sajtos Sült Maki Surimi / Thanh cua — 2250Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SM4", "type": "text" },
+              { "key": "name", "value": "Sajtos Sült Maki Surimi", "type": "text" },
+              { "key": "nameVI", "value": "Maki nướng phô mai thanh cua (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Cheesy Baked Maki Crab Stick (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Sajtos Sült Maki Surimi (8 db)", "type": "text" },
+              { "key": "description", "value": "Cheesy baked maki with crab stick (8 pcs) / Maki nướng phô mai thanh cua (8 miếng)", "type": "text" },
+              { "key": "price", "value": "2250", "type": "text" },
+              { "key": "category", "value": "Sajtos Sült Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SM5 - Sajtos Sült Maki Főtt garnéla / Tôm lược — 2350Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SM5", "type": "text" },
+              { "key": "name", "value": "Sajtos Sült Maki Főtt garnéla", "type": "text" },
+              { "key": "nameVI", "value": "Maki nướng phô mai tôm lược (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Cheesy Baked Maki Boiled Shrimp (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Sajtos Sült Maki Főtt garnéla (8 db)", "type": "text" },
+              { "key": "description", "value": "Cheesy baked maki with boiled shrimp (8 pcs) / Maki nướng phô mai tôm lược (8 miếng)", "type": "text" },
+              { "key": "price", "value": "2350", "type": "text" },
+              { "key": "category", "value": "Sajtos Sült Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🌮 BƯỚC 5 - TEA MAKI / TEMAKI (T1-T3)",
+      "item": [
+        {
+          "name": "T1 - Lazacos Tea Maki / Temaki cá hồi — 1690Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "T1", "type": "text" },
+              { "key": "name", "value": "Lazacos Tea Maki", "type": "text" },
+              { "key": "nameVI", "value": "Temaki cá hồi", "type": "text" },
+              { "key": "nameEN", "value": "Salmon Temaki", "type": "text" },
+              { "key": "nameHU", "value": "Lazacos Tea Maki", "type": "text" },
+              { "key": "description", "value": "Salmon Temaki - Nhân: bơ, trứng tôm + cá hồi | Töltelék: avokádó, garnéla ikra + lazac", "type": "text" },
+              { "key": "price", "value": "1690", "type": "text" },
+              { "key": "category", "value": "Tea Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "T2 - Tonhalas Tea Maki / Temaki cá ngừ — 1790Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "T2", "type": "text" },
+              { "key": "name", "value": "Tonhalas Tea Maki", "type": "text" },
+              { "key": "nameVI", "value": "Temaki cá ngừ", "type": "text" },
+              { "key": "nameEN", "value": "Tuna Temaki", "type": "text" },
+              { "key": "nameHU", "value": "Tonhalas Tea Maki", "type": "text" },
+              { "key": "description", "value": "Tuna Temaki - Nhân: bơ, trứng tôm + cá ngừ | Töltelék: avokádó, garnéla ikra + tonhal", "type": "text" },
+              { "key": "price", "value": "1790", "type": "text" },
+              { "key": "category", "value": "Tea Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "T3 - Surímis Tea Maki / Temaki thanh cua — 1590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "T3", "type": "text" },
+              { "key": "name", "value": "Surímis Tea Maki", "type": "text" },
+              { "key": "nameVI", "value": "Temaki thanh cua", "type": "text" },
+              { "key": "nameEN", "value": "Crab Stick Temaki", "type": "text" },
+              { "key": "nameHU", "value": "Surímis Tea Maki", "type": "text" },
+              { "key": "description", "value": "Crab Stick Temaki - Nhân: bơ, trứng tôm + thanh cua | Töltelék: avokádó, garnéla ikra + surimi", "type": "text" },
+              { "key": "price", "value": "1590", "type": "text" },
+              { "key": "category", "value": "Tea Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

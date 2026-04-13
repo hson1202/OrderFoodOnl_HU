@@ -1,0 +1,327 @@
+{
+  "info": {
+    "_postman_id": "menu-page4-ramen-udon-rice",
+    "name": "🍜 Menu Trang 4 - Mỳ Ramen/Udon & Cơm Đông",
+    "description": "RAMEN TÉSZTA / UDON TÉSZTA / RIZSES ÉTELEK - 16 món",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "https://food-del-clnf.onrender.com" }],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Categories",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Mỳ Ramen - Mỳ Udon",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "description", "value": "Ramen Tészta - Udon Tészta / Ramen Noodles - Udon Noodles", "type": "text" },
+              { "key": "sortOrder", "value": "4", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1b ▶ Tạo category: Cơm Đông",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Cơm Đông", "type": "text" },
+              { "key": "description", "value": "Rizses Ételek / Rice Meal", "type": "text" },
+              { "key": "sortOrder", "value": "5", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍜 BƯỚC 2 - RAMEN TÉSZTA / MỲ RAMEN (10A-10F)",
+      "item": [
+        {
+          "name": "10A - Ramen marha / Ramen bò — 3690Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "10A", "type": "text" },
+              { "key": "name", "value": "Ramen marha", "type": "text" },
+              { "key": "nameVI", "value": "Ramen bò", "type": "text" },
+              { "key": "nameEN", "value": "Beef Ramen", "type": "text" },
+              { "key": "nameHU", "value": "Ramen marha", "type": "text" },
+              { "key": "description", "value": "Beef ramen / Ramen bò", "type": "text" },
+              { "key": "price", "value": "3690", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "10B - Pirított ramen tengergyümölcsei / Ramen xào hải sản — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "10B", "type": "text" },
+              { "key": "name", "value": "Pirított ramen tengergyümölcsei", "type": "text" },
+              { "key": "nameVI", "value": "Ramen xào hải sản", "type": "text" },
+              { "key": "nameEN", "value": "Fried Ramen with Seafood", "type": "text" },
+              { "key": "nameHU", "value": "Pirított ramen tengergyümölcsei", "type": "text" },
+              { "key": "description", "value": "Fried ramen with seafood / Ramen xào hải sản", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "10C - Ramen miso szósszal / Mỳ ramen thịt heo sốt miso — 3990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "10C", "type": "text" },
+              { "key": "name", "value": "Ramen miso szósszal", "type": "text" },
+              { "key": "nameVI", "value": "Mỳ ramen thịt heo sốt miso", "type": "text" },
+              { "key": "nameEN", "value": "Miso Ramen", "type": "text" },
+              { "key": "nameHU", "value": "Ramen miso szósszal", "type": "text" },
+              { "key": "description", "value": "Miso ramen / Mỳ ramen thịt heo sốt miso", "type": "text" },
+              { "key": "price", "value": "3990", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "10D - Ramen kimchi-s / Ramen kim chi — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "10D", "type": "text" },
+              { "key": "name", "value": "Ramen kimchi-s", "type": "text" },
+              { "key": "nameVI", "value": "Ramen kim chi", "type": "text" },
+              { "key": "nameEN", "value": "Kimchi Ramen", "type": "text" },
+              { "key": "nameHU", "value": "Ramen kimchi-s", "type": "text" },
+              { "key": "description", "value": "Kimchi ramen / Ramen kim chi", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "10E - Ramen curry / Ramen Kari — 3990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "10E", "type": "text" },
+              { "key": "name", "value": "Ramen curry", "type": "text" },
+              { "key": "nameVI", "value": "Ramen Kari", "type": "text" },
+              { "key": "nameEN", "value": "Curry Ramen", "type": "text" },
+              { "key": "nameHU", "value": "Ramen curry", "type": "text" },
+              { "key": "description", "value": "Curry ramen / Ramen Kari", "type": "text" },
+              { "key": "price", "value": "3990", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "10F - Tonkotshu ramen / Thịt lợn sốt Tonkotshu — 3990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "10F", "type": "text" },
+              { "key": "name", "value": "Tonkotshu ramen", "type": "text" },
+              { "key": "nameVI", "value": "Ramen thịt lợn sốt Tonkotshu", "type": "text" },
+              { "key": "nameEN", "value": "Tonkotsu Ramen", "type": "text" },
+              { "key": "nameHU", "value": "Tonkotshu ramen", "type": "text" },
+              { "key": "description", "value": "Tonkotshu ramen / Thịt lợn sốt Tonkotshu", "type": "text" },
+              { "key": "price", "value": "3990", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍢 BƯỚC 3 - UDON TÉSZTA / MỲ UDON (11A-11E)",
+      "item": [
+        {
+          "name": "11A - Udon marhás / Udon bò — 3690Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "11A", "type": "text" },
+              { "key": "name", "value": "Udon marhás", "type": "text" },
+              { "key": "nameVI", "value": "Udon bò", "type": "text" },
+              { "key": "nameEN", "value": "Beef Udon", "type": "text" },
+              { "key": "nameHU", "value": "Udon marhás", "type": "text" },
+              { "key": "description", "value": "Beef udon / Udon bò", "type": "text" },
+              { "key": "price", "value": "3690", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "11B - Pirított udon tengerigyümölcsei / Udon xào hải sản — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "11B", "type": "text" },
+              { "key": "name", "value": "Pirított udon tengerigyümölcsei", "type": "text" },
+              { "key": "nameVI", "value": "Udon xào hải sản", "type": "text" },
+              { "key": "nameEN", "value": "Fried Udon with Seafood", "type": "text" },
+              { "key": "nameHU", "value": "Pirított udon tengerigyümölcsei", "type": "text" },
+              { "key": "description", "value": "Fried udon noodles with seafood / Udon xào hải sản", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "11C - Udon sajszósszal / Udon sốt phô mai — 3990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "11C", "type": "text" },
+              { "key": "name", "value": "Udon sajszósszal", "type": "text" },
+              { "key": "nameVI", "value": "Udon sốt phô mai", "type": "text" },
+              { "key": "nameEN", "value": "Udon with Cheese Sauce", "type": "text" },
+              { "key": "nameHU", "value": "Udon sajszósszal", "type": "text" },
+              { "key": "description", "value": "Udon with cheese sauce / Udon sốt phô mai", "type": "text" },
+              { "key": "price", "value": "3990", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "11D - Udon kimchi-s marhahús / Udon kim chi thịt bò — 3990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "11D", "type": "text" },
+              { "key": "name", "value": "Udon kimchi-s marhahús", "type": "text" },
+              { "key": "nameVI", "value": "Udon kim chi thịt bò", "type": "text" },
+              { "key": "nameEN", "value": "Udon Kimchi Beef", "type": "text" },
+              { "key": "nameHU", "value": "Udon kimchi-s marhahús", "type": "text" },
+              { "key": "description", "value": "Udon kimchi beef / Udon kim chi thịt bò", "type": "text" },
+              { "key": "price", "value": "3990", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "11E - Udon curry / Udon Kari — 3990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "11E", "type": "text" },
+              { "key": "name", "value": "Udon curry", "type": "text" },
+              { "key": "nameVI", "value": "Udon Kari", "type": "text" },
+              { "key": "nameEN", "value": "Curry Udon", "type": "text" },
+              { "key": "nameHU", "value": "Udon curry", "type": "text" },
+              { "key": "description", "value": "Udon curry / Udon Kari", "type": "text" },
+              { "key": "price", "value": "3990", "type": "text" },
+              { "key": "category", "value": "Mỳ Ramen - Mỳ Udon", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍚 BƯỚC 4 - RIZSES ÉTELEK / CƠM ĐÔNG (22A-22E)",
+      "item": [
+        {
+          "name": "22A - Angolnás rizs / Cơm lươn — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "22A", "type": "text" },
+              { "key": "name", "value": "Angolnás rizs", "type": "text" },
+              { "key": "nameVI", "value": "Cơm lươn", "type": "text" },
+              { "key": "nameEN", "value": "Eel with Rice", "type": "text" },
+              { "key": "nameHU", "value": "Angolnás rizs", "type": "text" },
+              { "key": "description", "value": "Eel with rice / Cơm lươn", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Cơm Đông", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "22B - Sertés húsos-tojásos rizs / Cơm đông thịt heo trứng — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "22B", "type": "text" },
+              { "key": "name", "value": "Sertés húsos-tojásos rizs", "type": "text" },
+              { "key": "nameVI", "value": "Cơm đông thịt heo trứng", "type": "text" },
+              { "key": "nameEN", "value": "Pork and Egg Rice", "type": "text" },
+              { "key": "nameHU", "value": "Sertés húsos-tojásos rizs", "type": "text" },
+              { "key": "description", "value": "Pork and egg / Cơm đông thịt heo trứng", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Cơm Đông", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "22C - Csirkés-tojásos rizs / Cơm đông thịt gà trứng — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "22C", "type": "text" },
+              { "key": "name", "value": "Csirkés-tojásos rizs", "type": "text" },
+              { "key": "nameVI", "value": "Cơm đông thịt gà trứng", "type": "text" },
+              { "key": "nameEN", "value": "Chicken and Egg Rice", "type": "text" },
+              { "key": "nameHU", "value": "Csirkés-tojásos rizs", "type": "text" },
+              { "key": "description", "value": "Chicken and egg / Cơm đông thịt gà trứng", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Cơm Đông", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "22D - Ráantott sertés rizs curry-vel / Cơm thịt heo chiên xù sốt cari — 3990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "22D", "type": "text" },
+              { "key": "name", "value": "Ráantott sertés rizs curry-vel", "type": "text" },
+              { "key": "nameVI", "value": "Cơm thịt heo chiên xù sốt cari", "type": "text" },
+              { "key": "nameEN", "value": "Fried Pork Rice with Curry", "type": "text" },
+              { "key": "nameHU", "value": "Ráantott sertés rizs curry-vel", "type": "text" },
+              { "key": "description", "value": "Fried pork and curry / Cơm thịt heo chiên xù sốt cari", "type": "text" },
+              { "key": "price", "value": "3990", "type": "text" },
+              { "key": "category", "value": "Cơm Đông", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "22E - Ráantott csirke rizs curry-vel / Cơm thịt gà chiên xù sốt cari — 3990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "22E", "type": "text" },
+              { "key": "name", "value": "Ráantott csirke rizs curry-vel", "type": "text" },
+              { "key": "nameVI", "value": "Cơm thịt gà chiên xù sốt cari", "type": "text" },
+              { "key": "nameEN", "value": "Fried Chicken Rice with Curry", "type": "text" },
+              { "key": "nameHU", "value": "Ráantott csirke rizs curry-vel", "type": "text" },
+              { "key": "description", "value": "Fried chicken and curry / Cơm thịt gà chiên xù sốt cari", "type": "text" },
+              { "key": "price", "value": "3990", "type": "text" },
+              { "key": "category", "value": "Cơm Đông", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

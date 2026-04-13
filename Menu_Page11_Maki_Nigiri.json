@@ -1,0 +1,492 @@
+{
+  "info": {
+    "_postman_id": "menu-page11-maki-nigiri",
+    "name": "🍣 Menu Trang 11 - Maki & Nigiri",
+    "description": "M1-M14 (Maki 8 miếng/phần) + N1-N12 (Nigiri 2 miếng/phần)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "https://food-del-clnf.onrender.com" }],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Categories mới",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Maki",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Maki", "type": "text" },
+              { "key": "description", "value": "Maki Sushi (8 db / 8 miếng mỗi phần)", "type": "text" },
+              { "key": "sortOrder", "value": "27", "type": "text" },
+              { "key": "language", "value": "en", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1b ▶ Tạo category: Nigiri",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Nigiri", "type": "text" },
+              { "key": "description", "value": "Nigiri Sushi (2 db / 2 miếng mỗi phần)", "type": "text" },
+              { "key": "sortOrder", "value": "28", "type": "text" },
+              { "key": "language", "value": "en", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🌿 BƯỚC 2 - MAKI (M1-M14) — 8 miếng/phần",
+      "item": [
+        {
+          "name": "M1 - Lazac maki / Maki cá hồi — 1550Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M1", "type": "text" },
+              { "key": "name", "value": "Lazac maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki cá hồi (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Salmon Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Lazac maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Salmon maki 8 pcs / Maki cá hồi 8 miếng", "type": "text" },
+              { "key": "price", "value": "1550", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M2 - Tonhal maki / Maki cá ngừ — 1650Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M2", "type": "text" },
+              { "key": "name", "value": "Tonhal maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki cá ngừ (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Tuna Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tonhal maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Tuna maki 8 pcs / Maki cá ngừ 8 miếng", "type": "text" },
+              { "key": "price", "value": "1650", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M3 - Tempura rák maki / Maki tôm chiên — 1350Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M3", "type": "text" },
+              { "key": "name", "value": "Tempura rák maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki tôm chiên (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Shrimp Tempura Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tempura rák maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Shrimp tempura maki 8 pcs / Maki tôm chiên 8 miếng", "type": "text" },
+              { "key": "price", "value": "1350", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M4 - Főtt rák maki / Maki tôm lược — 1350Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M4", "type": "text" },
+              { "key": "name", "value": "Főtt rák maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki tôm lược (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Boiled Shrimp Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Főtt rák maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Boiled shrimp maki 8 pcs / Maki tôm lược 8 miếng", "type": "text" },
+              { "key": "price", "value": "1350", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M5 - Surimi maki / Maki thanh cua — 1450Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M5", "type": "text" },
+              { "key": "name", "value": "Surimi maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki thanh cua (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Crab Stick Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Surimi maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Crab stick maki 8 pcs / Maki thanh cua 8 miếng", "type": "text" },
+              { "key": "price", "value": "1450", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M6 - Angolna maki / Maki lươn — 1550Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M6", "type": "text" },
+              { "key": "name", "value": "Angolna maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki lươn (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Eel Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Angolna maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Eel maki 8 pcs / Maki lươn 8 miếng", "type": "text" },
+              { "key": "price", "value": "1550", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M7 - Garnélás ikra maki / Maki trứng tôm — 1450Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M7", "type": "text" },
+              { "key": "name", "value": "Garnélás ikra maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki trứng tôm (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Shrimp Roe Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Garnélás ikra maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Shrimp roe maki 8 pcs / Maki trứng tôm 8 miếng", "type": "text" },
+              { "key": "price", "value": "1450", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M8 - Maki Avokádó / Maki bơ — 1250Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M8", "type": "text" },
+              { "key": "name", "value": "Maki Avokádó", "type": "text" },
+              { "key": "nameVI", "value": "Maki bơ (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Avocado Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Avokádó maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Avocado maki 8 pcs / Maki bơ 8 miếng", "type": "text" },
+              { "key": "price", "value": "1250", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M9 - Maki Uborka / Maki dưa leo — 1250Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M9", "type": "text" },
+              { "key": "name", "value": "Maki Uborka", "type": "text" },
+              { "key": "nameVI", "value": "Maki dưa leo (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Cucumber Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Uborka maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Cucumber maki 8 pcs / Maki dưa leo 8 miếng", "type": "text" },
+              { "key": "price", "value": "1250", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M10 - Szárított lazac maki / Maki cá hồi khô — 1550Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M10", "type": "text" },
+              { "key": "name", "value": "Szárított lazac maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki cá hồi khô (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Dried Salmon Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Szárított lazac maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Dried salmon maki 8 pcs / Maki cá hồi khô 8 miếng", "type": "text" },
+              { "key": "price", "value": "1550", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M11 - Szárított tonhal maki / Maki cá ngừ khô — 1650Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M11", "type": "text" },
+              { "key": "name", "value": "Szárított tonhal maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki cá ngừ khô (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Dried Tuna Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Szárított tonhal maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Dried tuna maki 8 pcs / Maki cá ngừ khô 8 miếng", "type": "text" },
+              { "key": "price", "value": "1650", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M12 - Tojásos maki / Maki trứng — 1350Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M12", "type": "text" },
+              { "key": "name", "value": "Tojásos maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki trứng (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Egg Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tojásos maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Egg maki 8 pcs / Maki trứng 8 miếng", "type": "text" },
+              { "key": "price", "value": "1350", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M13 - Avokádós lazac maki / Maki cá hồi bơ — 1650Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M13", "type": "text" },
+              { "key": "name", "value": "Avokádós lazac maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki cá hồi bơ (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Avocado Salmon Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Avokádós lazac maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Avocado & salmon maki 8 pcs / Maki cá hồi bơ 8 miếng", "type": "text" },
+              { "key": "price", "value": "1650", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "M14 - Avokádós tonhal maki / Maki cá ngừ bơ — 1750Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "M14", "type": "text" },
+              { "key": "name", "value": "Avokádós tonhal maki", "type": "text" },
+              { "key": "nameVI", "value": "Maki cá ngừ bơ (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Avocado Tuna Maki (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Avokádós tonhal maki (8 db)", "type": "text" },
+              { "key": "description", "value": "Avocado & tuna maki 8 pcs / Maki cá ngừ bơ 8 miếng", "type": "text" },
+              { "key": "price", "value": "1750", "type": "text" },
+              { "key": "category", "value": "Maki", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍱 BƯỚC 3 - NIGIRI (N1-N12) — 2 miếng/phần",
+      "item": [
+        {
+          "name": "N1 - Lazac Nigiri / Cá hồi (2 miếng) — 1450Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N1", "type": "text" },
+              { "key": "name", "value": "Lazac Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri cá hồi (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Salmon Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Lazac Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Salmon Nigiri 2 pcs / Nigiri cá hồi 2 miếng", "type": "text" },
+              { "key": "price", "value": "1450", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N2 - Tonhal Nigiri / Cá ngừ (2 miếng) — 1550Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N2", "type": "text" },
+              { "key": "name", "value": "Tonhal Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri cá ngừ (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Tuna Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tonhal Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Tuna Nigiri 2 pcs / Nigiri cá ngừ 2 miếng", "type": "text" },
+              { "key": "price", "value": "1550", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N3 - Szárított lazac Nigiri / Cá hồi khô (2 miếng) — 1550Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N3", "type": "text" },
+              { "key": "name", "value": "Szárított lazac Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri cá hồi khô (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Dried Salmon Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Szárított lazac Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Dried salmon Nigiri 2 pcs / Nigiri cá hồi khô 2 miếng", "type": "text" },
+              { "key": "price", "value": "1550", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N4 - Szárított tonhal Nigiri / Cá ngừ khô (2 miếng) — 1650Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N4", "type": "text" },
+              { "key": "name", "value": "Szárított tonhal Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri cá ngừ khô (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Dried Tuna Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Szárított tonhal Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Dried tuna Nigiri 2 pcs / Nigiri cá ngừ khô 2 miếng", "type": "text" },
+              { "key": "price", "value": "1650", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N5 - Főtt garnéla Nigiri / Tôm lược (2 miếng) — 1450Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N5", "type": "text" },
+              { "key": "name", "value": "Főtt garnéla Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri tôm lược (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Boiled Shrimp Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Főtt garnéla Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Boiled shrimp Nigiri 2 pcs / Nigiri tôm lược 2 miếng", "type": "text" },
+              { "key": "price", "value": "1450", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N6 - Angolna Nigiri / Lươn (2 miếng) — 1550Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N6", "type": "text" },
+              { "key": "name", "value": "Angolna Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri lươn (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Eel Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Angolna Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Eel Nigiri 2 pcs / Nigiri lươn 2 miếng", "type": "text" },
+              { "key": "price", "value": "1550", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N7 - Surimi Nigiri / Thanh cua (2 miếng) — 1350Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N7", "type": "text" },
+              { "key": "name", "value": "Surimi Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri thanh cua (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Crab Stick Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Surimi Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Crab stick Nigiri 2 pcs / Nigiri thanh cua 2 miếng", "type": "text" },
+              { "key": "price", "value": "1350", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N8 - Avokádó Nigiri / Bơ (2 miếng) — 1250Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N8", "type": "text" },
+              { "key": "name", "value": "Avokádó Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri bơ (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Avocado Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Avokádó Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Avocado Nigiri 2 pcs / Nigiri bơ 2 miếng", "type": "text" },
+              { "key": "price", "value": "1250", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N9 - Tengeri sügér Nigiri / Sò đỏ (2 miếng) — 1450Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N9", "type": "text" },
+              { "key": "name", "value": "Tengeri sügér Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri sò đỏ / cá vược biển (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Sea Bass Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tengeri sügér Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Sea bass Nigiri 2 pcs / Nigiri sò đỏ 2 miếng", "type": "text" },
+              { "key": "price", "value": "1450", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N10 - Sárgafarkú hal Nigiri / Cá cam (2 miếng) — 1550Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N10", "type": "text" },
+              { "key": "name", "value": "Sárgafarkú hal Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri cá cam / Yellowtail (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Yellowtail Hamachi Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Sárgafarkú hal Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Yellowtail hamachi Nigiri 2 pcs / Nigiri cá cam 2 miếng", "type": "text" },
+              { "key": "price", "value": "1550", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N11 - Tojás Nigiri / Trứng (2 miếng) — 1490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N11", "type": "text" },
+              { "key": "name", "value": "Tojás Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri trứng (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Egg Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tojás Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Egg Nigiri (Tamago) 2 pcs / Nigiri trứng 2 miếng", "type": "text" },
+              { "key": "price", "value": "1490", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "N12 - Fésűkagyló Nigiri / Sò điệp (2 miếng) — 1890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "N12", "type": "text" },
+              { "key": "name", "value": "Fésűkagyló Nigiri", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri sò điệp / Scallop (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Scallop Nigiri (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Fésűkagyló Nigiri (2 db)", "type": "text" },
+              { "key": "description", "value": "Scallop Nigiri 2 pcs / Nigiri sò điệp 2 miếng", "type": "text" },
+              { "key": "price", "value": "1890", "type": "text" },
+              { "key": "category", "value": "Nigiri", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

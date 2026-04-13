@@ -1,0 +1,533 @@
+{
+  "info": {
+    "_postman_id": "menu-page9-inside-out-rolls-fried",
+    "name": "🌀 Menu Trang 9 - Cuộn Phủ (Inside-Out) & Cuộn Chiên",
+    "description": "I1-I6 (Cuộn Phủ Nhân Cá Hồi Bơ) + I7-I13 (Đặc Biệt) + I14-I19 (Nhân Tôm Dưa Leo) + C1-C7 (Cuộn Chiên)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "https://food-del-clnf.onrender.com" }],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Categories mới",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Cuộn Phủ Nhân Cá Hồi Bơ",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Cuộn Phủ Nhân Cá Hồi Bơ", "type": "text" },
+              { "key": "description", "value": "Kifordított Tekercsek / Inside-Out Rolls (8 pcs) - Filling: Salmon, Avocado", "type": "text" },
+              { "key": "sortOrder", "value": "21", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1b ▶ Tạo category: Cuộn Phủ Đặc Biệt",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Cuộn Phủ Đặc Biệt", "type": "text" },
+              { "key": "description", "value": "Különleges Kifordított Tekercsek / Special Inside-Out Rolls Han'ei Sushi (8 pcs)", "type": "text" },
+              { "key": "sortOrder", "value": "22", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1c ▶ Tạo category: Cuộn Phủ Nhân Tôm Dưa Leo",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Cuộn Phủ Nhân Tôm Dưa Leo", "type": "text" },
+              { "key": "description", "value": "Uborkás Garnélás Tekercs / Shrimp & Cucumber Roll (8 pcs)", "type": "text" },
+              { "key": "sortOrder", "value": "23", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1d ▶ Tạo category: Cuộn Chiên",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Cuộn Chiên", "type": "text" },
+              { "key": "description", "value": "Sült Tekercsek / Fried Crunchy Rolls - Nhân: cà cải, dưa leo, bơ", "type": "text" },
+              { "key": "sortOrder", "value": "24", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🌀 BƯỚC 2 - CUỘN PHỦ NHÂN CÁ HỒI BƠ / Inside-Out Rolls (I1-I6)",
+      "item": [
+        {
+          "name": "I1 - Lazac borítású / Phủ cá hồi — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I1", "type": "text" },
+              { "key": "name", "value": "Lazac borítású tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ cá hồi (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Salmon Outside Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Lazac borítású tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Salmon outside roll (8 pcs) - Nhân: cá hồi, bơ | Filling: Salmon, Avocado", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Cá Hồi Bơ", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I2 - Garnélás ikra borítású / Phủ trứng tôm — 2890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I2", "type": "text" },
+              { "key": "name", "value": "Garnélás ikra borítású tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ trứng tôm (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Shrimp Roe Outside Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Garnélás ikra borítású tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Shrimp roe outside roll (8 pcs) / Cuộn phủ trứng tôm", "type": "text" },
+              { "key": "price", "value": "2890", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Cá Hồi Bơ", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I3 - Avokádó borítású / Phủ bơ — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I3", "type": "text" },
+              { "key": "name", "value": "Avokádó borítású tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ bơ (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Avocado Outside Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Avokádó borítású tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Avocado outside roll (8 pcs) / Cuộn phủ bơ", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Cá Hồi Bơ", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I4 - Szézámmagos borítású / Phủ vừng — 2890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I4", "type": "text" },
+              { "key": "name", "value": "Szézámmagos borítású tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ vừng (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Sesame Outside Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Szézámmagos borítású tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Sesame outside roll (8 pcs) / Cuộn phủ vừng", "type": "text" },
+              { "key": "price", "value": "2890", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Cá Hồi Bơ", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I5 - Tonhal borítású / Phủ cá ngừ — 3390Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I5", "type": "text" },
+              { "key": "name", "value": "Tonhal borítású tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ cá ngừ (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Tuna Outside Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tonhal borítású tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Tuna outside roll (8 pcs) / Cuộn phủ cá ngừ", "type": "text" },
+              { "key": "price", "value": "3390", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Cá Hồi Bơ", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I6 - Vegan vajas feltétes / Phủ bơ chay — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I6", "type": "text" },
+              { "key": "name", "value": "Vegan vajas feltétes tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ bơ chay (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Vegan Butter Topped Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Vegan vajas feltétes tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Vegan butter topped roll (8 pcs) / Cuộn phủ bơ chay", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Cá Hồi Bơ", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "⭐ BƯỚC 3 - CUỘN PHỦ ĐẶC BIỆT / Special Inside-Out Rolls (I7-I13)",
+      "item": [
+        {
+          "name": "I7 - Avokádó borítású / Phủ bơ đặc biệt — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I7", "type": "text" },
+              { "key": "name", "value": "Avokádó borítású különleges tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn đặc biệt phủ bơ (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Special Avocado Outside Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Avokádó borítású különleges tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Special avocado outside roll (8 pcs) - Nhân: cá hồi, bơ, trứng, thanh cua, nấm khô", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Đặc Biệt", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I8 - Garnélás ikra borítású / Phủ trứng tôm đặc biệt — 3490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I8", "type": "text" },
+              { "key": "name", "value": "Garnélás ikra borítású különleges tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn đặc biệt phủ trứng tôm (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Special Shrimp Roe Outside Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Garnélás ikra borítású különleges tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Special shrimp roe outside roll (8 pcs) / Cuộn đặc biệt phủ trứng tôm", "type": "text" },
+              { "key": "price", "value": "3490", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Đặc Biệt", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I9 - Lazac borítású szárított gombával és sajtszósszal / Phủ cá hồi khô sốt phô mai — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I9", "type": "text" },
+              { "key": "name", "value": "Lazac borítású tekercs szárított gombával és sajtszósszal", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ cá hồi khô sốt phô mai (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Salmon Roll with Dried Mushroom & Cheese Sauce (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Lazac borítású tekercs szárított gombával és sajtszósszal (8 db)", "type": "text" },
+              { "key": "description", "value": "Salmon outside roll with dried mushroom and cheese sauce (8 pcs) / Cuộn phủ cá hồi, nấm khô, sốt phô mai", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Đặc Biệt", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I10 - Szivárvány tekercs / Cuộn phủ cầu vồng / Rainbow Roll — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I10", "type": "text" },
+              { "key": "name", "value": "Szivárvány tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ cầu vồng (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Rainbow Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Szivárvány tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Rainbow roll (8 pcs) / Cuộn phủ cầu vồng", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Đặc Biệt", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I11 - Angolna borítású / Phủ lươn — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I11", "type": "text" },
+              { "key": "name", "value": "Angolna borítású tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ lươn (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Eel Outside Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Angolna borítású tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Eel outside roll (8 pcs) / Cuộn phủ lươn", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Đặc Biệt", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I12 - Sajt borítású / Phủ phô mai — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I12", "type": "text" },
+              { "key": "name", "value": "Sajt borítású tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ phô mai (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Cheese Outside Roll (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Sajt borítású tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Cheese outside roll (8 pcs) / Cuộn phủ phô mai", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Đặc Biệt", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I13 - Tengeri algás feltétes / Phủ rong biển — 3190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I13", "type": "text" },
+              { "key": "name", "value": "Tengeri algás feltétes tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ rong biển (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Roll Topped with Seaweed (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tengeri algás feltétes tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Roll topped with seaweed (8 pcs) / Cuộn phủ rong biển", "type": "text" },
+              { "key": "price", "value": "3190", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Đặc Biệt", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🦐 BƯỚC 4 - CUỘN PHỦ NHÂN TÔM DƯA LEO / Shrimp & Cucumber Roll (I14-I19)",
+      "item": [
+        {
+          "name": "I14 - Lazacos feltétes / Phủ cá hồi — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I14", "type": "text" },
+              { "key": "name", "value": "Lazacos feltétes tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ cá hồi - nhân tôm dưa leo (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Roll Topped with Salmon - Shrimp & Cucumber (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Lazacos feltétes tekercs - garnélás uborkás (8 db)", "type": "text" },
+              { "key": "description", "value": "Roll topped with salmon, shrimp & cucumber filling / Cuộn phủ cá hồi (nhân tôm dưa leo)", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Tôm Dưa Leo", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I15 - Tonhalas feltétes / Phủ cá ngừ — 3390Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I15", "type": "text" },
+              { "key": "name", "value": "Tonhalas feltétes tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ cá ngừ - nhân tôm dưa leo (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Roll Topped with Tuna - Shrimp & Cucumber (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tonhalas feltétes tekercs - garnélás uborkás (8 db)", "type": "text" },
+              { "key": "description", "value": "Roll topped with tuna, shrimp & cucumber filling / Cuộn phủ cá ngừ (nhân tôm dưa leo)", "type": "text" },
+              { "key": "price", "value": "3390", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Tôm Dưa Leo", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I16 - Vajas feltétes / Phủ bơ — 3190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I16", "type": "text" },
+              { "key": "name", "value": "Vajas feltétes tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ bơ - nhân tôm dưa leo (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Roll Topped with Butter - Shrimp & Cucumber (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Vajas feltétes tekercs - garnélás uborkás (8 db)", "type": "text" },
+              { "key": "description", "value": "Roll topped with butter, shrimp & cucumber filling / Cuộn phủ bơ (nhân tôm dưa leo)", "type": "text" },
+              { "key": "price", "value": "3190", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Tôm Dưa Leo", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I17 - Garnélás tojásos feltétes / Phủ trứng tôm — 2890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I17", "type": "text" },
+              { "key": "name", "value": "Garnélás tojásos feltétes tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ trứng tôm - nhân tôm dưa leo (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Roll Topped with Shrimp & Egg - Shrimp & Cucumber (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Garnélás tojásos feltétes tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Roll topped with shrimp and egg / Cuộn phủ trứng tôm (nhân tôm dưa leo)", "type": "text" },
+              { "key": "price", "value": "2890", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Tôm Dưa Leo", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I18 - Szárított lazacos feltétes / Phủ cá hồi khô — 3490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I18", "type": "text" },
+              { "key": "name", "value": "Szárított lazacos feltétes tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ cá hồi khô - nhân tôm dưa leo (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Roll Topped with Dried Salmon - Shrimp & Cucumber (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Szárított lazacos feltétes tekercs (8 db)", "type": "text" },
+              { "key": "description", "value": "Roll topped with dried salmon / Cuộn phủ cá hồi khô (nhân tôm dưa leo)", "type": "text" },
+              { "key": "price", "value": "3490", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Tôm Dưa Leo", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "I19 - Tonhalas feltétes đặc biệt / Phủ cá ngừ đặc biệt — 3590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "I19", "type": "text" },
+              { "key": "name", "value": "Tonhalas feltétes tekercs különleges", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn phủ cá ngừ đặc biệt - nhân tôm dưa leo (8 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Special Roll Topped with Tuna - Shrimp & Cucumber (8 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tonhalas feltétes tekercs különleges (8 db)", "type": "text" },
+              { "key": "description", "value": "Special roll topped with tuna / Cuộn phủ cá ngừ đặc biệt (nhân tôm dưa leo)", "type": "text" },
+              { "key": "price", "value": "3590", "type": "text" },
+              { "key": "category", "value": "Cuộn Phủ Nhân Tôm Dưa Leo", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🔥 BƯỚC 5 - SÜLT TEKERCSEK / CUỘN CHIÊN / Fried Crunchy Rolls (C1-C7) — có size",
+      "item": [
+        {
+          "name": "C1 - Lazaccal / Cá hồi (5 miếng=2990 / 10 miếng=4990)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "C1", "type": "text" },
+              { "key": "name", "value": "Sült tekercs lazaccal", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn chiên cá hồi", "type": "text" },
+              { "key": "nameEN", "value": "Fried Crunchy Roll with Salmon", "type": "text" },
+              { "key": "nameHU", "value": "Sült tekercs lazaccal", "type": "text" },
+              { "key": "description", "value": "Fried crunchy roll with salmon / Cuộn chiên cá hồi - Nhân: cà cải, dưa leo, bơ", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Cuộn Chiên", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":2990},{\"code\":\"10db\",\"label\":\"10 db / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":4990}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "C2 - Tonhallal / Cá ngừ (5 miếng=2990 / 10 miếng=4990)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "C2", "type": "text" },
+              { "key": "name", "value": "Sült tekercs tonhallal", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn chiên cá ngừ", "type": "text" },
+              { "key": "nameEN", "value": "Fried Crunchy Roll with Tuna", "type": "text" },
+              { "key": "nameHU", "value": "Sült tekercs tonhallal", "type": "text" },
+              { "key": "description", "value": "Fried crunchy roll with tuna / Cuộn chiên cá ngừ - Nhân: cà cải, dưa leo, bơ", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Cuộn Chiên", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":2990},{\"code\":\"10db\",\"label\":\"10 db / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":4990}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "C3 - Csirkével / Gà (5 miếng=2890 / 10 miếng=4890)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "C3", "type": "text" },
+              { "key": "name", "value": "Sült tekercs csirkével", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn chiên gà", "type": "text" },
+              { "key": "nameEN", "value": "Fried Crunchy Roll with Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Sült tekercs csirkével", "type": "text" },
+              { "key": "description", "value": "Fried crunchy roll with chicken / Cuộn chiên gà - Nhân: cà cải, dưa leo, bơ", "type": "text" },
+              { "key": "price", "value": "2890", "type": "text" },
+              { "key": "category", "value": "Cuộn Chiên", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":2890},{\"code\":\"10db\",\"label\":\"10 db / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":4890}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "C4 - Tempura rákkal / Tôm chiên (5 miếng=2890 / 10 miếng=4890)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "C4", "type": "text" },
+              { "key": "name", "value": "Sült tekercs tempura rákkal", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn chiên tôm tempura", "type": "text" },
+              { "key": "nameEN", "value": "Fried Crunchy Roll with Shrimp Tempura", "type": "text" },
+              { "key": "nameHU", "value": "Sült tekercs tempura rákkal", "type": "text" },
+              { "key": "description", "value": "Fried crunchy roll with shrimp tempura / Cuộn chiên tôm chiên - Nhân: cà cải, dưa leo, bơ", "type": "text" },
+              { "key": "price", "value": "2890", "type": "text" },
+              { "key": "category", "value": "Cuộn Chiên", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":2890},{\"code\":\"10db\",\"label\":\"10 db / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":4890}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "C5 - Vegetáriánus / Cuộn chiên chay (5 miếng=2790 / 10 miếng=4790)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "C5", "type": "text" },
+              { "key": "name", "value": "Vegetáriánus sült tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn chiên chay", "type": "text" },
+              { "key": "nameEN", "value": "Vegetarian Fried Crunchy Roll", "type": "text" },
+              { "key": "nameHU", "value": "Vegetáriánus sült tekercs", "type": "text" },
+              { "key": "description", "value": "Vegetarian fried crunchy roll / Cuộn chiên chay - Nhân: cà cải, dưa leo, bơ", "type": "text" },
+              { "key": "price", "value": "2790", "type": "text" },
+              { "key": "category", "value": "Cuộn Chiên", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":2790},{\"code\":\"10db\",\"label\":\"10 db / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":4790}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "C6 - Ráantott rákrúd maki / Thanh cua chiên (5 miếng=2890 / 10 miếng=4890)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "C6", "type": "text" },
+              { "key": "name", "value": "Ráantott rákrúd maki", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn chiên thanh cua", "type": "text" },
+              { "key": "nameEN", "value": "Fried Crab Stick Roll", "type": "text" },
+              { "key": "nameHU", "value": "Ráantott rákrúd maki", "type": "text" },
+              { "key": "description", "value": "Fried crab stick roll / Cuộn chiên thanh cua - Nhân: cà cải, dưa leo, bơ", "type": "text" },
+              { "key": "price", "value": "2890", "type": "text" },
+              { "key": "category", "value": "Cuộn Chiên", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":2890},{\"code\":\"10db\",\"label\":\"10 db / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":4890}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "C7 - Speciális tonhal+lazac+surimi / Thập cẩm (5 miếng=3490 / 10 miếng=5590)",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "C7", "type": "text" },
+              { "key": "name", "value": "Speciális sült tekercs (tonhal, lazac, surimi)", "type": "text" },
+              { "key": "nameVI", "value": "Cuộn chiên thập cẩm (cá ngừ, cá hồi, thanh cua)", "type": "text" },
+              { "key": "nameEN", "value": "Special Fried Roll (Tuna, Salmon, Surimi)", "type": "text" },
+              { "key": "nameHU", "value": "Speciális sült tekercs (tonhal, lazac, surimi)", "type": "text" },
+              { "key": "description", "value": "Special mix fried roll - tuna, salmon, surimi / Cuộn chiên thập cẩm - cá ngừ, cá hồi, thanh cua", "type": "text" },
+              { "key": "price", "value": "3490", "type": "text" },
+              { "key": "category", "value": "Cuộn Chiên", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"5db\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"5db\",\"label\":\"5 db / 5 miếng\",\"labelVI\":\"5 miếng\",\"labelEN\":\"5 pcs\",\"labelHU\":\"5 db\",\"price\":3490},{\"code\":\"10db\",\"label\":\"10 db / 10 miếng\",\"labelVI\":\"10 miếng\",\"labelEN\":\"10 pcs\",\"labelHU\":\"10 db\",\"price\":5590}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

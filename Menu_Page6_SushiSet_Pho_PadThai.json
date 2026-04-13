@@ -1,0 +1,378 @@
+{
+  "info": {
+    "_postman_id": "menu-page6-sushi-pho-padthai",
+    "name": "🍣🍜 Menu Trang 6 - Sushi Set lớn, Phở Nước & PadThai",
+    "description": "SS14-SS15 (Sushi Set) + 16A-17C (Phở/Bún) + 19A-19F (PadThai) - 18 món",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "https://food-del-clnf.onrender.com" }],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Categories mới",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Phở Nước",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Phở Nước", "type": "text" },
+              { "key": "description", "value": "Pho Leves / Pho Rice Noodle Soup - Koriander, hagyma, babcsíra, újhagyma", "type": "text" },
+              { "key": "sortOrder", "value": "9", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1b ▶ Tạo category: Bún",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Bún", "type": "text" },
+              { "key": "description", "value": "Bún chay / Bún bò Nam Bộ / Bún nem rán", "type": "text" },
+              { "key": "sortOrder", "value": "10", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1c ▶ Tạo category: PadThai",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "PadThai", "type": "text" },
+              { "key": "description", "value": "PadThai Fried Noodles - Hành lá, hành phi, giá, đậu phộng", "type": "text" },
+              { "key": "sortOrder", "value": "11", "type": "text" },
+              { "key": "language", "value": "en", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍣 BƯỚC 2 - SUSHI SET lớn (SS14-SS15)",
+      "item": [
+        {
+          "name": "SS14 - Han'Ei Sushi Set 9 (74 miếng) — 29990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS14", "type": "text" },
+              { "key": "name", "value": "Han'Ei Sushi Set 9", "type": "text" },
+              { "key": "nameVI", "value": "Han'Ei Sushi Set 9 (74 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Han'Ei Sushi Set 9 (74 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Han'Ei Sushi Set 9 (74 db)", "type": "text" },
+              { "key": "description", "value": "74 pcs: Lazac sashimi 5, tonhal sashimi 5, crab maki 8, lazac maki 8, avokádó maki 8, ráantott garnélas maki 8, lazac uramaki 8, tuna uramaki 8, szézámmag uramaki 8, fried chicken roll 5, fried salmon roll 5. Nigiri: 2 lazac, 2 tuna, 2 shrimp | Sashimi cá hồi 5, cá ngừ 5, maki thanh cua 8, cá hồi 8, bơ 8, tôm chiên 8, uramaki cá hồi 8, cá ngừ 8, vừng tôm 8, cuộn gà chiên 5, cuộn cá hồi chiên 5. Nigiri: 2 cá hồi, 2 cá ngừ, 2 tôm", "type": "text" },
+              { "key": "price", "value": "29990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SS15 - Han'Ei Sushi Set 10 (94 miếng) — 46990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS15", "type": "text" },
+              { "key": "name", "value": "Han'Ei Sushi Set 10", "type": "text" },
+              { "key": "nameVI", "value": "Han'Ei Sushi Set 10 (94 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Han'Ei Sushi Set 10 (94 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Han'Ei Sushi Set 10 (94 db)", "type": "text" },
+              { "key": "description", "value": "94 pcs - Grand party set: Salmon sashimi 4, tuna sashimi 4, shrimp 4, crab stick maki 8, salmon maki 8, avocado maki 8, fried salmon roll 5, crab stick maki 8, tuna & cream cheese maki 8, fried shrimp uramaki 8, salmon uramaki 8, avocado uramaki 8, tuna uramaki 8, shrimp roe uramaki 8. Nigiri: 3 salmon, 3 scallop | Sashimi cá hồi 4, cá ngừ 4, sò điệp 4, maki thanh cua 8, cá hồi 8, bơ 8, maki cá hồi 8, maki cá ngừ 8, uramaki tôm chiên 8, uramaki cá hồi 8, uramaki bơ 8, uramaki cá ngừ 8, uramaki trứng tôm 8. Nigiri cá hồi 3, sò điệp 3", "type": "text" },
+              { "key": "price", "value": "46990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍜 BƯỚC 3 - PHO LEVES / PHỞ NƯỚC (16A-16G)",
+      "item": [
+        {
+          "name": "16A - Pho leves marha / Phở bò — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "16A", "type": "text" },
+              { "key": "name", "value": "Pho leves marha", "type": "text" },
+              { "key": "nameVI", "value": "Phở bò", "type": "text" },
+              { "key": "nameEN", "value": "Pho Soup with Beef", "type": "text" },
+              { "key": "nameHU", "value": "Pho leves marha", "type": "text" },
+              { "key": "description", "value": "Pho soup with beef / Phở bò - Koriander, hagyma, babcsíra, újhagyma / Rau mùi, hành tây, giá, hành lá", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Phở Nước", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "16B - Pho leves csirke / Phở gà — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "16B", "type": "text" },
+              { "key": "name", "value": "Pho leves csirke", "type": "text" },
+              { "key": "nameVI", "value": "Phở gà", "type": "text" },
+              { "key": "nameEN", "value": "Pho Soup with Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Pho leves csirke", "type": "text" },
+              { "key": "description", "value": "Pho soup with chicken / Phở gà", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Phở Nước", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "16C - Pho leves sült csirke / Phở gà chiên — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "16C", "type": "text" },
+              { "key": "name", "value": "Pho leves sült csirke", "type": "text" },
+              { "key": "nameVI", "value": "Phở gà chiên", "type": "text" },
+              { "key": "nameEN", "value": "Pho Soup with Fried Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Pho leves sült csirke", "type": "text" },
+              { "key": "description", "value": "Pho soup with fried chicken / Phở gà chiên", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Phở Nước", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "16D - Pho leves sült kacsa / Phở vịt chiên — 3390Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "16D", "type": "text" },
+              { "key": "name", "value": "Pho leves sült kacsa", "type": "text" },
+              { "key": "nameVI", "value": "Phở vịt chiên", "type": "text" },
+              { "key": "nameEN", "value": "Pho Soup with Fried Duck", "type": "text" },
+              { "key": "nameHU", "value": "Pho leves sült kacsa", "type": "text" },
+              { "key": "description", "value": "Pho soup with fried duck / Phở vịt chiên", "type": "text" },
+              { "key": "price", "value": "3390", "type": "text" },
+              { "key": "category", "value": "Phở Nước", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "16E - Pho leves garnéla / Phở tôm — 3490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "16E", "type": "text" },
+              { "key": "name", "value": "Pho leves garnéla", "type": "text" },
+              { "key": "nameVI", "value": "Phở tôm", "type": "text" },
+              { "key": "nameEN", "value": "Pho Soup with Shrimp", "type": "text" },
+              { "key": "nameHU", "value": "Pho leves garnéla", "type": "text" },
+              { "key": "description", "value": "Pho soup with shrimp / Phở tôm", "type": "text" },
+              { "key": "price", "value": "3490", "type": "text" },
+              { "key": "category", "value": "Phở Nước", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "16F - Pho leves tofu / Phở đậu phụ — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "16F", "type": "text" },
+              { "key": "name", "value": "Pho leves tofu", "type": "text" },
+              { "key": "nameVI", "value": "Phở đậu phụ", "type": "text" },
+              { "key": "nameEN", "value": "Pho Soup with Tofu", "type": "text" },
+              { "key": "nameHU", "value": "Pho leves tofu", "type": "text" },
+              { "key": "description", "value": "Pho soup with tofu / Phở đậu phụ", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Phở Nước", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "16G - Pho leves különleges / Phở đặc biệt — 3490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "16G", "type": "text" },
+              { "key": "name", "value": "Pho leves különleges", "type": "text" },
+              { "key": "nameVI", "value": "Phở đặc biệt", "type": "text" },
+              { "key": "nameEN", "value": "Special Pho Soup", "type": "text" },
+              { "key": "nameHU", "value": "Pho leves különleges", "type": "text" },
+              { "key": "description", "value": "Special pho soup / Phở đặc biệt", "type": "text" },
+              { "key": "price", "value": "3490", "type": "text" },
+              { "key": "category", "value": "Phở Nước", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🥗 BƯỚC 4 - BÚN (17A-17C)",
+      "item": [
+        {
+          "name": "17A - Vegetáriánus tészta / Bún chay gồm rau và đậu phụ — 3190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "17A", "type": "text" },
+              { "key": "name", "value": "Vegetáriánus tészta", "type": "text" },
+              { "key": "nameVI", "value": "Bún chay gồm cà rau và đậu phụ", "type": "text" },
+              { "key": "nameEN", "value": "Vegetarian Noodles with Vegetables & Tofu", "type": "text" },
+              { "key": "nameHU", "value": "Vegetáriánus tészta", "type": "text" },
+              { "key": "description", "value": "Vegetarian noodles / Bún chay gồm cà rau và đậu phụ", "type": "text" },
+              { "key": "price", "value": "3190", "type": "text" },
+              { "key": "category", "value": "Bún", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "17B - Kevert bun tészta marha / Bún bò Nam Bộ — 3190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "17B", "type": "text" },
+              { "key": "name", "value": "Kevert bun tészta marha", "type": "text" },
+              { "key": "nameVI", "value": "Bún bò Nam Bộ", "type": "text" },
+              { "key": "nameEN", "value": "Mix Bun Noodle with Beef", "type": "text" },
+              { "key": "nameHU", "value": "Kevert bun tészta marha", "type": "text" },
+              { "key": "description", "value": "Mix bun noodle with beef / Bún bò Nam Bộ", "type": "text" },
+              { "key": "price", "value": "3190", "type": "text" },
+              { "key": "category", "value": "Bún", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "17C - Sült tavaszi tekercs bun tésztával / Bún nem rán — 3190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "17C", "type": "text" },
+              { "key": "name", "value": "Sült tavaszi tekercs bun tésztával", "type": "text" },
+              { "key": "nameVI", "value": "Bún nem rán", "type": "text" },
+              { "key": "nameEN", "value": "Springrolls with Bun Noodles", "type": "text" },
+              { "key": "nameHU", "value": "Sült tavaszi tekercs bun tésztával", "type": "text" },
+              { "key": "description", "value": "Springrolls with bun noodles / Bún nem rán", "type": "text" },
+              { "key": "price", "value": "3190", "type": "text" },
+              { "key": "category", "value": "Bún", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍝 BƯỚC 5 - PADTHAI FRIED NOODLES (19A-19F)",
+      "item": [
+        {
+          "name": "19A - Padthai marha / PadThai bò — 3390Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "19A", "type": "text" },
+              { "key": "name", "value": "Padthai marha", "type": "text" },
+              { "key": "nameVI", "value": "PadThai bò", "type": "text" },
+              { "key": "nameEN", "value": "Padthai with Beef", "type": "text" },
+              { "key": "nameHU", "value": "Padthai marha", "type": "text" },
+              { "key": "description", "value": "Padthai with beef / PadThai bò - Hành lá, hành phi, giá, đậu phộng", "type": "text" },
+              { "key": "price", "value": "3390", "type": "text" },
+              { "key": "category", "value": "PadThai", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "19B - Padthai csirke / PadThai gà — 3390Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "19B", "type": "text" },
+              { "key": "name", "value": "Padthai csirke", "type": "text" },
+              { "key": "nameVI", "value": "PadThai gà", "type": "text" },
+              { "key": "nameEN", "value": "Padthai with Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Padthai csirke", "type": "text" },
+              { "key": "description", "value": "Padthai chicken / PadThai gà", "type": "text" },
+              { "key": "price", "value": "3390", "type": "text" },
+              { "key": "category", "value": "PadThai", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "19C - Padthai ráantott csirke / PadThai gà chiên — 3590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "19C", "type": "text" },
+              { "key": "name", "value": "Padthai ráantott csirke", "type": "text" },
+              { "key": "nameVI", "value": "PadThai gà chiên", "type": "text" },
+              { "key": "nameEN", "value": "Padthai with Fried Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Padthai ráantott csirke", "type": "text" },
+              { "key": "description", "value": "Padthai with fried chicken / PadThai gà chiên", "type": "text" },
+              { "key": "price", "value": "3590", "type": "text" },
+              { "key": "category", "value": "PadThai", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "19D - Padthai ráantott kacsa / PadThai vịt chiên — 3790Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "19D", "type": "text" },
+              { "key": "name", "value": "Padthai ráantott kacsa", "type": "text" },
+              { "key": "nameVI", "value": "PadThai vịt chiên", "type": "text" },
+              { "key": "nameEN", "value": "Padthai with Fried Duck", "type": "text" },
+              { "key": "nameHU", "value": "Padthai ráantott kacsa", "type": "text" },
+              { "key": "description", "value": "Padthai with fried duck / PadThai vịt chiên", "type": "text" },
+              { "key": "price", "value": "3790", "type": "text" },
+              { "key": "category", "value": "PadThai", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "19E - Padthai garnéla / PadThai tôm — 3390Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "19E", "type": "text" },
+              { "key": "name", "value": "Padthai garnéla", "type": "text" },
+              { "key": "nameVI", "value": "PadThai tôm", "type": "text" },
+              { "key": "nameEN", "value": "Padthai with Shrimp", "type": "text" },
+              { "key": "nameHU", "value": "Padthai garnéla", "type": "text" },
+              { "key": "description", "value": "Padthai with shrimp / PadThai tôm", "type": "text" },
+              { "key": "price", "value": "3390", "type": "text" },
+              { "key": "category", "value": "PadThai", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "19F - Padthai tofu / PadThai đậu phụ — 3190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "19F", "type": "text" },
+              { "key": "name", "value": "Padthai tofu", "type": "text" },
+              { "key": "nameVI", "value": "PadThai đậu phụ", "type": "text" },
+              { "key": "nameEN", "value": "Padthai with Tofu", "type": "text" },
+              { "key": "nameHU", "value": "Padthai tofu", "type": "text" },
+              { "key": "description", "value": "Padthai with tofu / PadThai đậu phụ", "type": "text" },
+              { "key": "price", "value": "3190", "type": "text" },
+              { "key": "category", "value": "PadThai", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

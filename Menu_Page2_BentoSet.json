@@ -1,0 +1,312 @@
+{
+  "info": {
+    "_postman_id": "menu-page2-bento-set",
+    "name": "🍱 Menu Trang 2 - BENTO SET (11h-17h)",
+    "description": "Chỉ bán 11:00-17:00 / Only sold 11 AM - 5 PM. Chạy BƯỚC 1 (tạo category) trước.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://food-del-clnf.onrender.com",
+      "description": "Backend production trên Render"
+    }
+  ],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Category Bento Set",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Bento Set",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "name", "value": "Bento Set", "type": "text" },
+                { "key": "description", "value": "Csak délélőtt 11 és délután 5 óra között kapható / Only sold 11 AM - 5 PM / Chỉ bán ở khung giờ từ 11h-17h", "type": "text" },
+                { "key": "sortOrder", "value": "3", "type": "text" },
+                { "key": "language", "value": "hu", "type": "text" }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/category",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "category"]
+            },
+            "description": "Nếu báo 'already exists' thì bỏ qua, sang bước add món."
+          }
+        },
+        {
+          "name": "1b ✅ Kiểm tra category đã tạo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/category",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "category"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍱 BƯỚC 2 - Add món BENTO SET (SB1-SB10)",
+      "description": "10 món bento, tất cả đều được set dailyAvailability 11:00-17:00.",
+      "item": [
+        {
+          "name": "SB1 - Főtt tojás miso leves (Trứng hấp, miso, cá hồi bơ tỏi) — 8990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "SB1", "type": "text" },
+                { "key": "name", "value": "Főtt tojás, miso leves bento", "type": "text" },
+                { "key": "nameVI", "value": "Bento trứng hấp, súp miso, cá hồi bơ tỏi", "type": "text" },
+                { "key": "nameEN", "value": "Bento - Egg, Miso Soup, Garlic Butter Salmon", "type": "text" },
+                { "key": "nameHU", "value": "Főtt tojás, miso leves, avokádó fokhagymás lazac bento", "type": "text" },
+                { "key": "description", "value": "Főtt tojás, miso leves, avokádó fokhagymás lazac, kimchi, avokádó saláta, fehér rizs, sült dumpling | Trứng hấp, súp miso đậu, cá hồi sốt bơ tỏi, kim chi, salat bơ, cơm trắng, há cảo chiên", "type": "text" },
+                { "key": "price", "value": "8990", "type": "text" },
+                { "key": "category", "value": "Bento Set", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "dailyAvailabilityEnabled", "value": "true", "type": "text" },
+                { "key": "dailyTimeFrom", "value": "11:00", "type": "text" },
+                { "key": "dailyTimeTo", "value": "17:00", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SB2 - Miso leves tofuval, tempura rák (Miso tofu, thanh cua, tôm chiên) — 7990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "SB2", "type": "text" },
+                { "key": "name", "value": "Miso leves tofuval, tempura rák bento", "type": "text" },
+                { "key": "nameVI", "value": "Bento súp miso đậu, cá hồi teriyaki, thanh cua, tôm chiên xù", "type": "text" },
+                { "key": "nameEN", "value": "Bento - Tofu Miso Soup, Teriyaki Salmon, Crab Salad, Shrimp Tempura", "type": "text" },
+                { "key": "nameHU", "value": "Miso leves tofuval, kimcsi, surimi saláta, fehér rizs, tempura rák bento", "type": "text" },
+                { "key": "description", "value": "Miso leves tofuval, kimcsi, surimi saláta, fehér rizs, tempura rák 3db | Súp miso đậu, cá hồi sốt teriyaki, kim chi, salat thanh cua, cơm trắng, tôm chiên xù 3 con", "type": "text" },
+                { "key": "price", "value": "7990", "type": "text" },
+                { "key": "category", "value": "Bento Set", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "dailyAvailabilityEnabled", "value": "true", "type": "text" },
+                { "key": "dailyTimeFrom", "value": "11:00", "type": "text" },
+                { "key": "dailyTimeTo", "value": "17:00", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SB3 - Miso leves, pirított rizs garnélával (Cơm rang tôm, há cảo hấp, cari bò) — 8990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "SB3", "type": "text" },
+                { "key": "name", "value": "Miso leves tofuval, pirított rizs garnélával bento", "type": "text" },
+                { "key": "nameVI", "value": "Bento súp miso, cơm rang tôm, salat cá hồi bơ, há cảo hấp, sốt cari bò", "type": "text" },
+                { "key": "nameEN", "value": "Bento - Tofu Miso, Shrimp Fried Rice, Salmon Avocado Salad, Steamed Dumpling, Beef Curry", "type": "text" },
+                { "key": "nameHU", "value": "Miso leves tofuval, pirított rizs garnélával, lazacos avokádó saláta, párolt dumpling, marha curry bento", "type": "text" },
+                { "key": "description", "value": "Miso leves tofuval, pirított rizs garnélával, lazacos avokádó saláta, kimchi, párolt dumpling, marha curry | Súp miso đậu, cơm rang tôm, salat cá hồi bơ, kim chi, há cảo hấp, sốt cari bò", "type": "text" },
+                { "key": "price", "value": "8990", "type": "text" },
+                { "key": "category", "value": "Bento Set", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "dailyAvailabilityEnabled", "value": "true", "type": "text" },
+                { "key": "dailyTimeFrom", "value": "11:00", "type": "text" },
+                { "key": "dailyTimeTo", "value": "17:00", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SB4 - Miso leves, kiformított sushi (Súp miso, sushi cuộn, nigiri) — 9990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "SB4", "type": "text" },
+                { "key": "name", "value": "Miso leves, kiformított sushi bento", "type": "text" },
+                { "key": "nameVI", "value": "Bento súp miso, cuộn phô mai cá hồi, cuộn cá ngừ, maki, nigiri, salat cá hồi tỏi", "type": "text" },
+                { "key": "nameEN", "value": "Bento - Miso Soup, Assorted Sushi (Salmon, Tuna, Shrimp Maki, Nigiri)", "type": "text" },
+                { "key": "nameHU", "value": "Miso leves, kiformított sushi: lazac, tonhal, garnéla maki, nigiri bento", "type": "text" },
+                { "key": "description", "value": "Miso leves, kiformított sushi: lazac 4db, tonhal 4db, garnéla maki 8db, nigiri: lazac 3db, tonhal 3db, kimchi enyhén fűszárított lazac | Súp miso, cuộn phô mai cá hồi 4 miếng, cuộn phô mai cá ngừ 4 miếng, maki lườn 8 miếng, nigiri cá hồi 3 miếng, cá ngừ 3 miếng, kim chi, salat cá hồi tỏi", "type": "text" },
+                { "key": "price", "value": "9990", "type": "text" },
+                { "key": "category", "value": "Bento Set", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "dailyAvailabilityEnabled", "value": "true", "type": "text" },
+                { "key": "dailyTimeFrom", "value": "11:00", "type": "text" },
+                { "key": "dailyTimeTo", "value": "17:00", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SB5 - Ráatott lazac tekercs, garnéla avokádó roll, sashimi (Salmon roll chiên, tôm bơ, sashimi) — 9990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "SB5", "type": "text" },
+                { "key": "name", "value": "Ráatott lazac tekercs, garnéla avokádó roll bento", "type": "text" },
+                { "key": "nameVI", "value": "Bento cuộn chiên cá hồi, cuộn tôm bơ, nigiri tôm-cá hồi-cá ngừ, sashimi cá hồi, súp miso", "type": "text" },
+                { "key": "nameEN", "value": "Bento - Fried Salmon Roll, Shrimp Avocado Roll, Nigiri, Salmon Sashimi Salad, Miso Soup", "type": "text" },
+                { "key": "nameHU", "value": "Ráatott lazac tekercs 5db, garnéla avokádó tekercs 8db, garnéla-lazac-tonhal nigiri, lazac sashimi saláta, miso leves bento", "type": "text" },
+                { "key": "description", "value": "Ráatott lazac tekercs 5db, garnéla avokádó tekercs 8db, garnéla nigiri 2db, lazac nigiri 2db, tonhal nigiri 2db, lazac sashimi saláta, kimchi, miso leves tofuval | Cuộn chiên cá hồi 5 miếng, cuộn phô tôm bơ 8 miếng, nigiri tôm 2, cá hồi 2, cá ngừ 2, sashimi cá hồi tỏi, kim chi, súp miso đậu", "type": "text" },
+                { "key": "price", "value": "9990", "type": "text" },
+                { "key": "category", "value": "Bento Set", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "dailyAvailabilityEnabled", "value": "true", "type": "text" },
+                { "key": "dailyTimeFrom", "value": "11:00", "type": "text" },
+                { "key": "dailyTimeTo", "value": "17:00", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SB6 - Nigiri lazac & garnéla, kiformított sushi (Nigiri tôm-cá hồi, cuộn trứng tôm) — 8990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "SB6", "type": "text" },
+                { "key": "name", "value": "Nigiri lazac & garnéla, kiformított sushi bento", "type": "text" },
+                { "key": "nameVI", "value": "Bento nigiri tôm-cá hồi, cuộn phô trứng tôm, maki cá hồi, salat bơ, súp miso", "type": "text" },
+                { "key": "nameEN", "value": "Bento - Salmon & Shrimp Nigiri, Shrimp Roe Roll, Salmon Maki, Avocado Salad, Miso Soup", "type": "text" },
+                { "key": "nameHU", "value": "Nigiri: lazac 2db, garnéla 2db, kiformított sushi: garnéla ikra roll, avokádós lazac maki bento", "type": "text" },
+                { "key": "description", "value": "Nigiri: lazac 2db, garnéla 2db, kiformított sushi: garnéla (ikra) 4db, lazac (ikra) maki 8db, avokádós lazac saláta, kimchi, miso leves tofuval | Nigiri tôm 2, cá hồi 2, cuộn phô trứng tôm 4 miếng, maki cá hồi 8 miếng, salat cá hồi bơ, kim chi, súp miso", "type": "text" },
+                { "key": "price", "value": "8990", "type": "text" },
+                { "key": "category", "value": "Bento Set", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "dailyAvailabilityEnabled", "value": "true", "type": "text" },
+                { "key": "dailyTimeFrom", "value": "11:00", "type": "text" },
+                { "key": "dailyTimeTo", "value": "17:00", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SB7 - Fehér rizs, gyoza, csirkecurry (Cơm, há cảo chiên, cari gà) — 4990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "SB7", "type": "text" },
+                { "key": "name", "value": "Fehér rizs, ráatott gyoza, csirkecurry bento", "type": "text" },
+                { "key": "nameVI", "value": "Bento cơm trắng, há cảo chiên 4 miếng, cari gà, salat bơ cá hồi, súp miso, kim chi", "type": "text" },
+                { "key": "nameEN", "value": "Bento - Steamed White Rice, Fried Gyoza, Chicken Curry, Salmon Avocado Salad, Miso Soup", "type": "text" },
+                { "key": "nameHU", "value": "Fehér rizs, 4db ráatott gyoza, csirkecurry, lazacos avokádó saláta, miso leves tofuval bento", "type": "text" },
+                { "key": "description", "value": "Fehér rizs, 4db ráatott gyoza, csirkecurry, lazacos avokádó saláta, miso leves tofuval, kimchi | Cơm trắng, há cảo chiên 4 miếng, cari gà, salat bơ cá hồi, súp miso đậu, kim chi", "type": "text" },
+                { "key": "price", "value": "4990", "type": "text" },
+                { "key": "category", "value": "Bento Set", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "dailyAvailabilityEnabled", "value": "true", "type": "text" },
+                { "key": "dailyTimeFrom", "value": "11:00", "type": "text" },
+                { "key": "dailyTimeTo", "value": "17:00", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SB8 - Marhahúsos sült rizs, tôm chiên, gyoza hấp (Cơm rang bò, rong biển) — 4990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "SB8", "type": "text" },
+                { "key": "name", "value": "Marhahúsos sült rizs, ráatott garnéla, párolt gyoza bento", "type": "text" },
+                { "key": "nameVI", "value": "Bento cơm rang bò, tôm chiên 3 con, salat rong biển trứng tôm, há cảo hấp 4 miếng, súp miso, kim chi", "type": "text" },
+                { "key": "nameEN", "value": "Bento - Beef Fried Rice, 3 Fried Shrimps, Seaweed Salad with Shrimp Roe, Steamed Gyoza, Miso Soup", "type": "text" },
+                { "key": "nameHU", "value": "Marhahúsos sült rizs, 3db ráatott garnéla, tengerialgás saláta garnélától, 4db párolt gyoza, miso leves bento", "type": "text" },
+                { "key": "description", "value": "Marhahúsos sült rizs, 3db ráatott garnéla, tengen algás saláta garnélától, 4db párolt gyoza, kimchi, miso leves tofuval | Cơm rang bò, tôm chiên 3 con, salat rong biển trứng tôm, há cảo hấp 4 miếng, kim chi, súp miso đậu", "type": "text" },
+                { "key": "price", "value": "4990", "type": "text" },
+                { "key": "category", "value": "Bento Set", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "dailyAvailabilityEnabled", "value": "true", "type": "text" },
+                { "key": "dailyTimeFrom", "value": "11:00", "type": "text" },
+                { "key": "dailyTimeTo", "value": "17:00", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SB9 - Fehér rizs, marhahúsos curry, tôm chiên, thanh cua (Cơm, cari bò, thanh cua) — 4990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "SB9", "type": "text" },
+                { "key": "name", "value": "Fehér rizs, marhahúsos curry, ráatott garnéla bento", "type": "text" },
+                { "key": "nameVI", "value": "Bento cơm trắng, cari bò, salat thanh cua, tôm chiên 3 con, súp miso, kim chi", "type": "text" },
+                { "key": "nameEN", "value": "Bento - Steamed White Rice, Beef Curry, Crab Stick Salad, 3 Fried Shrimps, Miso Soup", "type": "text" },
+                { "key": "nameHU", "value": "Fehér rizs, marhahúsos curry, rákos rúd saláta, 3db ráatott garnéla, miso leves tofuval bento", "type": "text" },
+                { "key": "description", "value": "Fehér rizs, marhahúsos curry, rákos rúd saláta, 3db ráatott garnéla, kimchi, miso leves tofuval | Cơm trắng, cari bò, salat thanh cua, tôm chiên 3 con, kim chi, súp miso đậu", "type": "text" },
+                { "key": "price", "value": "4990", "type": "text" },
+                { "key": "category", "value": "Bento Set", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "dailyAvailabilityEnabled", "value": "true", "type": "text" },
+                { "key": "dailyTimeFrom", "value": "11:00", "type": "text" },
+                { "key": "dailyTimeTo", "value": "17:00", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SB10 - Pirított rizstészta, avokádó saláta, ráatott sertés (Phở xào tôm, thịt heo chiên xù) — 4990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "SB10", "type": "text" },
+                { "key": "name", "value": "Pirított rizstészta garnelával, avokádó saláta, ráatott sertés bento", "type": "text" },
+                { "key": "nameVI", "value": "Bento phở xào tôm, salat bơ, thịt heo chiên xù, maki cá hồi, súp miso, kim chi", "type": "text" },
+                { "key": "nameEN", "value": "Bento - Stir-fried Rice Noodles, Avocado Salad, Crispy Fried Pork, Salmon Maki, Miso Soup", "type": "text" },
+                { "key": "nameHU", "value": "Pirított rizstészta garnelával, avokádó saláta, ráatott sertés, lazacos maki, miso leves bento", "type": "text" },
+                { "key": "description", "value": "Pirított rizstészta garnelával, avokádó saláta, ráatott sertéshús, lazacos maki, kimchi, miso leves tofuval | Phở xào tôm, salat bơ, thịt heo chiên xù, maki cá hồi, kim chi, súp miso đậu", "type": "text" },
+                { "key": "price", "value": "4990", "type": "text" },
+                { "key": "category", "value": "Bento Set", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "dailyAvailabilityEnabled", "value": "true", "type": "text" },
+                { "key": "dailyTimeFrom", "value": "11:00", "type": "text" },
+                { "key": "dailyTimeTo", "value": "17:00", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

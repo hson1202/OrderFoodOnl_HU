@@ -1,0 +1,610 @@
+{
+  "info": {
+    "_postman_id": "menu-page1-with-categories",
+    "name": "🍜 Menu Trang 1 - Saláták & Előételek (kèm tạo category)",
+    "description": "Chạy theo thứ tự: 1) Tạo category → 2) Add món. HAN'EI SUSHI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://food-del-clnf.onrender.com",
+      "description": "Backend production trên Render"
+    }
+  ],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Category (chạy trước)",
+      "description": "Tạo 2 category cần thiết. Chạy hết folder này TRƯỚC KHI add món.",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Saláták (Salads)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Saláták",
+                  "description": "Tên category - phải khớp chính xác với field 'category' trong các request add món",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Salads / Gỏi - Salat",
+                  "type": "text"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "1",
+                  "description": "Thứ tự hiển thị (số nhỏ hơn = hiện trước)",
+                  "type": "text"
+                },
+                {
+                  "key": "language",
+                  "value": "hu",
+                  "description": "Ngôn ngữ chính của category: hu / en / vi",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/category",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "category"]
+            },
+            "description": "POST /api/category - multipart/form-data. Nếu báo 'Category already exists for this language' tức là đã có rồi, bỏ qua và sang bước tiếp."
+          }
+        },
+        {
+          "name": "1b ▶ Tạo category: Előételek (Appetizers)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Előételek",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "Appetizers / Khai vị",
+                  "type": "text"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "language",
+                  "value": "hu",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/category",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "category"]
+            }
+          }
+        },
+        {
+          "name": "1c ✅ Kiểm tra categories đã tạo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/category",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "category"]
+            },
+            "description": "Xem danh sách category đã có - đảm bảo 'Saláták' và 'Előételek' đã xuất hiện trước khi add món."
+          }
+        }
+      ]
+    },
+    {
+      "name": "🥗 BƯỚC 2a - Add món SALÁTÁK (A1-A11)",
+      "description": "11 món salad. Chạy sau khi đã tạo category 'Saláták'.",
+      "item": [
+        {
+          "name": "A1 - Lazac saláta (Salmon Salad) — 2450Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A1", "type": "text" },
+                { "key": "name", "value": "Lazac saláta", "type": "text" },
+                { "key": "nameVI", "value": "Salat cá hồi", "type": "text" },
+                { "key": "nameEN", "value": "Salmon Salad", "type": "text" },
+                { "key": "nameHU", "value": "Lazac saláta", "type": "text" },
+                { "key": "description", "value": "Salmon / Salat cá hồi", "type": "text" },
+                { "key": "price", "value": "2450", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "A2 - Tonhal saláta (Tuna Salad) — 2450Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A2", "type": "text" },
+                { "key": "name", "value": "Tonhal saláta", "type": "text" },
+                { "key": "nameVI", "value": "Salat cá ngừ", "type": "text" },
+                { "key": "nameEN", "value": "Tuna Salad", "type": "text" },
+                { "key": "nameHU", "value": "Tonhal saláta", "type": "text" },
+                { "key": "description", "value": "Tuna / Salat cá ngừ", "type": "text" },
+                { "key": "price", "value": "2450", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "A3 - Szárított lazac saláta (Dried Salmon Salad) — 2650Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A3", "type": "text" },
+                { "key": "name", "value": "Szárított lazac saláta", "type": "text" },
+                { "key": "nameVI", "value": "Salat cá hồi khô", "type": "text" },
+                { "key": "nameEN", "value": "Dried Salmon Salad", "type": "text" },
+                { "key": "nameHU", "value": "Szárított lazac saláta", "type": "text" },
+                { "key": "description", "value": "Dried salmon / Salat cá hồi khô", "type": "text" },
+                { "key": "price", "value": "2650", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "A4 - Szárított tonhal saláta (Dried Tuna Salad) — 2650Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A4", "type": "text" },
+                { "key": "name", "value": "Szárított tonhal saláta", "type": "text" },
+                { "key": "nameVI", "value": "Salat cá ngừ khô", "type": "text" },
+                { "key": "nameEN", "value": "Dried Tuna Salad", "type": "text" },
+                { "key": "nameHU", "value": "Szárított tonhal saláta", "type": "text" },
+                { "key": "description", "value": "Dried tuna / Salat cá ngừ khô", "type": "text" },
+                { "key": "price", "value": "2650", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "A5 - Tengerialgá saláta szezámöntettel (Seaweed Sesame) — 1450Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A5", "type": "text" },
+                { "key": "name", "value": "Tengerialgá saláta szezámöntettel", "type": "text" },
+                { "key": "nameVI", "value": "Salat rong biển trộn vừng", "type": "text" },
+                { "key": "nameEN", "value": "Seaweed Salad with Sesame Dressing", "type": "text" },
+                { "key": "nameHU", "value": "Tengerialgá saláta szezámöntettel", "type": "text" },
+                { "key": "description", "value": "Seaweed with sesame dressing / Salat rong biển trộn vừng", "type": "text" },
+                { "key": "price", "value": "1450", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "A6 - Algasaláta szőlővel (Seaweed with Grapes) — 2650Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A6", "type": "text" },
+                { "key": "name", "value": "Algasaláta szőlővel", "type": "text" },
+                { "key": "nameVI", "value": "Salat rong nho", "type": "text" },
+                { "key": "nameEN", "value": "Seaweed Salad with Grapes", "type": "text" },
+                { "key": "nameHU", "value": "Algasaláta szőlővel", "type": "text" },
+                { "key": "description", "value": "Seaweed with grapes / Salat rong nho", "type": "text" },
+                { "key": "price", "value": "2650", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "A7 - Garnélás-mangós saláta (Shrimp & Mango) — 2450Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A7", "type": "text" },
+                { "key": "name", "value": "Garnélás-mangós saláta", "type": "text" },
+                { "key": "nameVI", "value": "Salat tôm xoài", "type": "text" },
+                { "key": "nameEN", "value": "Shrimp and Mango Salad", "type": "text" },
+                { "key": "nameHU", "value": "Garnélás-mangós saláta", "type": "text" },
+                { "key": "description", "value": "Shrimp and mango / Salat tôm xoài", "type": "text" },
+                { "key": "price", "value": "2450", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "A8 - Marhahúsos saláta (Beef Salad) — 2450Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A8", "type": "text" },
+                { "key": "name", "value": "Marhahúsos saláta", "type": "text" },
+                { "key": "nameVI", "value": "Salat bò", "type": "text" },
+                { "key": "nameEN", "value": "Beef Salad", "type": "text" },
+                { "key": "nameHU", "value": "Marhahúsos saláta", "type": "text" },
+                { "key": "description", "value": "Beef / Salat bò", "type": "text" },
+                { "key": "price", "value": "2450", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "A9 - Surimi saláta (Crab Stick Salad) — 2450Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A9", "type": "text" },
+                { "key": "name", "value": "Surimi saláta", "type": "text" },
+                { "key": "nameVI", "value": "Salat thanh cua", "type": "text" },
+                { "key": "nameEN", "value": "Crab Stick Salad", "type": "text" },
+                { "key": "nameHU", "value": "Surimi saláta", "type": "text" },
+                { "key": "description", "value": "Surimi / Salat thanh cua", "type": "text" },
+                { "key": "price", "value": "2450", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "A10 - Vegetáriánus saláta (Vegetarian Salad) — 1850Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A10", "type": "text" },
+                { "key": "name", "value": "Vegetáriánus saláta", "type": "text" },
+                { "key": "nameVI", "value": "Salat chay", "type": "text" },
+                { "key": "nameEN", "value": "Vegetarian Salad", "type": "text" },
+                { "key": "nameHU", "value": "Vegetáriánus saláta", "type": "text" },
+                { "key": "description", "value": "Vegetarian / Salat chay", "type": "text" },
+                { "key": "price", "value": "1850", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "A11 - Házi speciális saláta (House Special) — 2950Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "A11", "type": "text" },
+                { "key": "name", "value": "Házi speciális saláta", "type": "text" },
+                { "key": "nameVI", "value": "Salat Han'Ei", "type": "text" },
+                { "key": "nameEN", "value": "House Special Salad", "type": "text" },
+                { "key": "nameHU", "value": "Házi speciális saláta", "type": "text" },
+                { "key": "description", "value": "House's special / Salat Han'Ei", "type": "text" },
+                { "key": "price", "value": "2950", "type": "text" },
+                { "key": "category", "value": "Saláták", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🥟 BƯỚC 2b - Add món ELŐÉTELEK (B01-B18)",
+      "description": "11 món khai vị. Chạy sau khi đã tạo category 'Előételek'.",
+      "item": [
+        {
+          "name": "B01 - Párolt Edaname bab (Edamame Bean) — 1490Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B01", "type": "text" },
+                { "key": "name", "value": "Párolt Edaname bab", "type": "text" },
+                { "key": "nameVI", "value": "Đậu nành Nhật hấp", "type": "text" },
+                { "key": "nameEN", "value": "Edamame Bean", "type": "text" },
+                { "key": "nameHU", "value": "Párolt Edaname bab", "type": "text" },
+                { "key": "description", "value": "Edaname bean / Đậu nành Nhật hấp", "type": "text" },
+                { "key": "price", "value": "1490", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B02 - Sült dumpling húsos batyú (Fried Dumpling) — 1690Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B02", "type": "text" },
+                { "key": "name", "value": "Sült dumpling húsos batyú", "type": "text" },
+                { "key": "nameVI", "value": "Há cảo chiên", "type": "text" },
+                { "key": "nameEN", "value": "Fried Dumpling", "type": "text" },
+                { "key": "nameHU", "value": "Sült dumpling húsos batyú", "type": "text" },
+                { "key": "description", "value": "Fried dumpling / Há cảo chiên", "type": "text" },
+                { "key": "price", "value": "1690", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B03 - Párolt dumpling húsos batyú (Steamed Dumpling - Shrimp) — 1890Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B03", "type": "text" },
+                { "key": "name", "value": "Párolt dumpling húsos batyú", "type": "text" },
+                { "key": "nameVI", "value": "Há cảo hấp nhân tôm", "type": "text" },
+                { "key": "nameEN", "value": "Steamed Dumpling (Shrimp filling)", "type": "text" },
+                { "key": "nameHU", "value": "Párolt dumpling húsos batyú", "type": "text" },
+                { "key": "description", "value": "Steamed dumpling / Há cảo hấp - Töltelék: garnéla / Filling: Shrimp / Nhân: tôm", "type": "text" },
+                { "key": "price", "value": "1890", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B04 - Sült vegetáriánus dumpling (Fried Veg Dumpling) — 1590Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B04", "type": "text" },
+                { "key": "name", "value": "Sült vegetáriánus dumpling húsos batyú", "type": "text" },
+                { "key": "nameVI", "value": "Há cảo chay chiên", "type": "text" },
+                { "key": "nameEN", "value": "Fried Vegetarian Dumpling", "type": "text" },
+                { "key": "nameHU", "value": "Sült vegetáriánus dumpling húsos batyú", "type": "text" },
+                { "key": "description", "value": "Fried vegetarian dumpling / Há cảo chay chiên", "type": "text" },
+                { "key": "price", "value": "1590", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B05 - Sült krumpli (Fries) — 1590Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B05", "type": "text" },
+                { "key": "name", "value": "Sült krumpli", "type": "text" },
+                { "key": "nameVI", "value": "Khoai tây chiên", "type": "text" },
+                { "key": "nameEN", "value": "Fries", "type": "text" },
+                { "key": "nameHU", "value": "Sült krumpli", "type": "text" },
+                { "key": "description", "value": "Fries / Khoai tây chiên", "type": "text" },
+                { "key": "price", "value": "1590", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B06 - Tempura rák (Tempura Shrimp) — 1990Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B06", "type": "text" },
+                { "key": "name", "value": "Tempura rák", "type": "text" },
+                { "key": "nameVI", "value": "Tôm tẩm bột chiên", "type": "text" },
+                { "key": "nameEN", "value": "Tempura Shrimp", "type": "text" },
+                { "key": "nameHU", "value": "Tempura rák", "type": "text" },
+                { "key": "description", "value": "Tempura shrimp / Tôm tẩm bột chiên", "type": "text" },
+                { "key": "price", "value": "1990", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B07 - Sült tavaszi tekercs (Fried Spring Rolls) — 1890Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B07", "type": "text" },
+                { "key": "name", "value": "Sült tavaszi tekercs", "type": "text" },
+                { "key": "nameVI", "value": "Nem rán", "type": "text" },
+                { "key": "nameEN", "value": "Fried Spring Rolls", "type": "text" },
+                { "key": "nameHU", "value": "Sült tavaszi tekercs", "type": "text" },
+                { "key": "description", "value": "Fried spring rolls / Nem rán", "type": "text" },
+                { "key": "price", "value": "1890", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B08 - Marhahúsos tavaszi tekercs (Beef Springrolls) — 1890Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B08", "type": "text" },
+                { "key": "name", "value": "Marhahúsos tavaszi tekercs", "type": "text" },
+                { "key": "nameVI", "value": "Nem cuốn bò", "type": "text" },
+                { "key": "nameEN", "value": "Fried Springrolls with Beef", "type": "text" },
+                { "key": "nameHU", "value": "Marhahúsos tavaszi tekercs", "type": "text" },
+                { "key": "description", "value": "Fried springrolls with beef / Nem cuốn bò", "type": "text" },
+                { "key": "price", "value": "1890", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B09 - Garnélás tavaszi tekercs (Shrimp Springrolls) — 1890Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B09", "type": "text" },
+                { "key": "name", "value": "Garnélás tavaszi tekercs", "type": "text" },
+                { "key": "nameVI", "value": "Nem cuốn tôm", "type": "text" },
+                { "key": "nameEN", "value": "Fried Spring Rolls with Shrimp", "type": "text" },
+                { "key": "nameHU", "value": "Garnélás tavaszi tekercs", "type": "text" },
+                { "key": "description", "value": "Fried spring rolls with shrimp / Nem cuốn tôm", "type": "text" },
+                { "key": "price", "value": "1890", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B13 - Ropogósra sült sertéshús (Crispy Fried Pork) — 2190Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B13", "type": "text" },
+                { "key": "name", "value": "Ropogósra sült sertéshús", "type": "text" },
+                { "key": "nameVI", "value": "Thịt heo chiên xù", "type": "text" },
+                { "key": "nameEN", "value": "Crispy Fried Pork", "type": "text" },
+                { "key": "nameHU", "value": "Ropogósra sült sertéshús", "type": "text" },
+                { "key": "description", "value": "Crispy fried pork / Thịt heo chiên xù", "type": "text" },
+                { "key": "price", "value": "2190", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B18 - Vegetáriánus tavaszi tekercs Tofu (Veg Spring Rolls) — 1690Ft",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "B18", "type": "text" },
+                { "key": "name", "value": "Vegetáriánus tavaszi tekercs (Tofu)", "type": "text" },
+                { "key": "nameVI", "value": "Nem cuốn chay đậu phụ", "type": "text" },
+                { "key": "nameEN", "value": "Vegetarian Spring Rolls (Tofu)", "type": "text" },
+                { "key": "nameHU", "value": "Vegetáriánus tavaszi tekercs (Tofu)", "type": "text" },
+                { "key": "description", "value": "Vegetarian spring rolls (Tofu) / Nem cuốn chay đậu phụ", "type": "text" },
+                { "key": "price", "value": "1690", "type": "text" },
+                { "key": "category", "value": "Előételek", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

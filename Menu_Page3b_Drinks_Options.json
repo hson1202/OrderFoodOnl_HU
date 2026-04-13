@@ -1,0 +1,284 @@
+{
+  "info": {
+    "_postman_id": "menu-page3b-drinks-options",
+    "name": "🥤 Menu Trang 3b - Đồ uống có options (Size & Flavor)",
+    "description": "Limonádék, Aloe Vera, Soft Drinks, Nước lọc, Trà nóng, Trà trái cây - tất cả có options chọn size/hương vị",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "https://food-del-clnf.onrender.com" }],
+  "item": [
+    {
+      "name": "🍋 LIMONÁDÉK / LEMONADE / NƯỚC CHANH (size + hương vị)",
+      "item": [
+        {
+          "name": "DR10 - Limonádék / Lemonade / Nước Chanh (0.4L=1690 / 1L=2590) + 10 hương vị",
+          "request": {
+            "method": "POST", "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "DR10", "type": "text" },
+                { "key": "name", "value": "Limonádék", "type": "text" },
+                { "key": "nameVI", "value": "Nước Chanh", "type": "text" },
+                { "key": "nameEN", "value": "Lemonade", "type": "text" },
+                { "key": "nameHU", "value": "Limonádék", "type": "text" },
+                { "key": "description", "value": "Limonádék / Lemonade / Nước Chanh - 10 hương vị: Lựu, Dâu tây, Dưa hấu, Chanh leo, Đào, Xoài, Chanh vàng, Táo, Phúc bồn tử, Bạc hà", "type": "text" },
+                { "key": "price", "value": "1690", "type": "text" },
+                { "key": "category", "value": "Italok", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "disableBoxFee", "value": "true", "type": "text" },
+                {
+                  "key": "options",
+                  "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"04l\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"04l\",\"label\":\"0.4L\",\"labelVI\":\"0.4L\",\"labelEN\":\"0.4L\",\"labelHU\":\"0.4L\",\"price\":1690},{\"code\":\"1l\",\"label\":\"1L\",\"labelVI\":\"1L\",\"labelEN\":\"1L\",\"labelHU\":\"1L\",\"price\":2590}]},{\"name\":\"Íz\",\"nameVI\":\"Hương vị\",\"nameEN\":\"Flavor\",\"nameHU\":\"Íz\",\"type\":\"select\",\"defaultChoiceCode\":\"citrom\",\"pricingMode\":\"add\",\"choices\":[{\"code\":\"granalma\",\"label\":\"Gránátalma / Pomegranate / Lựu\",\"labelVI\":\"Lựu\",\"labelEN\":\"Pomegranate\",\"labelHU\":\"Gránátalma\",\"price\":0},{\"code\":\"eper\",\"label\":\"Eper / Strawberry / Dâu tây\",\"labelVI\":\"Dâu tây\",\"labelEN\":\"Strawberry\",\"labelHU\":\"Eper\",\"price\":0},{\"code\":\"gorogdinnye\",\"label\":\"Görögdinnye / Watermelon / Dưa hấu\",\"labelVI\":\"Dưa hấu\",\"labelEN\":\"Watermelon\",\"labelHU\":\"Görögdinnye\",\"price\":0},{\"code\":\"maracuja\",\"label\":\"Maracuja / Passion fruit / Chanh leo\",\"labelVI\":\"Chanh leo\",\"labelEN\":\"Passion fruit\",\"labelHU\":\"Maracuja\",\"price\":0},{\"code\":\"oszibarack\",\"label\":\"Őszibarack / Peach / Đào\",\"labelVI\":\"Đào\",\"labelEN\":\"Peach\",\"labelHU\":\"Őszibarack\",\"price\":0},{\"code\":\"mango\",\"label\":\"Mangó / Mango / Xoài\",\"labelVI\":\"Xoài\",\"labelEN\":\"Mango\",\"labelHU\":\"Mangó\",\"price\":0},{\"code\":\"citrom\",\"label\":\"Citrom / Lemon / Chanh vàng\",\"labelVI\":\"Chanh vàng\",\"labelEN\":\"Lemon\",\"labelHU\":\"Citrom\",\"price\":0},{\"code\":\"alma\",\"label\":\"Alma / Apple / Táo\",\"labelVI\":\"Táo\",\"labelEN\":\"Apple\",\"labelHU\":\"Alma\",\"price\":0},{\"code\":\"malna\",\"label\":\"Málna / Raspberry / Phúc bồn tử\",\"labelVI\":\"Phúc bồn tử\",\"labelEN\":\"Raspberry\",\"labelHU\":\"Málna\",\"price\":0},{\"code\":\"mint\",\"label\":\"Mint / Bạc hà\",\"labelVI\":\"Bạc hà\",\"labelEN\":\"Mint\",\"labelHU\":\"Menta\",\"price\":0}]}]",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🌿 ALOE VERA 500ml — 1490Ft (4 hương vị)",
+      "item": [
+        {
+          "name": "DR11 - Aloe Vera / Nước Nha Đam 500ml — 1490Ft",
+          "request": {
+            "method": "POST", "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "DR11", "type": "text" },
+                { "key": "name", "value": "Aloe Vera Ital", "type": "text" },
+                { "key": "nameVI", "value": "Nước Nha Đam", "type": "text" },
+                { "key": "nameEN", "value": "Aloe Vera Drink (500ml)", "type": "text" },
+                { "key": "nameHU", "value": "Aloe Vera Ital (500ml)", "type": "text" },
+                { "key": "description", "value": "Aloe Vera 500ml - 4 hương vị: Xoài, Dâu tây, Vải, Nguyên bản", "type": "text" },
+                { "key": "price", "value": "1490", "type": "text" },
+                { "key": "category", "value": "Italok", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "disableBoxFee", "value": "true", "type": "text" },
+                {
+                  "key": "options",
+                  "value": "[{\"name\":\"Íz\",\"nameVI\":\"Hương vị\",\"nameEN\":\"Flavor\",\"nameHU\":\"Íz\",\"type\":\"select\",\"defaultChoiceCode\":\"mango-av\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"mango-av\",\"label\":\"Mangó / Mango / Xoài\",\"labelVI\":\"Xoài\",\"labelEN\":\"Mango\",\"labelHU\":\"Mangó\",\"price\":1490},{\"code\":\"eper-av\",\"label\":\"Eper / Strawberry / Dâu tây\",\"labelVI\":\"Dâu tây\",\"labelEN\":\"Strawberry\",\"labelHU\":\"Eper\",\"price\":1490},{\"code\":\"licsi-av\",\"label\":\"Licsi / Lychee / Vải\",\"labelVI\":\"Vải\",\"labelEN\":\"Lychee\",\"labelHU\":\"Licsi\",\"price\":1490},{\"code\":\"eredeti-av\",\"label\":\"Eredeti íz / Original / Nguyên bản\",\"labelVI\":\"Hương vị nguyên bản\",\"labelEN\":\"Original taste\",\"labelHU\":\"Eredeti íz\",\"price\":1490}]}]",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🥫 ÜVEGES ITALOK / SOFT DRINKS / NƯỚC NGỌT 0.25L — 690Ft",
+      "item": [
+        {
+          "name": "DR12 - Üveges Italok / Nước Ngọt 0.25L — 690Ft (6 loại)",
+          "request": {
+            "method": "POST", "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "DR12", "type": "text" },
+                { "key": "name", "value": "Üveges Italok", "type": "text" },
+                { "key": "nameVI", "value": "Nước Ngọt", "type": "text" },
+                { "key": "nameEN", "value": "Soft Drinks (0.25L)", "type": "text" },
+                { "key": "nameHU", "value": "Üveges Italok (0.25L)", "type": "text" },
+                { "key": "description", "value": "Soft Drinks 0.25L - Coca Cola, Coca Cola Zero, Fanta, Kinley Gyömbér, Kinley Tonic, Cappy Juice", "type": "text" },
+                { "key": "price", "value": "690", "type": "text" },
+                { "key": "category", "value": "Italok", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "disableBoxFee", "value": "true", "type": "text" },
+                {
+                  "key": "options",
+                  "value": "[{\"name\":\"Választás\",\"nameVI\":\"Loại nước\",\"nameEN\":\"Choice\",\"nameHU\":\"Választás\",\"type\":\"select\",\"defaultChoiceCode\":\"cola\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"cola\",\"label\":\"Coca Cola Eredeti / Nguyên bản\",\"labelVI\":\"Coca Cola Nguyên bản\",\"labelEN\":\"Coca Cola Original\",\"labelHU\":\"Coca Cola Eredeti\",\"price\":690},{\"code\":\"cola-zero\",\"label\":\"Coca Cola Zéro / Không đường\",\"labelVI\":\"Coca Cola không đường\",\"labelEN\":\"Coca Cola Zero\",\"labelHU\":\"Coca Cola Zéro\",\"price\":690},{\"code\":\"fanta\",\"label\":\"Fanta\",\"labelVI\":\"Fanta\",\"labelEN\":\"Fanta\",\"labelHU\":\"Fanta\",\"price\":690},{\"code\":\"kinley-gyombér\",\"label\":\"Kinley Gyömbér / Gừng\",\"labelVI\":\"Kinley Gừng\",\"labelEN\":\"Kinley Ginger\",\"labelHU\":\"Kinley Gyömbér\",\"price\":690},{\"code\":\"kinley-tonic\",\"label\":\"Kinley Tonic\",\"labelVI\":\"Kinley Tonic\",\"labelEN\":\"Kinley Tonic\",\"labelHU\":\"Kinley Tonic\",\"price\":690},{\"code\":\"cappy\",\"label\":\"Cappy Juice (Alma/Đào/Cam)\",\"labelVI\":\"Cappy (Táo/Đào/Cam)\",\"labelEN\":\"Cappy Juice (Apple/Peach/Orange)\",\"labelHU\":\"Cappy Juice\",\"price\":690}]}]",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "💧 VÍZ / WATER / NƯỚC LỌC (2 loại, 2 size)",
+      "item": [
+        {
+          "name": "DR13 - Mentes Víz / Still Water / Nước khoáng không ga (0.33L=690 / 0.75L=1090)",
+          "request": {
+            "method": "POST", "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "DR13", "type": "text" },
+                { "key": "name", "value": "Mentes Víz", "type": "text" },
+                { "key": "nameVI", "value": "Nước khoáng không ga", "type": "text" },
+                { "key": "nameEN", "value": "Still Water", "type": "text" },
+                { "key": "nameHU", "value": "Mentes Víz", "type": "text" },
+                { "key": "description", "value": "Still Water / Nước khoáng không ga", "type": "text" },
+                { "key": "price", "value": "690", "type": "text" },
+                { "key": "category", "value": "Italok", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "disableBoxFee", "value": "true", "type": "text" },
+                {
+                  "key": "options",
+                  "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"033l\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"033l\",\"label\":\"0.33L\",\"labelVI\":\"0.33L\",\"labelEN\":\"0.33L\",\"labelHU\":\"0.33L\",\"price\":690},{\"code\":\"075l\",\"label\":\"0.75L\",\"labelVI\":\"0.75L\",\"labelEN\":\"0.75L\",\"labelHU\":\"0.75L\",\"price\":1090}]}]",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "DR14 - Szénsavas Víz / Sparkling Water / Nước khoáng có ga (0.33L=690 / 0.75L=1090)",
+          "request": {
+            "method": "POST", "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "DR14", "type": "text" },
+                { "key": "name", "value": "Szénsavas Víz", "type": "text" },
+                { "key": "nameVI", "value": "Nước khoáng có ga", "type": "text" },
+                { "key": "nameEN", "value": "Sparkling Water", "type": "text" },
+                { "key": "nameHU", "value": "Szénsavas Víz", "type": "text" },
+                { "key": "description", "value": "Sparkling Water / Nước khoáng có ga", "type": "text" },
+                { "key": "price", "value": "690", "type": "text" },
+                { "key": "category", "value": "Italok", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "disableBoxFee", "value": "true", "type": "text" },
+                {
+                  "key": "options",
+                  "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"033l\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"033l\",\"label\":\"0.33L\",\"labelVI\":\"0.33L\",\"labelEN\":\"0.33L\",\"labelHU\":\"0.33L\",\"price\":690},{\"code\":\"075l\",\"label\":\"0.75L\",\"labelVI\":\"0.75L\",\"labelEN\":\"0.75L\",\"labelHU\":\"0.75L\",\"price\":1090}]}]",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍵 HOT TEA / TRÀ NÓNG (có size 200ml / 500ml)",
+      "item": [
+        {
+          "name": "DR15 - Vietnámi zöld tea / Trà Xanh Việt Nam (200ml=1690 / 500ml=2590)",
+          "request": {
+            "method": "POST", "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "DR15", "type": "text" },
+                { "key": "name", "value": "Vietnámi zöld tea", "type": "text" },
+                { "key": "nameVI", "value": "Trà Xanh Việt Nam", "type": "text" },
+                { "key": "nameEN", "value": "Vietnamese Green Tea", "type": "text" },
+                { "key": "nameHU", "value": "Vietnámi zöld tea", "type": "text" },
+                { "key": "description", "value": "Vietnamese green tea / Trà xanh Việt Nam", "type": "text" },
+                { "key": "price", "value": "1690", "type": "text" },
+                { "key": "category", "value": "Italok", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "disableBoxFee", "value": "true", "type": "text" },
+                {
+                  "key": "options",
+                  "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"200ml\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"200ml\",\"label\":\"200ml\",\"labelVI\":\"200ml\",\"labelEN\":\"200ml\",\"labelHU\":\"200ml\",\"price\":1690},{\"code\":\"500ml\",\"label\":\"500ml\",\"labelVI\":\"500ml\",\"labelEN\":\"500ml\",\"labelHU\":\"500ml\",\"price\":2590}]}]",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "DR16 - Jázmin tea / Lục Trà Nhài (200ml=1690 / 500ml=2590)",
+          "request": {
+            "method": "POST", "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "DR16", "type": "text" },
+                { "key": "name", "value": "Jázmin tea", "type": "text" },
+                { "key": "nameVI", "value": "Lục Trà Nhài", "type": "text" },
+                { "key": "nameEN", "value": "Jasmine Tea", "type": "text" },
+                { "key": "nameHU", "value": "Jázmin tea", "type": "text" },
+                { "key": "description", "value": "Jasmine tea / Lục trà nhài", "type": "text" },
+                { "key": "price", "value": "1690", "type": "text" },
+                { "key": "category", "value": "Italok", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "disableBoxFee", "value": "true", "type": "text" },
+                {
+                  "key": "options",
+                  "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"200ml\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"200ml\",\"label\":\"200ml\",\"labelVI\":\"200ml\",\"labelEN\":\"200ml\",\"labelHU\":\"200ml\",\"price\":1690},{\"code\":\"500ml\",\"label\":\"500ml\",\"labelVI\":\"500ml\",\"labelEN\":\"500ml\",\"labelHU\":\"500ml\",\"price\":2590}]}]",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "DR17 - Lótusz tea / Trà Sen (200ml=1690 / 500ml=2590)",
+          "request": {
+            "method": "POST", "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "DR17", "type": "text" },
+                { "key": "name", "value": "Lótusz tea", "type": "text" },
+                { "key": "nameVI", "value": "Trà Sen", "type": "text" },
+                { "key": "nameEN", "value": "Lotus Tea", "type": "text" },
+                { "key": "nameHU", "value": "Lótusz tea", "type": "text" },
+                { "key": "description", "value": "Lotus tea / Trà sen", "type": "text" },
+                { "key": "price", "value": "1690", "type": "text" },
+                { "key": "category", "value": "Italok", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "disableBoxFee", "value": "true", "type": "text" },
+                {
+                  "key": "options",
+                  "value": "[{\"name\":\"Méret\",\"nameVI\":\"Kích cỡ\",\"nameEN\":\"Size\",\"nameHU\":\"Méret\",\"type\":\"select\",\"defaultChoiceCode\":\"200ml\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"200ml\",\"label\":\"200ml\",\"labelVI\":\"200ml\",\"labelEN\":\"200ml\",\"labelHU\":\"200ml\",\"price\":1690},{\"code\":\"500ml\",\"label\":\"500ml\",\"labelVI\":\"500ml\",\"labelEN\":\"500ml\",\"labelHU\":\"500ml\",\"price\":2590}]}]",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🧋 GYÜMÖLCSTEA / FRUIT TEA / TRÀ TRÁI CÂY 0.4L — 1890Ft (8 hương vị)",
+      "item": [
+        {
+          "name": "DR18 - Gyümölcstea / Trà Trái Cây 0.4L — 1890Ft",
+          "request": {
+            "method": "POST", "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "sku", "value": "DR18", "type": "text" },
+                { "key": "name", "value": "Gyümölcstea", "type": "text" },
+                { "key": "nameVI", "value": "Trà Trái Cây", "type": "text" },
+                { "key": "nameEN", "value": "Fruit Tea (0.4L)", "type": "text" },
+                { "key": "nameHU", "value": "Gyümölcstea (0.4L)", "type": "text" },
+                { "key": "description", "value": "Fruit Tea 0.4L - 8 hương vị: Dâu tây, Đào, Chanh leo, Vải hoa đậu biếc, Chanh nhài, Mắm xôi, Xoài, Chanh", "type": "text" },
+                { "key": "price", "value": "1890", "type": "text" },
+                { "key": "category", "value": "Italok", "type": "text" },
+                { "key": "quantity", "value": "999", "type": "text" },
+                { "key": "disableBoxFee", "value": "true", "type": "text" },
+                {
+                  "key": "options",
+                  "value": "[{\"name\":\"Íz\",\"nameVI\":\"Hương vị\",\"nameEN\":\"Flavor\",\"nameHU\":\"Íz\",\"type\":\"select\",\"defaultChoiceCode\":\"eper-tea\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"eper-tea\",\"label\":\"Eper / Strawberry / Trà Dâu Tây\",\"labelVI\":\"Trà dâu tây\",\"labelEN\":\"Strawberry Tea\",\"labelHU\":\"Eper Tea\",\"price\":1890},{\"code\":\"barack-tea\",\"label\":\"Barack / Peach / Trà Đào\",\"labelVI\":\"Trà đào\",\"labelEN\":\"Peach Tea\",\"labelHU\":\"Barack Tea\",\"price\":1890},{\"code\":\"maracuja-tea\",\"label\":\"Maracujás / Passion Fruit / Trà Chanh Leo\",\"labelVI\":\"Trà chanh leo\",\"labelEN\":\"Passion Fruit Tea\",\"labelHU\":\"Maracujás Tea\",\"price\":1890},{\"code\":\"licsi-tea\",\"label\":\"Licsi Pillangóborsóval / Lychee Butterfly Pea / Trà Vải Hoa Đậu Biếc\",\"labelVI\":\"Trà vải hoa đậu biếc\",\"labelEN\":\"Lychee Butterfly Pea Tea\",\"labelHU\":\"Licsi Tea Pillangóborsóval\",\"price\":1890},{\"code\":\"jazmin-citrom\",\"label\":\"Jázminos Citrom / Jasmine Lemon / Trà Chanh Nhài\",\"labelVI\":\"Trà chanh nhài\",\"labelEN\":\"Jasmine Lemon Tea\",\"labelHU\":\"Jázminos Citrom Tea\",\"price\":1890},{\"code\":\"malna-tea\",\"label\":\"Málna / Raspberry / Trà Mắm Xôi\",\"labelVI\":\"Trà mắm xôi\",\"labelEN\":\"Raspberry Tea\",\"labelHU\":\"Málna Tea\",\"price\":1890},{\"code\":\"mango-tea\",\"label\":\"Mangó / Mango / Trà Xoài\",\"labelVI\":\"Trà xoài\",\"labelEN\":\"Mango Tea\",\"labelHU\":\"Mangó Tea\",\"price\":1890},{\"code\":\"citrom-tea\",\"label\":\"Citrom / Lemon / Trà Chanh\",\"labelVI\":\"Trà chanh\",\"labelEN\":\"Lemon Tea\",\"labelHU\":\"Citrom Tea\",\"price\":1890}]}]",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

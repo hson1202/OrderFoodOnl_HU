@@ -1,0 +1,397 @@
+{
+  "info": {
+    "_postman_id": "menu-page10-appetizer-sashimi",
+    "name": "🥗🐟 Menu Trang 10 - Khai Vị (Súp) & Sashimi",
+    "description": "B10-B19 (Khai Vị mới) + D1-D3 (Cơm Sashimi) + S1-S9 (Sashimi)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "https://food-del-clnf.onrender.com" }],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Categories mới",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Cơm Đông Sashimi",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Cơm Đông Sashimi", "type": "text" },
+              { "key": "description", "value": "Sashimi Avokádó, Lazac Ikra Rizzsel / Sashimi với cơm, trứng cá hồi, bơ", "type": "text" },
+              { "key": "sortOrder", "value": "25", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1b ▶ Tạo category: Sashimi",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Sashimi", "type": "text" },
+              { "key": "description", "value": "Sashimi tươi - served with avocado, salmon roe", "type": "text" },
+              { "key": "sortOrder", "value": "26", "type": "text" },
+              { "key": "language", "value": "en", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🥗 BƯỚC 2 - KHAI VỊ / APPETIZER (B10-B19) — thêm vào category Khai Vị có sẵn",
+      "item": [
+        {
+          "name": "B10 - Dumpling soup / Súp há cảo (Dim sum) — 2190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "B10", "type": "text" },
+              { "key": "name", "value": "Dumpling leves", "type": "text" },
+              { "key": "nameVI", "value": "Súp há cảo (Dim sum)", "type": "text" },
+              { "key": "nameEN", "value": "Dumpling Soup (Dim Sum)", "type": "text" },
+              { "key": "nameHU", "value": "Dumpling leves", "type": "text" },
+              { "key": "description", "value": "Dumpling soup (Dim sum) / Súp há cảo", "type": "text" },
+              { "key": "price", "value": "2190", "type": "text" },
+              { "key": "category", "value": "Khai Vị", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B11 - Miso leves tofuval / Súp miso đậu — 1490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "B11", "type": "text" },
+              { "key": "name", "value": "Miso leves tofuval", "type": "text" },
+              { "key": "nameVI", "value": "Súp miso đậu phụ", "type": "text" },
+              { "key": "nameEN", "value": "Miso Soup with Tofu", "type": "text" },
+              { "key": "nameHU", "value": "Miso leves tofuval", "type": "text" },
+              { "key": "description", "value": "Miso soup with tofu / Súp miso đậu phụ", "type": "text" },
+              { "key": "price", "value": "1490", "type": "text" },
+              { "key": "category", "value": "Khai Vị", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B12 - Miso leves lazaccal / Súp miso cá hồi — 1890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "B12", "type": "text" },
+              { "key": "name", "value": "Miso leves lazaccal", "type": "text" },
+              { "key": "nameVI", "value": "Súp miso cá hồi", "type": "text" },
+              { "key": "nameEN", "value": "Miso Soup with Salmon", "type": "text" },
+              { "key": "nameHU", "value": "Miso leves lazaccal", "type": "text" },
+              { "key": "description", "value": "Miso soup with salmon / Súp miso cá hồi", "type": "text" },
+              { "key": "price", "value": "1890", "type": "text" },
+              { "key": "category", "value": "Khai Vị", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B14 - Párolt tojás Japan / Trứng hấp Nhật Bản — 1890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "B14", "type": "text" },
+              { "key": "name", "value": "Párolt tojás Japan", "type": "text" },
+              { "key": "nameVI", "value": "Trứng hấp Nhật Bản", "type": "text" },
+              { "key": "nameEN", "value": "Japanese Steamed Eggs", "type": "text" },
+              { "key": "nameHU", "value": "Párolt tojás Japan", "type": "text" },
+              { "key": "description", "value": "Japanese steamed eggs / Trứng hấp Nhật Bản", "type": "text" },
+              { "key": "price", "value": "1890", "type": "text" },
+              { "key": "category", "value": "Khai Vị", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B15 - Takoyaki 5db / Bánh bạch tuộc 5 viên — 1950Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "B15", "type": "text" },
+              { "key": "name", "value": "Takoyaki 5db", "type": "text" },
+              { "key": "nameVI", "value": "Bánh bạch tuộc Takoyaki (5 viên)", "type": "text" },
+              { "key": "nameEN", "value": "Takoyaki - Octopus Ball (5 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Takoyaki (5 db)", "type": "text" },
+              { "key": "description", "value": "Takoyaki octopus ball (5 pcs) / Bánh bạch tuộc Takoyaki 5 viên", "type": "text" },
+              { "key": "price", "value": "1950", "type": "text" },
+              { "key": "category", "value": "Khai Vị", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B16 - Tom yum leves / Súp Tom Yum — có options protein",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "B16", "type": "text" },
+              { "key": "name", "value": "Tom yum leves", "type": "text" },
+              { "key": "nameVI", "value": "Súp Tom Yum", "type": "text" },
+              { "key": "nameEN", "value": "Tom Yum Soup", "type": "text" },
+              { "key": "nameHU", "value": "Tom yum leves", "type": "text" },
+              { "key": "description", "value": "Tom Yum Soup - Paradicsom, hagyma, gomba, galangal, chilipor / Cà chua, hành tây, nấm, sả, ớt", "type": "text" },
+              { "key": "price", "value": "1150", "type": "text" },
+              { "key": "category", "value": "Khai Vị", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Protein\",\"nameVI\":\"Protein\",\"nameEN\":\"Protein\",\"nameHU\":\"Protein\",\"type\":\"select\",\"defaultChoiceCode\":\"tofu\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"tofu\",\"label\":\"Tofu / Đậu phụ\",\"labelVI\":\"Đậu phụ\",\"labelEN\":\"Tofu\",\"labelHU\":\"Tofu\",\"price\":1150},{\"code\":\"chicken\",\"label\":\"Csirke / Chicken / Thịt gà\",\"labelVI\":\"Thịt gà\",\"labelEN\":\"Chicken\",\"labelHU\":\"Csirke\",\"price\":1300},{\"code\":\"shrimp\",\"label\":\"Garnélarák / Shrimp / Tôm\",\"labelVI\":\"Tôm\",\"labelEN\":\"Shrimp\",\"labelHU\":\"Garnélarák\",\"price\":1600}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B17 - Tom kha leves / Súp Tom Kha — có options protein",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "B17", "type": "text" },
+              { "key": "name", "value": "Tom kha leves", "type": "text" },
+              { "key": "nameVI", "value": "Súp Tom Kha", "type": "text" },
+              { "key": "nameEN", "value": "Tom Kha Soup", "type": "text" },
+              { "key": "nameHU", "value": "Tom kha leves", "type": "text" },
+              { "key": "description", "value": "Tom Kha Soup (Coconut Milk) - Kókusztej, paradicsom, hányma, gomba, galangal / Nước cốt dừa, cà chua, hành tây, nấm, sả", "type": "text" },
+              { "key": "price", "value": "1250", "type": "text" },
+              { "key": "category", "value": "Khai Vị", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "options", "value": "[{\"name\":\"Protein\",\"nameVI\":\"Protein\",\"nameEN\":\"Protein\",\"nameHU\":\"Protein\",\"type\":\"select\",\"defaultChoiceCode\":\"tofu\",\"pricingMode\":\"override\",\"choices\":[{\"code\":\"tofu\",\"label\":\"Tofu / Đậu phụ\",\"labelVI\":\"Đậu phụ\",\"labelEN\":\"Tofu\",\"labelHU\":\"Tofu\",\"price\":1250},{\"code\":\"chicken\",\"label\":\"Csirke / Chicken / Thịt gà\",\"labelVI\":\"Thịt gà\",\"labelEN\":\"Chicken\",\"labelHU\":\"Csirke\",\"price\":1480},{\"code\":\"shrimp\",\"label\":\"Garnélarák / Shrimp / Tôm\",\"labelVI\":\"Tôm\",\"labelEN\":\"Shrimp\",\"labelHU\":\"Garnélarák\",\"price\":1750}]}]", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "B19 - Vegetáriánus ráantott tavaszi tekercs / Nem rán chay — 1590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "B19", "type": "text" },
+              { "key": "name", "value": "Vegetáriánus ráantott tavaszi tekercs", "type": "text" },
+              { "key": "nameVI", "value": "Nem rán chay", "type": "text" },
+              { "key": "nameEN", "value": "Vegetarian Fried Spring Rolls", "type": "text" },
+              { "key": "nameHU", "value": "Vegetáriánus ráantott tavaszi tekercs", "type": "text" },
+              { "key": "description", "value": "Vegetarian Fried Spring Rolls / Nem rán chay", "type": "text" },
+              { "key": "price", "value": "1590", "type": "text" },
+              { "key": "category", "value": "Khai Vị", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍱 BƯỚC 3 - CƠM ĐÔNG SASHIMI (D1-D3) — Sashimi với cơm + trứng cá hồi bơ",
+      "item": [
+        {
+          "name": "D1 - Lazac sashimi rizzsel / Cơm cá hồi sashimi — 4590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "D1", "type": "text" },
+              { "key": "name", "value": "Lazac sashimi rizzsel", "type": "text" },
+              { "key": "nameVI", "value": "Cơm cá hồi sashimi", "type": "text" },
+              { "key": "nameEN", "value": "Salmon Sashimi with Rice", "type": "text" },
+              { "key": "nameHU", "value": "Lazac sashimi rizzsel", "type": "text" },
+              { "key": "description", "value": "Salmon sashimi with rice, avocado & salmon roe / Cơm cá hồi sashimi - trứng cá hồi, bơ", "type": "text" },
+              { "key": "price", "value": "4590", "type": "text" },
+              { "key": "category", "value": "Cơm Đông Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "D2 - Tonhal sashimi rizzsel / Cơm cá ngừ sashimi — 4690Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "D2", "type": "text" },
+              { "key": "name", "value": "Tonhal sashimi rizzsel", "type": "text" },
+              { "key": "nameVI", "value": "Cơm cá ngừ sashimi", "type": "text" },
+              { "key": "nameEN", "value": "Tuna Sashimi with Rice", "type": "text" },
+              { "key": "nameHU", "value": "Tonhal sashimi rizzsel", "type": "text" },
+              { "key": "description", "value": "Tuna sashimi with rice, avocado & salmon roe / Cơm cá ngừ sashimi - trứng cá hồi, bơ", "type": "text" },
+              { "key": "price", "value": "4690", "type": "text" },
+              { "key": "category", "value": "Cơm Đông Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "D3 - Speciális vegyes sashimi rizzsel / Cơm sashimi thập cẩm — 4890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "D3", "type": "text" },
+              { "key": "name", "value": "Speciális vegyes sashimi rizzsel", "type": "text" },
+              { "key": "nameVI", "value": "Cơm sashimi thập cẩm", "type": "text" },
+              { "key": "nameEN", "value": "Special Mixed Sashimi with Rice", "type": "text" },
+              { "key": "nameHU", "value": "Speciális vegyes sashimi rizzsel", "type": "text" },
+              { "key": "description", "value": "Special mixed sashimi with rice, avocado & salmon roe / Cơm sashimi thập cẩm - trứng cá hồi, bơ", "type": "text" },
+              { "key": "price", "value": "4890", "type": "text" },
+              { "key": "category", "value": "Cơm Đông Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🐟 BƯỚC 4 - SASHIMI (S1-S9)",
+      "item": [
+        {
+          "name": "S1 - Lazac sashimi / Cá hồi 5 miếng — 2890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "S1", "type": "text" },
+              { "key": "name", "value": "Lazac sashimi", "type": "text" },
+              { "key": "nameVI", "value": "Cá hồi sashimi (5 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Salmon Sashimi (5 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Lazac sashimi (5 db)", "type": "text" },
+              { "key": "description", "value": "Salmon sashimi 5 pcs / Cá hồi sashimi 5 miếng", "type": "text" },
+              { "key": "price", "value": "2890", "type": "text" },
+              { "key": "category", "value": "Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "S2 - Tonhal sashimi / Cá ngừ 5 miếng — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "S2", "type": "text" },
+              { "key": "name", "value": "Tonhal sashimi", "type": "text" },
+              { "key": "nameVI", "value": "Cá ngừ sashimi (5 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Tuna Sashimi (5 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tonhal sashimi (5 db)", "type": "text" },
+              { "key": "description", "value": "Tuna sashimi 5 pcs / Cá ngừ sashimi 5 miếng", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "S3 - Sárgafarkú hal sashimi / Cá cam 6 miếng — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "S3", "type": "text" },
+              { "key": "name", "value": "Sárgafarkú hal sashimi", "type": "text" },
+              { "key": "nameVI", "value": "Cá cam sashimi (6 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Yellowtail Sashimi (6 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Sárgafarkú hal sashimi (6 db)", "type": "text" },
+              { "key": "description", "value": "Yellowtail (Hamachi) sashimi 6 pcs / Cá cam sashimi 6 miếng", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "S4 - Osztriga / Hàu Nhật 3 con — 4390Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "S4", "type": "text" },
+              { "key": "name", "value": "Osztriga sashimi", "type": "text" },
+              { "key": "nameVI", "value": "Hàu Nhật (3 con)", "type": "text" },
+              { "key": "nameEN", "value": "Oyster (3 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Osztriga (3 db)", "type": "text" },
+              { "key": "description", "value": "Japanese oyster 3 pcs / Hàu Nhật 3 con", "type": "text" },
+              { "key": "price", "value": "4390", "type": "text" },
+              { "key": "category", "value": "Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "S5 - Szárított lazac sashimi bonzu szósszal / Cá hồi khô sốt ponzu 5 miếng — 4290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "S5", "type": "text" },
+              { "key": "name", "value": "Szárított lazac sashimi bonzu szósszal", "type": "text" },
+              { "key": "nameVI", "value": "Cá hồi khô sashimi sốt ponzu (5 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Dried Salmon Sashimi with Ponzu Sauce (5 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Szárított lazac sashimi bonzu szósszal (5 db)", "type": "text" },
+              { "key": "description", "value": "Dried salmon sashimi with ponzu sauce (5 pcs) - hagyma, gyömbér / sốt ponzu, hành tây, tỏi, gừng", "type": "text" },
+              { "key": "price", "value": "4290", "type": "text" },
+              { "key": "category", "value": "Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "S6 - Szárított tonhal sashimi bonzu szósszal / Cá ngừ khô sốt ponzu 5 miếng — 4390Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "S6", "type": "text" },
+              { "key": "name", "value": "Szárított tonhal sashimi bonzu szósszal", "type": "text" },
+              { "key": "nameVI", "value": "Cá ngừ khô sashimi sốt ponzu (5 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Dried Tuna Sashimi with Ponzu Sauce (5 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Szárított tonhal sashimi bonzu szósszal (5 db)", "type": "text" },
+              { "key": "description", "value": "Dried tuna sashimi with ponzu sauce (5 pcs) - hagyma, gyömbér / sốt ponzu, hành tây, tỏi, gừng", "type": "text" },
+              { "key": "price", "value": "4390", "type": "text" },
+              { "key": "category", "value": "Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "S7 - Sashimi 3 loại (cá hồi 4, cá cam 4, cá ngừ 4) — 9890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "S7", "type": "text" },
+              { "key": "name", "value": "Sashimi 3 válogatás", "type": "text" },
+              { "key": "nameVI", "value": "Sashimi 3 loại (12 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Sashimi 3 Selection (12 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Sashimi 3 válogatás (12 db)", "type": "text" },
+              { "key": "description", "value": "12 pcs: Lazac 4 db, Sárgafarkú hal 4 db, Tonhal 4 db / Sashimi 3 loại: cá hồi 4, cá cam 4, cá ngừ 4", "type": "text" },
+              { "key": "price", "value": "9890", "type": "text" },
+              { "key": "category", "value": "Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "S8 - Sashimi 5 loại (cá ngừ 4, cá hồi 4, cá cam 4, sò đỏ 4, bạch tuộc 4) — 14490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "S8", "type": "text" },
+              { "key": "name", "value": "Sashimi 5 válogatás", "type": "text" },
+              { "key": "nameVI", "value": "Sashimi 5 loại (20 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Sashimi 5 Selection (20 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Sashimi 5 válogatás (20 db)", "type": "text" },
+              { "key": "description", "value": "20 pcs: Lazac 4, Sárgafarkú hal 4, Tonhal 4, Tengeri süger 4, Polip 4 / Sashimi 5 loại: cá ngừ 4, cá hồi 4, cá cam 4, sò đỏ 4, bạch tuộc 4", "type": "text" },
+              { "key": "price", "value": "14490", "type": "text" },
+              { "key": "category", "value": "Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "S9 - Han'Ei Sashimi Set đặc biệt — 22990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "S9", "type": "text" },
+              { "key": "name", "value": "Han'Ei Sashimi Set különleges", "type": "text" },
+              { "key": "nameVI", "value": "Han'Ei Sashimi Set đặc biệt", "type": "text" },
+              { "key": "nameEN", "value": "Han'Ei Special Sashimi Set", "type": "text" },
+              { "key": "nameHU", "value": "Han'Ei Sashimi Set különleges", "type": "text" },
+              { "key": "description", "value": "Han'Ei Special Set: Lazac 4, Polip 4, Osztriga, Garnéla, Lazac ikra 3, Sashimi (cá hồi 4, cá ngừ 4, cá cam 4, sò đỏ 4) / Sashimi đặc biệt: cá hồi 4, cá ngừ 4, cá cam 4, sò đỏ 4, bạch tuộc 3, hàu Nhật, tảo tôm, trứng cá hồi", "type": "text" },
+              { "key": "price", "value": "22990", "type": "text" },
+              { "key": "category", "value": "Sashimi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

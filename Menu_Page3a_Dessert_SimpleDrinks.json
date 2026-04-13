@@ -1,0 +1,350 @@
+{
+  "info": {
+    "_postman_id": "menu-page3-dessert-simple-drinks",
+    "name": "🍮 Menu Trang 3a - Desszert & Đồ uống đơn giản",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "https://food-del-clnf.onrender.com" }],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Categories",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Desszert",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Desszert", "type": "text" },
+              { "key": "description", "value": "Dessert / Tráng miệng", "type": "text" },
+              { "key": "sortOrder", "value": "10", "type": "text" },
+              { "key": "language", "value": "hu", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1b ▶ Tạo category: Italok",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Italok", "type": "text" },
+              { "key": "description", "value": "Drinks / Đồ uống", "type": "text" },
+              { "key": "sortOrder", "value": "11", "type": "text" },
+              { "key": "language", "value": "hu", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1c ▶ Tạo category: Sörök",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Sörök", "type": "text" },
+              { "key": "description", "value": "Beers / Bia", "type": "text" },
+              { "key": "sortOrder", "value": "12", "type": "text" },
+              { "key": "language", "value": "hu", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1d ▶ Tạo category: Vietnami Kávé",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Vietnami Kávé", "type": "text" },
+              { "key": "description", "value": "Vietnamese Coffee / Cà phê Việt Nam", "type": "text" },
+              { "key": "sortOrder", "value": "13", "type": "text" },
+              { "key": "language", "value": "hu", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍮 BƯỚC 2 - DESSZERT / TRÁNG MIỆNG",
+      "item": [
+        {
+          "name": "D01 - Sült banán / Chuối chiên — 1590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "D01", "type": "text" },
+              { "key": "name", "value": "Sült banán", "type": "text" },
+              { "key": "nameVI", "value": "Chuối chiên", "type": "text" },
+              { "key": "nameEN", "value": "Fried Banana", "type": "text" },
+              { "key": "nameHU", "value": "Sült banán", "type": "text" },
+              { "key": "description", "value": "Fried banana / Chuối chiên", "type": "text" },
+              { "key": "price", "value": "1590", "type": "text" },
+              { "key": "category", "value": "Desszert", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "false", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "D02 - Sült ananász / Dứa chiên — 1590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "D02", "type": "text" },
+              { "key": "name", "value": "Sült ananász", "type": "text" },
+              { "key": "nameVI", "value": "Dứa chiên", "type": "text" },
+              { "key": "nameEN", "value": "Fried Pineapple", "type": "text" },
+              { "key": "nameHU", "value": "Sült ananász", "type": "text" },
+              { "key": "description", "value": "Fried ananas / Dứa chiên", "type": "text" },
+              { "key": "price", "value": "1590", "type": "text" },
+              { "key": "category", "value": "Desszert", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "D03 - Mochi 3db / Bánh Mochi 3 cái — 1290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "D03", "type": "text" },
+              { "key": "name", "value": "Mochi (3db)", "type": "text" },
+              { "key": "nameVI", "value": "Bánh Mochi 3 cái", "type": "text" },
+              { "key": "nameEN", "value": "Mochi (3 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Mochi (3db)", "type": "text" },
+              { "key": "description", "value": "Mochi 3db / Bánh Mochi 3 cái", "type": "text" },
+              { "key": "price", "value": "1290", "type": "text" },
+              { "key": "category", "value": "Desszert", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "D04 - Szézámfánk 5db / Bánh rán vừng — 1590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "D04", "type": "text" },
+              { "key": "name", "value": "Szézámfánk (5db)", "type": "text" },
+              { "key": "nameVI", "value": "Bánh rán vừng 5 cái", "type": "text" },
+              { "key": "nameEN", "value": "Fried Sesame Rice Ball (5 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Szézámfánk (5db)", "type": "text" },
+              { "key": "description", "value": "Fried sesame rice ball / Bánh rán vừng 5 cái", "type": "text" },
+              { "key": "price", "value": "1590", "type": "text" },
+              { "key": "category", "value": "Desszert", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "☕ BƯỚC 3 - VIETNAMI KÁVÉ / CÀ PHÊ VIỆT NAM",
+      "item": [
+        {
+          "name": "CF01 - Meleg Tejeskávé Phin / Cà phê sữa nóng — 1290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "CF01", "type": "text" },
+              { "key": "name", "value": "Meleg Tejeskávé Phin", "type": "text" },
+              { "key": "nameVI", "value": "Cà phê sữa nóng pha phin", "type": "text" },
+              { "key": "nameEN", "value": "Hot Coffee with Condensed Milk (Phin)", "type": "text" },
+              { "key": "nameHU", "value": "Meleg Tejeskávé Phin", "type": "text" },
+              { "key": "description", "value": "Hot Coffee with Condensed Milk / Cà phê sữa nóng pha phin", "type": "text" },
+              { "key": "price", "value": "1290", "type": "text" },
+              { "key": "category", "value": "Vietnami Kávé", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "CF02 - Hideg Tejeskávé Phin / Cà phê sữa đá — 1390Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "CF02", "type": "text" },
+              { "key": "name", "value": "Hideg Tejeskávé Phin", "type": "text" },
+              { "key": "nameVI", "value": "Cà phê sữa đá pha phin", "type": "text" },
+              { "key": "nameEN", "value": "Iced Coffee with Condensed Milk (Phin)", "type": "text" },
+              { "key": "nameHU", "value": "Hideg Tejeskávé Phin", "type": "text" },
+              { "key": "description", "value": "Iced Coffee with Condensed Milk / Cà phê sữa đá pha phin", "type": "text" },
+              { "key": "price", "value": "1390", "type": "text" },
+              { "key": "category", "value": "Vietnami Kávé", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "CF03 - Vietnamese White Coffee / Bạc xỉu — 1890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "CF03", "type": "text" },
+              { "key": "name", "value": "Vietnamese White Coffee", "type": "text" },
+              { "key": "nameVI", "value": "Bạc xỉu", "type": "text" },
+              { "key": "nameEN", "value": "Vietnamese White Coffee", "type": "text" },
+              { "key": "nameHU", "value": "Vietnami Fehér Kávé", "type": "text" },
+              { "key": "description", "value": "Vietnamese White Coffee / Bạc xỉu", "type": "text" },
+              { "key": "price", "value": "1890", "type": "text" },
+              { "key": "category", "value": "Vietnami Kávé", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍺 BƯỚC 4 - SÖR / BEERS / BIA",
+      "item": [
+        {
+          "name": "BR01 - Dreher (0.33l) — 990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "BR01", "type": "text" },
+              { "key": "name", "value": "Dreher sör", "type": "text" },
+              { "key": "nameVI", "value": "Bia Dreher", "type": "text" },
+              { "key": "nameEN", "value": "Dreher Beer (0.33l)", "type": "text" },
+              { "key": "nameHU", "value": "Dreher sör (0.33l)", "type": "text" },
+              { "key": "description", "value": "Dreher (0.33l) - Hungary", "type": "text" },
+              { "key": "price", "value": "990", "type": "text" },
+              { "key": "category", "value": "Sörök", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "BR02 - Soproni (0.33l) — 990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "BR02", "type": "text" },
+              { "key": "name", "value": "Soproni sör", "type": "text" },
+              { "key": "nameVI", "value": "Bia Soproni", "type": "text" },
+              { "key": "nameEN", "value": "Soproni Beer (0.33l)", "type": "text" },
+              { "key": "nameHU", "value": "Soproni sör (0.33l)", "type": "text" },
+              { "key": "description", "value": "Soproni (0.33l) - Hungary", "type": "text" },
+              { "key": "price", "value": "990", "type": "text" },
+              { "key": "category", "value": "Sörök", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "BR03 - Heineken (0.33l) — 990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "BR03", "type": "text" },
+              { "key": "name", "value": "Heineken", "type": "text" },
+              { "key": "nameVI", "value": "Bia Heineken", "type": "text" },
+              { "key": "nameEN", "value": "Heineken (0.33l)", "type": "text" },
+              { "key": "nameHU", "value": "Heineken (0.33l)", "type": "text" },
+              { "key": "description", "value": "Heineken (0.33l) - Netherlands", "type": "text" },
+              { "key": "price", "value": "990", "type": "text" },
+              { "key": "category", "value": "Sörök", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "BR04 - Sài Gòn Vietnam (0.33l) — 1490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "BR04", "type": "text" },
+              { "key": "name", "value": "Sài Gòn sör", "type": "text" },
+              { "key": "nameVI", "value": "Bia Sài Gòn", "type": "text" },
+              { "key": "nameEN", "value": "Sai Gon Beer (0.33l)", "type": "text" },
+              { "key": "nameHU", "value": "Sài Gòn sör (0.33l)", "type": "text" },
+              { "key": "description", "value": "Sài Gòn (0.33l) - Vietnam", "type": "text" },
+              { "key": "price", "value": "1490", "type": "text" },
+              { "key": "category", "value": "Sörök", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "BR05 - Asahi Japan (0.33l) — 1490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "BR05", "type": "text" },
+              { "key": "name", "value": "Asahi sör", "type": "text" },
+              { "key": "nameVI", "value": "Bia Asahi", "type": "text" },
+              { "key": "nameEN", "value": "Asahi Beer (0.33l)", "type": "text" },
+              { "key": "nameHU", "value": "Asahi sör (0.33l)", "type": "text" },
+              { "key": "description", "value": "Asahi (0.33l) - Japan", "type": "text" },
+              { "key": "price", "value": "1490", "type": "text" },
+              { "key": "category", "value": "Sörök", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "BR06 - Singha Thailand (0.33l) — 1590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "BR06", "type": "text" },
+              { "key": "name", "value": "Singha sör", "type": "text" },
+              { "key": "nameVI", "value": "Bia Singha", "type": "text" },
+              { "key": "nameEN", "value": "Singha Beer (0.33l)", "type": "text" },
+              { "key": "nameHU", "value": "Singha sör (0.33l)", "type": "text" },
+              { "key": "description", "value": "Singha (0.33l) - Thailand", "type": "text" },
+              { "key": "price", "value": "1590", "type": "text" },
+              { "key": "category", "value": "Sörök", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🧃 BƯỚC 5 - Nước ép tươi & Nước lọc",
+      "item": [
+        {
+          "name": "DR01 - Frissen Facsart Narancs / Nước Cam Ép Tươi 0.4L — 1990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "DR01", "type": "text" },
+              { "key": "name", "value": "Frissen Facsart Narancs", "type": "text" },
+              { "key": "nameVI", "value": "Nước Cam Ép Tươi", "type": "text" },
+              { "key": "nameEN", "value": "Freshly Squeezed Orange Juice (0.4L)", "type": "text" },
+              { "key": "nameHU", "value": "Frissen Facsart Narancs (0.4L)", "type": "text" },
+              { "key": "description", "value": "Freshly Squeezed / Nước Ép Tươi - Narancs/Orange/Cam (0.4L)", "type": "text" },
+              { "key": "price", "value": "1990", "type": "text" },
+              { "key": "category", "value": "Italok", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "DR02 - Gyömbér Tea / Trà Gừng 300ml — 1090Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "DR02", "type": "text" },
+              { "key": "name", "value": "Gyömbér tea", "type": "text" },
+              { "key": "nameVI", "value": "Trà gừng", "type": "text" },
+              { "key": "nameEN", "value": "Ginger Tea (300ml)", "type": "text" },
+              { "key": "nameHU", "value": "Gyömbér tea (300ml)", "type": "text" },
+              { "key": "description", "value": "Ginger tea 300ml / Trà gừng 300ml", "type": "text" },
+              { "key": "price", "value": "1090", "type": "text" },
+              { "key": "category", "value": "Italok", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" },
+              { "key": "disableBoxFee", "value": "true", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

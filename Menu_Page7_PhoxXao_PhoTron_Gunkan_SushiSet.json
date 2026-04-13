@@ -1,0 +1,514 @@
+{
+  "info": {
+    "_postman_id": "menu-page7-phoxao-photropn-gunkan-sushiset",
+    "name": "🍜🍣 Menu Trang 7 - Phở Xào, Phở Trộn, Gunkan Sushi & Sushi Set",
+    "description": "18A-18F (Phở Xào) + 24A-24F (Phở Trộn) + GS1-GS5 (Gunkan) + SS1-SS4 (Sushi Set) + Sushi Torta",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "https://food-del-clnf.onrender.com" }],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Categories mới",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Phở Xào",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Phở Xào", "type": "text" },
+              { "key": "description", "value": "Pirított Pho Tészta / Fried Pho Noodles - Giá, hành lá, hành phi", "type": "text" },
+              { "key": "sortOrder", "value": "14", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1b ▶ Tạo category: Phở Trộn",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Phở Trộn", "type": "text" },
+              { "key": "description", "value": "Pho Kevert Tészta / Vietnamese Mixed Pho Noodles", "type": "text" },
+              { "key": "sortOrder", "value": "15", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1c ▶ Tạo category: Gunkan Sushi",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Gunkan Sushi", "type": "text" },
+              { "key": "description", "value": "Gunkan Sushi (2 db/2 pcs/2 miếng)", "type": "text" },
+              { "key": "sortOrder", "value": "16", "type": "text" },
+              { "key": "language", "value": "en", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1d ▶ Tạo category: Sushi Torta",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Sushi Torta", "type": "text" },
+              { "key": "description", "value": "Bánh sinh nhật sushi / Sushi Birthday Cake - 30p várakozás / Khách chờ 30 phút", "type": "text" },
+              { "key": "sortOrder", "value": "17", "type": "text" },
+              { "key": "language", "value": "en", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍳 BƯỚC 2 - PIRÍTOTT PHO TÉSZTA / PHỞ XÀO (18A-18F)",
+      "item": [
+        {
+          "name": "18A - Pirított pho tészta marha / Phở xào bò — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "18A", "type": "text" },
+              { "key": "name", "value": "Pirított pho tészta marha", "type": "text" },
+              { "key": "nameVI", "value": "Phở xào bò", "type": "text" },
+              { "key": "nameEN", "value": "Fried Pho Noodles with Beef", "type": "text" },
+              { "key": "nameHU", "value": "Pirított pho tészta marha", "type": "text" },
+              { "key": "description", "value": "Fried pho noodles with beef / Phở xào bò - Giá, hành lá, hành phi", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Phở Xào", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "18B - Pirított pho tészta csirke / Phở xào gà — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "18B", "type": "text" },
+              { "key": "name", "value": "Pirított pho tészta csirke", "type": "text" },
+              { "key": "nameVI", "value": "Phở xào gà", "type": "text" },
+              { "key": "nameEN", "value": "Fried Pho Noodles with Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Pirított pho tészta csirke", "type": "text" },
+              { "key": "description", "value": "Fried pho noodles with chicken / Phở xào gà", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Phở Xào", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "18C - Pirított pho tészta ráantott csirke / Phở xào gà chiên — 3490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "18C", "type": "text" },
+              { "key": "name", "value": "Pirított pho tészta ráantott csirke", "type": "text" },
+              { "key": "nameVI", "value": "Phở xào gà chiên", "type": "text" },
+              { "key": "nameEN", "value": "Fried Pho Noodles with Fried Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Pirított pho tészta ráantott csirke", "type": "text" },
+              { "key": "description", "value": "Fried pho noodles with fried chicken / Phở xào gà chiên", "type": "text" },
+              { "key": "price", "value": "3490", "type": "text" },
+              { "key": "category", "value": "Phở Xào", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "18D - Pirított pho tészta ráantott kacsa / Phở xào vịt chiên — 3790Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "18D", "type": "text" },
+              { "key": "name", "value": "Pirított pho tészta ráantott kacsa", "type": "text" },
+              { "key": "nameVI", "value": "Phở xào vịt chiên", "type": "text" },
+              { "key": "nameEN", "value": "Fried Pho Noodles with Fried Duck", "type": "text" },
+              { "key": "nameHU", "value": "Pirított pho tészta ráantott kacsa", "type": "text" },
+              { "key": "description", "value": "Fried pho noodles with fried duck / Phở xào vịt chiên", "type": "text" },
+              { "key": "price", "value": "3790", "type": "text" },
+              { "key": "category", "value": "Phở Xào", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "18E - Pirított pho tészta garnéla / Phở xào tôm — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "18E", "type": "text" },
+              { "key": "name", "value": "Pirított pho tészta garnéla", "type": "text" },
+              { "key": "nameVI", "value": "Phở xào tôm", "type": "text" },
+              { "key": "nameEN", "value": "Fried Pho Noodles with Shrimp", "type": "text" },
+              { "key": "nameHU", "value": "Pirított pho tészta garnéla", "type": "text" },
+              { "key": "description", "value": "Fried pho noodles with shrimp / Phở xào tôm", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Phở Xào", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "18F - Pirított pho tészta tofu / Phở xào đậu phụ — 3190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "18F", "type": "text" },
+              { "key": "name", "value": "Pirított pho tészta tofu", "type": "text" },
+              { "key": "nameVI", "value": "Phở xào đậu phụ", "type": "text" },
+              { "key": "nameEN", "value": "Fried Pho Noodles with Tofu", "type": "text" },
+              { "key": "nameHU", "value": "Pirított pho tészta tofu", "type": "text" },
+              { "key": "description", "value": "Fried pho noodles with tofu / Phở xào đậu phụ", "type": "text" },
+              { "key": "price", "value": "3190", "type": "text" },
+              { "key": "category", "value": "Phở Xào", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🥗 BƯỚC 3 - PHO KEVERT TÉSZTA / PHỞ TRỘN (24A-24F)",
+      "item": [
+        {
+          "name": "24A - Marhahúsos kevert Pho / Phở trộn bò — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "24A", "type": "text" },
+              { "key": "name", "value": "Marhahúsos kevert Pho", "type": "text" },
+              { "key": "nameVI", "value": "Phở trộn bò", "type": "text" },
+              { "key": "nameEN", "value": "Mixed Pho with Beef", "type": "text" },
+              { "key": "nameHU", "value": "Marhahúsos kevert Pho", "type": "text" },
+              { "key": "description", "value": "Mixed Pho with Beef / Phở trộn bò", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Phở Trộn", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "24B - Csirkés kevert Pho / Phở trộn gà — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "24B", "type": "text" },
+              { "key": "name", "value": "Csirkés kevert Pho", "type": "text" },
+              { "key": "nameVI", "value": "Phở trộn gà", "type": "text" },
+              { "key": "nameEN", "value": "Mixed Pho with Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Csirkés kevert Pho", "type": "text" },
+              { "key": "description", "value": "Mixed Pho with Chicken / Phở trộn gà", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Phở Trộn", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "24C - Ráantott csirkes kevert Pho / Phở trộn gà chiên — 3590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "24C", "type": "text" },
+              { "key": "name", "value": "Ráantott csirkes kevert Pho", "type": "text" },
+              { "key": "nameVI", "value": "Phở trộn gà chiên", "type": "text" },
+              { "key": "nameEN", "value": "Mixed Pho with Fried Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Ráantott csirkes kevert Pho", "type": "text" },
+              { "key": "description", "value": "Mixed Pho with Fried Chicken / Phở trộn gà chiên", "type": "text" },
+              { "key": "price", "value": "3590", "type": "text" },
+              { "key": "category", "value": "Phở Trộn", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "24D - Ráantott kacsás kevert Pho / Phở trộn vịt chiên — 3890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "24D", "type": "text" },
+              { "key": "name", "value": "Ráantott kacsás kevert Pho", "type": "text" },
+              { "key": "nameVI", "value": "Phở trộn vịt chiên", "type": "text" },
+              { "key": "nameEN", "value": "Mixed Pho with Fried Duck", "type": "text" },
+              { "key": "nameHU", "value": "Ráantott kacsás kevert Pho", "type": "text" },
+              { "key": "description", "value": "Mixed Pho with Fried Duck / Phở trộn vịt chiên", "type": "text" },
+              { "key": "price", "value": "3890", "type": "text" },
+              { "key": "category", "value": "Phở Trộn", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "24E - Garnélás kevert Pho / Phở trộn tôm — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "24E", "type": "text" },
+              { "key": "name", "value": "Garnélás kevert Pho", "type": "text" },
+              { "key": "nameVI", "value": "Phở trộn tôm", "type": "text" },
+              { "key": "nameEN", "value": "Mixed Pho with Shrimp", "type": "text" },
+              { "key": "nameHU", "value": "Garnélás kevert Pho", "type": "text" },
+              { "key": "description", "value": "Mixed Pho with Shrimp / Phở trộn tôm", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Phở Trộn", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "24F - Tofus kevert Pho / Phở trộn đậu phụ — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "24F", "type": "text" },
+              { "key": "name", "value": "Tofus kevert Pho", "type": "text" },
+              { "key": "nameVI", "value": "Phở trộn đậu phụ", "type": "text" },
+              { "key": "nameEN", "value": "Mixed Pho with Tofu", "type": "text" },
+              { "key": "nameHU", "value": "Tofus kevert Pho", "type": "text" },
+              { "key": "description", "value": "Mixed Pho with Tofu / Phở trộn đậu phụ", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Phở Trộn", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍱 BƯỚC 4 - GUNKAN SUSHI (GS1-GS5) — 2 miếng/phần",
+      "item": [
+        {
+          "name": "GS1 - Lazac Gunkan / Cá hồi (2 miếng) — 1750Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "GS1", "type": "text" },
+              { "key": "name", "value": "Lazac Gunkan", "type": "text" },
+              { "key": "nameVI", "value": "Gunkan cá hồi (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Salmon Gunkan (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Lazac Gunkan (2 db)", "type": "text" },
+              { "key": "description", "value": "Salmon Gunkan 2 pcs / Gunkan cá hồi 2 miếng", "type": "text" },
+              { "key": "price", "value": "1750", "type": "text" },
+              { "key": "category", "value": "Gunkan Sushi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "GS2 - Tonhal Gunkan / Cá ngừ (2 miếng) — 1850Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "GS2", "type": "text" },
+              { "key": "name", "value": "Tonhal Gunkan", "type": "text" },
+              { "key": "nameVI", "value": "Gunkan cá ngừ (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Tuna Gunkan (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tonhal Gunkan (2 db)", "type": "text" },
+              { "key": "description", "value": "Tuna Gunkan 2 pcs / Gunkan cá ngừ 2 miếng", "type": "text" },
+              { "key": "price", "value": "1850", "type": "text" },
+              { "key": "category", "value": "Gunkan Sushi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "GS3 - Garnélás ikra Gunkan / Trứng tôm (2 miếng) — 1650Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "GS3", "type": "text" },
+              { "key": "name", "value": "Garnélás ikra Gunkan", "type": "text" },
+              { "key": "nameVI", "value": "Gunkan trứng tôm (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Shrimp Roe Gunkan (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Garnélás ikra Gunkan (2 db)", "type": "text" },
+              { "key": "description", "value": "Shrimp roe Gunkan 2 pcs / Gunkan trứng tôm 2 miếng", "type": "text" },
+              { "key": "price", "value": "1650", "type": "text" },
+              { "key": "category", "value": "Gunkan Sushi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "GS4 - Lazacos ikra Gunkan / Trứng cá hồi (2 miếng) — 1850Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "GS4", "type": "text" },
+              { "key": "name", "value": "Lazacos ikra Gunkan", "type": "text" },
+              { "key": "nameVI", "value": "Gunkan trứng cá hồi (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Salmon Roe Gunkan (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Lazacos ikra Gunkan (2 db)", "type": "text" },
+              { "key": "description", "value": "Salmon roe Gunkan 2 pcs / Gunkan trứng cá hồi 2 miếng", "type": "text" },
+              { "key": "price", "value": "1850", "type": "text" },
+              { "key": "category", "value": "Gunkan Sushi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "GS5 - Tengeri alga Gunkan / Rong biển (2 miếng) — 1450Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "GS5", "type": "text" },
+              { "key": "name", "value": "Tengeri alga Gunkan", "type": "text" },
+              { "key": "nameVI", "value": "Gunkan rong biển (2 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Seaweed Gunkan (2 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Tengeri alga Gunkan (2 db)", "type": "text" },
+              { "key": "description", "value": "Seaweed Gunkan 2 pcs / Gunkan rong biển 2 miếng", "type": "text" },
+              { "key": "price", "value": "1450", "type": "text" },
+              { "key": "category", "value": "Gunkan Sushi", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍣 BƯỚC 5 - SUSHI SZETT nhỏ (SS1-SS4)",
+      "item": [
+        {
+          "name": "SS1 - Nigiri mix (10 miếng) — 7990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS1", "type": "text" },
+              { "key": "name", "value": "Nigiri Mix Set", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri Mix (10 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Nigiri Mix Set (10 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Nigiri Mix (10 db)", "type": "text" },
+              { "key": "description", "value": "10 pcs: Nigiri 2 shrimp, 2 red clam, 2 salmon, 2 tuna, 2 scallop | Nigiri trộn: 2 tôm, 2 sò đỏ, 2 cá hồi, 2 cá ngừ, 2 sò điệp", "type": "text" },
+              { "key": "price", "value": "7990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SS2 - Nigiri mix (18 miếng) — 12990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS2", "type": "text" },
+              { "key": "name", "value": "Nigiri Mix Set Premium", "type": "text" },
+              { "key": "nameVI", "value": "Nigiri Mix (18 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Nigiri Mix Set Premium (18 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Nigiri Mix (18 db)", "type": "text" },
+              { "key": "description", "value": "18 pcs: Nigiri 3 shrimp, 3 red clam, 3 salmon, 3 tuna, 3 scallop | Nigiri trộn: 3 tôm, 3 sò đỏ, 3 cá hồi, 3 cá ngừ, 3 sò điệp", "type": "text" },
+              { "key": "price", "value": "12990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SS3 - Maki Set (24 miếng / 3 cuộn) — 12990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS3", "type": "text" },
+              { "key": "name", "value": "Maki Set (3 cuộn)", "type": "text" },
+              { "key": "nameVI", "value": "Maki Set (24 miếng / 3 cuộn)", "type": "text" },
+              { "key": "nameEN", "value": "Maki Set (24 pcs / 3 rolls)", "type": "text" },
+              { "key": "nameHU", "value": "Maki Set (24 db / 3 tekercs)", "type": "text" },
+              { "key": "description", "value": "24 pcs / 3 rolls: Salmon maki, fried shrimp maki, tuna maki (8 pcs each) | Cuộn maki cá hồi, cuộn maki tôm chiên, cuộn maki cá ngừ (mỗi cuộn 8 miếng)", "type": "text" },
+              { "key": "price", "value": "12990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SS4 - Maki Sushi Set (22 miếng) — 9590Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS4", "type": "text" },
+              { "key": "name", "value": "Maki Sushi Set", "type": "text" },
+              { "key": "nameVI", "value": "Maki Sushi Set (22 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Maki Sushi Set (22 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Maki Sushi Set (22 db)", "type": "text" },
+              { "key": "description", "value": "22 pcs: Maki 4 salmon, 4 tuna; Uramaki 4 salmon, 4 avocado; Nigiri 3 salmon, 3 tuna | Maki: 4 cá hồi, 4 cá ngừ; Uramaki: 4 cá hồi, 4 bơ; Nigiri: 3 cá hồi, 3 cá ngừ", "type": "text" },
+              { "key": "price", "value": "9590", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🎂 BƯỚC 6 - SUSHI TORTA / BÁNH SINH NHẬT SUSHI (chờ 30 phút)",
+      "item": [
+        {
+          "name": "ST-A - Sushi Torta A — 25000Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "STA", "type": "text" },
+              { "key": "name", "value": "Sushi Torta A", "type": "text" },
+              { "key": "nameVI", "value": "Bánh sinh nhật sushi A", "type": "text" },
+              { "key": "nameEN", "value": "Sushi Birthday Cake A", "type": "text" },
+              { "key": "nameHU", "value": "Sushi Torta A", "type": "text" },
+              { "key": "description", "value": "Sushi Torta / Bánh sinh nhật sushi - 30p várakozás / Khách chờ 30 phút - Size A", "type": "text" },
+              { "key": "price", "value": "25000", "type": "text" },
+              { "key": "category", "value": "Sushi Torta", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "ST-B - Sushi Torta B — 30000Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "STB", "type": "text" },
+              { "key": "name", "value": "Sushi Torta B", "type": "text" },
+              { "key": "nameVI", "value": "Bánh sinh nhật sushi B", "type": "text" },
+              { "key": "nameEN", "value": "Sushi Birthday Cake B", "type": "text" },
+              { "key": "nameHU", "value": "Sushi Torta B", "type": "text" },
+              { "key": "description", "value": "Sushi Torta / Bánh sinh nhật sushi - 30p várakozás / Khách chờ 30 phút - Size B", "type": "text" },
+              { "key": "price", "value": "30000", "type": "text" },
+              { "key": "category", "value": "Sushi Torta", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "ST-C - Sushi Torta C — 35000Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "STC", "type": "text" },
+              { "key": "name", "value": "Sushi Torta C", "type": "text" },
+              { "key": "nameVI", "value": "Bánh sinh nhật sushi C", "type": "text" },
+              { "key": "nameEN", "value": "Sushi Birthday Cake C", "type": "text" },
+              { "key": "nameHU", "value": "Sushi Torta C", "type": "text" },
+              { "key": "description", "value": "Sushi Torta / Bánh sinh nhật sushi - 30p várakozás / Khách chờ 30 phút - Size C", "type": "text" },
+              { "key": "price", "value": "35000", "type": "text" },
+              { "key": "category", "value": "Sushi Torta", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "ST-D - Sushi Torta D — 40000Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "STD", "type": "text" },
+              { "key": "name", "value": "Sushi Torta D", "type": "text" },
+              { "key": "nameVI", "value": "Bánh sinh nhật sushi D", "type": "text" },
+              { "key": "nameEN", "value": "Sushi Birthday Cake D", "type": "text" },
+              { "key": "nameHU", "value": "Sushi Torta D", "type": "text" },
+              { "key": "description", "value": "Sushi Torta / Bánh sinh nhật sushi - 30p várakozás / Khách chờ 30 phút - Size D (Lớn nhất)", "type": "text" },
+              { "key": "price", "value": "40000", "type": "text" },
+              { "key": "category", "value": "Sushi Torta", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}

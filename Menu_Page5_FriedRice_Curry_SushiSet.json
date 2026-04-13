@@ -1,0 +1,492 @@
+{
+  "info": {
+    "_postman_id": "menu-page5-fried-rice-curry-sushi",
+    "name": "🍳 Menu Trang 5 - Cơm Rang, Cơm Cury/Sốt Lạc & Sushi Set",
+    "description": "Pirított Rizs / Currys Rizs / Sushi Szett - 25 món",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "https://food-del-clnf.onrender.com" }],
+  "item": [
+    {
+      "name": "⚙️ BƯỚC 1 - Tạo Categories",
+      "item": [
+        {
+          "name": "1a ▶ Tạo category: Cơm Rang",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Cơm Rang", "type": "text" },
+              { "key": "description", "value": "Pirított Rizs / Fried Rice - Alap: sárgarépa, zöldborsó, tojás", "type": "text" },
+              { "key": "sortOrder", "value": "6", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1b ▶ Tạo category: Cơm Cury - Cơm Sốt Lạc",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "description", "value": "Currys Rizs / Mogyorószószos Rizs / Curry Rice / Rice with Peanut Sauce", "type": "text" },
+              { "key": "sortOrder", "value": "7", "type": "text" },
+              { "key": "language", "value": "vi", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        },
+        {
+          "name": "1c ▶ Tạo category: Sushi Set",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "name", "value": "Sushi Set", "type": "text" },
+              { "key": "description", "value": "Sushi Szett / Han'Ei Sushi Sets", "type": "text" },
+              { "key": "sortOrder", "value": "8", "type": "text" },
+              { "key": "language", "value": "en", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/category", "host": ["{{baseUrl}}"], "path": ["api","category"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍳 BƯỚC 2 - PIRÍTOTT RIZS / CƠM RANG (20A-20I)",
+      "item": [
+        {
+          "name": "20A - Marhahúsos pirított rizs / Cơm rang bò — 3190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "20A", "type": "text" },
+              { "key": "name", "value": "Marhahúsos pirított rizs", "type": "text" },
+              { "key": "nameVI", "value": "Cơm rang bò", "type": "text" },
+              { "key": "nameEN", "value": "Beef Fried Rice", "type": "text" },
+              { "key": "nameHU", "value": "Marhahúsos pirított rizs", "type": "text" },
+              { "key": "description", "value": "Beef fried rice / Cơm rang bò - Alap: sárgarépa, zöldborsó, tojás / Nhân: cà rốt, đậu, trứng", "type": "text" },
+              { "key": "price", "value": "3190", "type": "text" },
+              { "key": "category", "value": "Cơm Rang", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "20B - Csirkés pirított rizs / Cơm rang gà — 3190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "20B", "type": "text" },
+              { "key": "name", "value": "Csirkés pirított rizs", "type": "text" },
+              { "key": "nameVI", "value": "Cơm rang gà", "type": "text" },
+              { "key": "nameEN", "value": "Chicken Fried Rice", "type": "text" },
+              { "key": "nameHU", "value": "Csirkés pirított rizs", "type": "text" },
+              { "key": "description", "value": "Chicken fried rice / Cơm rang gà", "type": "text" },
+              { "key": "price", "value": "3190", "type": "text" },
+              { "key": "category", "value": "Cơm Rang", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "20C - Ráantott csirkés pirított rizs / Cơm rang gà chiên — 3390Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "20C", "type": "text" },
+              { "key": "name", "value": "Ráantott csirkés pirított rizs", "type": "text" },
+              { "key": "nameVI", "value": "Cơm rang gà chiên", "type": "text" },
+              { "key": "nameEN", "value": "Fried Chicken Fried Rice", "type": "text" },
+              { "key": "nameHU", "value": "Ráantott csirkés pirított rizs", "type": "text" },
+              { "key": "description", "value": "Fried chicken fried rice / Cơm rang gà chiên", "type": "text" },
+              { "key": "price", "value": "3390", "type": "text" },
+              { "key": "category", "value": "Cơm Rang", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "20D - Ráantott kacsás pirított rizs / Cơm rang vịt chiên — 3690Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "20D", "type": "text" },
+              { "key": "name", "value": "Ráantott kacsás pirított rizs", "type": "text" },
+              { "key": "nameVI", "value": "Cơm rang vịt chiên", "type": "text" },
+              { "key": "nameEN", "value": "Fried Duck Fried Rice", "type": "text" },
+              { "key": "nameHU", "value": "Ráantott kacsás pirított rizs", "type": "text" },
+              { "key": "description", "value": "Fried duck fried rice / Cơm rang vịt chiên", "type": "text" },
+              { "key": "price", "value": "3690", "type": "text" },
+              { "key": "category", "value": "Cơm Rang", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "20E - Garnélás pirított rizs / Cơm rang tôm — 3190Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "20E", "type": "text" },
+              { "key": "name", "value": "Garnélás pirított rizs", "type": "text" },
+              { "key": "nameVI", "value": "Cơm rang tôm", "type": "text" },
+              { "key": "nameEN", "value": "Shrimp Fried Rice", "type": "text" },
+              { "key": "nameHU", "value": "Garnélás pirított rizs", "type": "text" },
+              { "key": "description", "value": "Shrimp fried rice / Cơm rang tôm", "type": "text" },
+              { "key": "price", "value": "3190", "type": "text" },
+              { "key": "category", "value": "Cơm Rang", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "20F - Vegetáriánus pirított rizs tofuval / Cơm rang đậu phụ — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "20F", "type": "text" },
+              { "key": "name", "value": "Vegetáriánus pirított rizs tofuval", "type": "text" },
+              { "key": "nameVI", "value": "Cơm rang đậu phụ", "type": "text" },
+              { "key": "nameEN", "value": "Vegetarian Fried Rice with Tofu", "type": "text" },
+              { "key": "nameHU", "value": "Vegetáriánus pirított rizs tofuval", "type": "text" },
+              { "key": "description", "value": "Vegetarian fried rice with tofu / Cơm rang đậu phụ", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Cơm Rang", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "20G - Lazacos pirított rizs / Cơm rang cá hồi — 3490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "20G", "type": "text" },
+              { "key": "name", "value": "Lazacos pirított rizs", "type": "text" },
+              { "key": "nameVI", "value": "Cơm rang cá hồi", "type": "text" },
+              { "key": "nameEN", "value": "Salmon Fried Rice", "type": "text" },
+              { "key": "nameHU", "value": "Lazacos pirított rizs", "type": "text" },
+              { "key": "description", "value": "Salmon fried rice / Cơm rang cá hồi", "type": "text" },
+              { "key": "price", "value": "3490", "type": "text" },
+              { "key": "category", "value": "Cơm Rang", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "20H - Tojásos pirított rizs / Cơm rang trứng — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "20H", "type": "text" },
+              { "key": "name", "value": "Tojásos pirított rizs", "type": "text" },
+              { "key": "nameVI", "value": "Cơm rang trứng", "type": "text" },
+              { "key": "nameEN", "value": "Egg Fried Rice", "type": "text" },
+              { "key": "nameHU", "value": "Tojásos pirított rizs", "type": "text" },
+              { "key": "description", "value": "Fried rice with egg / Cơm rang trứng", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Cơm Rang", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "20I - Sült rizs marhával & vietnámi savanyúsággal / Cơm chiên thịt bò dưa chua — 3400Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "20I", "type": "text" },
+              { "key": "name", "value": "Sült rizs marhával & vietnámi savanyúsággal", "type": "text" },
+              { "key": "nameVI", "value": "Cơm chiên thịt bò và dưa chua Việt Nam", "type": "text" },
+              { "key": "nameEN", "value": "Fried Rice with Beef & Vietnamese Pickle", "type": "text" },
+              { "key": "nameHU", "value": "Sült rizs marhával & vietnámi savanyúsággal", "type": "text" },
+              { "key": "description", "value": "Fried rice with beef & Vietnamese pickle / Cơm chiên thịt bò và dưa chua Việt Nam", "type": "text" },
+              { "key": "price", "value": "3400", "type": "text" },
+              { "key": "category", "value": "Cơm Rang", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍛 BƯỚC 3 - CURRYS RIZS & MOGYORÓSZÓSZOS RIZS (12A-14F)",
+      "item": [
+        {
+          "name": "12A - Curry marhával / Cury bò — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "12A", "type": "text" },
+              { "key": "name", "value": "Curry marhával", "type": "text" },
+              { "key": "nameVI", "value": "Cury bò", "type": "text" },
+              { "key": "nameEN", "value": "Curry with Beef", "type": "text" },
+              { "key": "nameHU", "value": "Curry marhával", "type": "text" },
+              { "key": "description", "value": "Curry with beef / Cury bò", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "12B - Curry csirkével / Cury gà — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "12B", "type": "text" },
+              { "key": "name", "value": "Curry csirkével", "type": "text" },
+              { "key": "nameVI", "value": "Cury gà", "type": "text" },
+              { "key": "nameEN", "value": "Curry with Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Curry csirkével", "type": "text" },
+              { "key": "description", "value": "Curry with chicken / Cury gà", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "12C - Curry ráantott csirkével / Cury gà chiên — 3490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "12C", "type": "text" },
+              { "key": "name", "value": "Curry ráantott csirkével", "type": "text" },
+              { "key": "nameVI", "value": "Cury gà chiên", "type": "text" },
+              { "key": "nameEN", "value": "Curry with Fried Chicken", "type": "text" },
+              { "key": "nameHU", "value": "Curry ráantott csirkével", "type": "text" },
+              { "key": "description", "value": "Curry with fried chicken / Cury gà chiên", "type": "text" },
+              { "key": "price", "value": "3490", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "12D - Curry ráantott kacsával / Cury vịt chiên — 3790Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "12D", "type": "text" },
+              { "key": "name", "value": "Curry ráantott kacsával", "type": "text" },
+              { "key": "nameVI", "value": "Cury vịt chiên", "type": "text" },
+              { "key": "nameEN", "value": "Curry with Fried Duck", "type": "text" },
+              { "key": "nameHU", "value": "Curry ráantott kacsával", "type": "text" },
+              { "key": "description", "value": "Curry with fried duck / Cury vịt chiên", "type": "text" },
+              { "key": "price", "value": "3790", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "12E - Curry garnélával / Cury tôm — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "12E", "type": "text" },
+              { "key": "name", "value": "Curry garnélával", "type": "text" },
+              { "key": "nameVI", "value": "Cury tôm", "type": "text" },
+              { "key": "nameEN", "value": "Curry with Shrimp", "type": "text" },
+              { "key": "nameHU", "value": "Curry garnélával", "type": "text" },
+              { "key": "description", "value": "Curry with shrimp / Cury tôm", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "12F - Curry tofuval / Cury đậu phụ — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "12F", "type": "text" },
+              { "key": "name", "value": "Curry tofuval", "type": "text" },
+              { "key": "nameVI", "value": "Cury đậu phụ", "type": "text" },
+              { "key": "nameEN", "value": "Curry with Tofu", "type": "text" },
+              { "key": "nameHU", "value": "Curry tofuval", "type": "text" },
+              { "key": "description", "value": "Curry with tofu / Cury đậu phụ", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "14A - Mogyorószószos marha / Cơm sốt lạc bò — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "14A", "type": "text" },
+              { "key": "name", "value": "Mogyorószószos marha", "type": "text" },
+              { "key": "nameVI", "value": "Cơm sốt lạc bò", "type": "text" },
+              { "key": "nameEN", "value": "Beef with Peanut Sauce", "type": "text" },
+              { "key": "nameHU", "value": "Mogyorószószos marha", "type": "text" },
+              { "key": "description", "value": "Beef with peanut sauce / Cơm sốt lạc bò", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "14B - Mogyorószószos csirke / Cơm sốt lạc gà — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "14B", "type": "text" },
+              { "key": "name", "value": "Mogyorószószos csirke", "type": "text" },
+              { "key": "nameVI", "value": "Cơm sốt lạc gà", "type": "text" },
+              { "key": "nameEN", "value": "Chicken with Peanut Sauce", "type": "text" },
+              { "key": "nameHU", "value": "Mogyorószószos csirke", "type": "text" },
+              { "key": "description", "value": "Chicken with peanut sauce / Cơm sốt lạc gà", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "14C - Mogyorószószos rántott csirke / Cơm sốt lạc gà chiên — 3490Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "14C", "type": "text" },
+              { "key": "name", "value": "Mogyorószószos rántott csirke", "type": "text" },
+              { "key": "nameVI", "value": "Cơm sốt lạc gà chiên", "type": "text" },
+              { "key": "nameEN", "value": "Fried Chicken with Peanut Sauce", "type": "text" },
+              { "key": "nameHU", "value": "Mogyorószószos rántott csirke", "type": "text" },
+              { "key": "description", "value": "Fried chicken with peanut sauce / Cơm sốt lạc gà chiên", "type": "text" },
+              { "key": "price", "value": "3490", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "14D - Mogyorószószos rántott kacsa / Cơm sốt lạc vịt chiên — 3790Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "14D", "type": "text" },
+              { "key": "name", "value": "Mogyorószószos rántott kacsa", "type": "text" },
+              { "key": "nameVI", "value": "Cơm sốt lạc vịt chiên", "type": "text" },
+              { "key": "nameEN", "value": "Fried Duck with Peanut Sauce", "type": "text" },
+              { "key": "nameHU", "value": "Mogyorószószos rántott kacsa", "type": "text" },
+              { "key": "description", "value": "Fried duck with peanut sauce / Cơm sốt lạc vịt chiên", "type": "text" },
+              { "key": "price", "value": "3790", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "14E - Mogyorószószos garnéla / Cơm sốt lạc tôm — 3290Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "14E", "type": "text" },
+              { "key": "name", "value": "Mogyorószószos garnéla", "type": "text" },
+              { "key": "nameVI", "value": "Cơm sốt lạc tôm", "type": "text" },
+              { "key": "nameEN", "value": "Shrimp with Peanut Sauce", "type": "text" },
+              { "key": "nameHU", "value": "Mogyorószószos garnéla", "type": "text" },
+              { "key": "description", "value": "Shrimp with peanut sauce / Cơm sốt lạc tôm", "type": "text" },
+              { "key": "price", "value": "3290", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "14F - Mogyorószószos tofu / Cơm sốt lạc đậu phụ — 2990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "14F", "type": "text" },
+              { "key": "name", "value": "Mogyorószószos tofu", "type": "text" },
+              { "key": "nameVI", "value": "Cơm sốt lạc đậu phụ", "type": "text" },
+              { "key": "nameEN", "value": "Tofu with Peanut Sauce", "type": "text" },
+              { "key": "nameHU", "value": "Mogyorószószos tofu", "type": "text" },
+              { "key": "description", "value": "Tofu with peanut sauce / Cơm sốt lạc đậu phụ", "type": "text" },
+              { "key": "price", "value": "2990", "type": "text" },
+              { "key": "category", "value": "Cơm Cury - Cơm Sốt Lạc", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🍣 BƯỚC 4 - SUSHI SZETT / SUSHI SET (SS9-SS12)",
+      "item": [
+        {
+          "name": "SS9 - Han'Ei Sushi Set 5 (30 miếng) — 12990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS9", "type": "text" },
+              { "key": "name", "value": "Han'Ei Sushi Set 5", "type": "text" },
+              { "key": "nameVI", "value": "Han'Ei Sushi Set 5 (30 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Han'Ei Sushi Set 5 (30 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Han'Ei Sushi Set 5 (30 db)", "type": "text" },
+              { "key": "description", "value": "30 pcs: Salmon avocado maki 8, fried tuna & cream cheese maki 8, sesame uramaki 4, shrimp roe uramaki 4, nigiri: 3 shrimp, 3 salmon | Maki cá hồi bơ 8, maki cá ngừ phô mai chiên 8, cuộn phô vàng 4, cuộn phô trứng tôm 4, nigiri 3 tôm, 3 cá hồi", "type": "text" },
+              { "key": "price", "value": "12990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SS10 - Han'Ei Sushi Set 6 (15 miếng) — 5990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS10", "type": "text" },
+              { "key": "name", "value": "Han'Ei Sushi Set 6", "type": "text" },
+              { "key": "nameVI", "value": "Han'Ei Sushi Set 6 (15 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Han'Ei Sushi Set 6 (15 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Han'Ei Sushi Set 6 (15 db)", "type": "text" },
+              { "key": "description", "value": "15 pcs: Nigiri 2 tuna, tuna maki 4, salmon maki 4, fried salmon roll 5 | Nigiri 2 cá ngừ, maki cá ngừ 4 miếng, maki cá hồi 4 miếng, cuộn chiên cá hồi 5 miếng", "type": "text" },
+              { "key": "price", "value": "5990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SS11 - Han'Ei Sushi Set 7 (20 miếng) — 7890Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS11", "type": "text" },
+              { "key": "name", "value": "Han'Ei Sushi Set 7", "type": "text" },
+              { "key": "nameVI", "value": "Han'Ei Sushi Set 7 (20 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Han'Ei Sushi Set 7 (20 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Han'Ei Sushi Set 7 (20 db)", "type": "text" },
+              { "key": "description", "value": "20 pcs: Avocado maki 4, cucumber maki 4, nigiri: 2 salmon, 2 tuna, salmon uramaki 4, tuna uramaki 4 | Maki bơ 4, maki dưa leo 4, nigiri cá hồi 2, cá ngừ 2, cuộn phô cá hồi 4, cuộn phô cá ngừ 4", "type": "text" },
+              { "key": "price", "value": "7890", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        },
+        {
+          "name": "SS12 - Han'Ei Sushi Set 8 (56 miếng) — 22990Ft",
+          "request": { "method": "POST", "header": [],
+            "body": { "mode": "formdata", "formdata": [
+              { "key": "sku", "value": "SS12", "type": "text" },
+              { "key": "name", "value": "Han'Ei Sushi Set 8", "type": "text" },
+              { "key": "nameVI", "value": "Han'Ei Sushi Set 8 (56 miếng)", "type": "text" },
+              { "key": "nameEN", "value": "Han'Ei Sushi Set 8 (56 pcs)", "type": "text" },
+              { "key": "nameHU", "value": "Han'Ei Sushi Set 8 (56 db)", "type": "text" },
+              { "key": "description", "value": "56 pcs - Party set: Lazac maki 8, garnéla maki 8, ráantott tonhal maki 8, ráantott lazac maki 8, lazac sashimi 3, tonhal sashimi 3, ráantott Japanese roll 5, lazacos uramaki 5, avokádó uramaki 8, crab stick maki 8, salmon sashimi 3, tuna sashimi 3, fried salmon roll 5, fried tuna roll 5, salmon uramaki 8, avocado uramaki 8 | Maki cá hồi 8, maki cá ngứ 8, maki tôm 8, maki cá hồi 8, sushi 3 cá hồi 3 cá ngứ, cuộn chiên cá hồi 4, cuộn chiên cá ngứ 5 miếng", "type": "text" },
+              { "key": "price", "value": "22990", "type": "text" },
+              { "key": "category", "value": "Sushi Set", "type": "text" },
+              { "key": "quantity", "value": "999", "type": "text" }
+            ]},
+            "url": { "raw": "{{baseUrl}}/api/food/add", "host": ["{{baseUrl}}"], "path": ["api","food","add"] }
+          }
+        }
+      ]
+    }
+  ]
+}
