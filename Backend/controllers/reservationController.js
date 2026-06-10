@@ -1,5 +1,5 @@
 import reservationModel from "../models/reservationModel.js"
-import { sendReservationConfirmation, sendStatusUpdateEmail } from "../services/emailService.js"
+import { sendReservationConfirmation, sendAdminReservationNotification, sendStatusUpdateEmail } from "../services/emailService.js"
 
 // Helper function to validate email
 const isValidEmail = (email) => {
@@ -163,18 +163,32 @@ export const createReservation = async (req, res) => {
         await newReservation.save()
         console.log('✅ Reservation saved successfully with ID:', newReservation._id)
 
-        // Send confirmation email
-        try {
-            const emailResult = await sendReservationConfirmation(newReservation)
-            if (emailResult && emailResult.success) {
-                console.log('✅ Confirmation email sent successfully')
-            } else {
-                console.log('⚠️ Email not sent:', emailResult?.message || 'Unknown error')
+        // Send emails in background (non-blocking)
+        setImmediate(async () => {
+            // 1. Send confirmation email to customer
+            try {
+                const emailResult = await sendReservationConfirmation(newReservation)
+                if (emailResult && emailResult.success) {
+                    console.log('✅ Confirmation email sent to customer:', newReservation.email)
+                } else {
+                    console.log('⚠️ Customer email not sent:', emailResult?.message || 'Unknown error')
+                }
+            } catch (emailError) {
+                console.error('❌ Error sending customer confirmation email:', emailError)
             }
-        } catch (emailError) {
-            console.error('❌ Error sending confirmation email:', emailError)
-            // Don't fail the reservation if email fails
-        }
+
+            // 2. Send notification email to admin
+            try {
+                const adminEmailResult = await sendAdminReservationNotification(newReservation)
+                if (adminEmailResult && adminEmailResult.success) {
+                    console.log('✅ Reservation notification email sent to admin')
+                } else {
+                    console.log('⚠️ Admin notification not sent:', adminEmailResult?.message || 'Unknown error')
+                }
+            } catch (adminEmailError) {
+                console.error('❌ Error sending admin reservation notification:', adminEmailError)
+            }
+        })
 
         const response = {
             success: true,

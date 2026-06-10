@@ -319,6 +319,52 @@ export const sendReservationConfirmation = async (reservation) => {
   }
 }
 
+// Send admin notification for new reservation
+export const sendAdminReservationNotification = async (reservation) => {
+  try {
+    const adminEmail = process.env.ADMIN_EMAIL || process.env.EMAIL_USER
+
+    if (!adminEmail) {
+      console.error('❌ Admin reservation notification not sent: ADMIN_EMAIL not configured')
+      return {
+        success: false,
+        message: 'Admin reservation notification not sent (ADMIN_EMAIL not configured)'
+      }
+    }
+
+    const transporter = createTransporter()
+
+    if (!transporter) {
+      console.log('⚠️ Email not sent: Email service not configured')
+      return {
+        success: true,
+        messageId: 'email_not_configured',
+        message: 'Admin reservation notification not sent (email service not configured)'
+      }
+    }
+
+    const branding = await getRestaurantBranding()
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: adminEmail,
+      subject: `📅 New Reservation - ${reservation.customerName} - ${branding.name}`,
+      html: generateAdminReservationNotificationHTML(reservation, branding),
+      text: generateAdminReservationNotificationText(reservation, branding)
+    }
+
+    const result = await transporter.sendMail(mailOptions)
+    console.log('✅ Admin reservation notification email sent successfully:', result.messageId)
+    console.log(`   To: ${adminEmail}`)
+    console.log(`   From: ${reservation.customerName} (${reservation.email})`)
+    return { success: true, messageId: result.messageId }
+
+  } catch (error) {
+    console.error('❌ Error sending admin reservation notification email:', error)
+    return { success: false, error: error.message }
+  }
+}
+
 // Send reservation status update email
 export const sendStatusUpdateEmail = async (reservation, oldStatus, newStatus) => {
   try {
@@ -550,6 +596,145 @@ export const sendAdminOrderNotification = async (order) => {
     }
     return { success: false, error: error.message }
   }
+}
+
+// Generate admin reservation notification HTML
+const generateAdminReservationNotificationHTML = (reservation, branding = {}) => {
+  const name = branding.name || 'Restaurant'
+  const address = branding.address || ''
+  const phone = branding.phone || ''
+  const copyrightText = branding.copyrightText || `© ${new Date().getFullYear()} ${name}. All rights reserved.`
+
+  const formatDate = (date) => new Date(date).toLocaleDateString('en-US', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  })
+
+  return `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>New Reservation Alert</title>
+      <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f4f4f4; }
+        .container { max-width: 600px; margin: 20px auto; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #c0392b, #e74c3c); color: white; padding: 25px 30px; text-align: center; }
+        .header h1 { margin: 0 0 5px; font-size: 22px; }
+        .header p { margin: 0; opacity: 0.9; font-size: 14px; }
+        .alert-badge { display: inline-block; background: #fff; color: #e74c3c; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 13px; margin-top: 10px; }
+        .body { padding: 30px; }
+        .section-title { font-size: 13px; font-weight: bold; color: #888; text-transform: uppercase; letter-spacing: 1px; margin: 20px 0 10px; }
+        .info-card { background: #fafafa; border: 1px solid #e8e8e8; border-radius: 8px; padding: 18px 20px; margin-bottom: 15px; }
+        .info-row { display: flex; padding: 7px 0; border-bottom: 1px solid #f0f0f0; }
+        .info-row:last-child { border-bottom: none; }
+        .info-label { font-weight: bold; color: #555; min-width: 140px; font-size: 14px; }
+        .info-value { color: #222; font-size: 14px; }
+        .highlight { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px 18px; margin: 15px 0; }
+        .highlight p { margin: 0; color: #856404; font-size: 14px; }
+        .note-box { background: #f8f9fa; border-left: 4px solid #e74c3c; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 15px 0; }
+        .note-box p { margin: 0; color: #555; font-size: 14px; }
+        .footer { background: #f8f8f8; text-align: center; padding: 20px; color: #999; font-size: 12px; border-top: 1px solid #eee; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1>🍽️ ${name}</h1>
+          <p>Restaurant Management System</p>
+          <div class="alert-badge">📅 NEW RESERVATION</div>
+        </div>
+
+        <div class="body">
+          <p style="font-size:16px; margin-top:0;">A new reservation has been submitted and is <strong>waiting for your confirmation</strong>.</p>
+
+          <div class="section-title">👤 Customer Information</div>
+          <div class="info-card">
+            <div class="info-row">
+              <span class="info-label">Full Name:</span>
+              <span class="info-value">${reservation.customerName}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Phone:</span>
+              <span class="info-value">${reservation.phone}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Email:</span>
+              <span class="info-value">${reservation.email}</span>
+            </div>
+          </div>
+
+          <div class="section-title">📋 Reservation Details</div>
+          <div class="info-card">
+            <div class="info-row">
+              <span class="info-label">Date:</span>
+              <span class="info-value">${formatDate(reservation.reservationDate)}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Time:</span>
+              <span class="info-value">${reservation.reservationTime}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Number of Guests:</span>
+              <span class="info-value">${reservation.numberOfPeople} ${reservation.numberOfPeople === 1 ? 'person' : 'people'}</span>
+            </div>
+            ${reservation.note ? `
+            <div class="info-row">
+              <span class="info-label">Special Requests:</span>
+              <span class="info-value">${reservation.note}</span>
+            </div>` : ''}
+          </div>
+
+          <div class="highlight">
+            <p>⚡ <strong>Action Required:</strong> Please confirm or update this reservation in the Admin Panel within 2 hours. The customer is waiting for confirmation.</p>
+          </div>
+
+          ${address || phone ? `
+          <div class="section-title">📍 Restaurant Info</div>
+          <div class="note-box">
+            <p>${address ? `📍 ${address}<br>` : ''}${phone ? `📞 ${phone}` : ''}</p>
+          </div>` : ''}
+        </div>
+
+        <div class="footer">
+          <p>This is an automated alert from the ${name} reservation system.</p>
+          <p>${copyrightText}</p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `
+}
+
+// Generate admin reservation notification plain text
+const generateAdminReservationNotificationText = (reservation, branding = {}) => {
+  const name = branding.name || 'Restaurant'
+  const copyrightText = branding.copyrightText || `© ${new Date().getFullYear()} ${name}. All rights reserved.`
+  const formatDate = (date) => new Date(date).toLocaleDateString('en-US', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  })
+
+  return `
+[${name}] NEW RESERVATION ALERT
+
+A new reservation has been submitted and is waiting for your confirmation.
+
+CUSTOMER INFORMATION:
+  Name  : ${reservation.customerName}
+  Phone : ${reservation.phone}
+  Email : ${reservation.email}
+
+RESERVATION DETAILS:
+  Date   : ${formatDate(reservation.reservationDate)}
+  Time   : ${reservation.reservationTime}
+  Guests : ${reservation.numberOfPeople} ${reservation.numberOfPeople === 1 ? 'person' : 'people'}
+${reservation.note ? `  Notes  : ${reservation.note}` : ''}
+
+ACTION REQUIRED:
+Please confirm or update this reservation in the Admin Panel within 2 hours.
+
+---
+${copyrightText}
+  `
 }
 
 // Generate HTML email content for confirmation

@@ -80,7 +80,7 @@ export const createContactMessage = async (req, res) => {
       try {
         console.log('')
         console.log('=' .repeat(60))
-        console.log('📧 NEW CONTACT MESSAGE - ADMIN NOTIFICATION')
+        console.log('📧 NEW CONTACT MESSAGE - SENDING EMAILS')
         console.log('=' .repeat(60))
         console.log(`📋 Message #${contactMessage.messageNumber}`)
         console.log(`🆔 ID: ${contactMessage._id}`)
@@ -90,48 +90,43 @@ export const createContactMessage = async (req, res) => {
         console.log(`💬 Message: ${contactMessage.message.substring(0, 100)}${contactMessage.message.length > 100 ? '...' : ''}`)
         console.log('=' .repeat(60))
         console.log('')
-        
-        // CHỈ gửi email thông báo cho admin (KHÔNG gửi cho khách)
-        console.log('📤 Sending admin notification email...')
-        console.log('📤 Sending admin notification email...')
+
+        // 1. Send admin notification email
+        console.log('📤 [1/2] Sending admin notification email...')
         console.log(`   Admin Email: ${process.env.ADMIN_EMAIL || process.env.EMAIL_USER || 'NOT SET'}`)
         const adminEmailResult = await sendAdminNotification(contactMessage)
-        
+
         if (adminEmailResult && adminEmailResult.success) {
-          console.log('')
-          console.log('🎉 SUCCESS: Admin notification email sent!')
-          console.log('=' .repeat(60))
-          console.log(`✅ Admin was notified about new message`)
-          console.log(`   From: ${contactMessage.name}`)
-          console.log(`   Email: ${contactMessage.email}`)
-          console.log(`   Subject: ${contactMessage.subject}`)
+          console.log('✅ Admin notification email sent!')
           console.log(`   MessageID: ${adminEmailResult.messageId}`)
-          console.log('=' .repeat(60))
-          console.log('')
         } else {
-          console.log('')
-          console.error('⚠️⚠️⚠️ CRITICAL: ADMIN EMAIL NOTIFICATION FAILED ⚠️⚠️⚠️')
-          console.error('=' .repeat(60))
-          console.error('❌ Admin was NOT notified about this contact message!')
-          console.error('')
-          console.error('📋 Message Details:')
-          console.error(`   ID: ${contactMessage._id}`)
-          console.error(`   Name: ${contactMessage.name}`)
-          console.error(`   Email: ${contactMessage.email}`)
-          console.error(`   Subject: ${contactMessage.subject}`)
-          console.error(`   Priority: ${contactMessage.priority}`)
-          console.error('')
-          console.error('🔧 Troubleshooting:')
+          console.error('⚠️ ADMIN EMAIL NOTIFICATION FAILED')
           console.error(`   1. Check ADMIN_EMAIL in .env: ${process.env.ADMIN_EMAIL ? '✓ SET' : '✗ NOT SET'}`)
           console.error(`   2. Check EMAIL_USER in .env: ${process.env.EMAIL_USER ? '✓ SET' : '✗ NOT SET'}`)
           console.error(`   3. Check EMAIL_PASSWORD in .env: ${process.env.EMAIL_PASSWORD ? '✓ SET' : '✗ NOT SET'}`)
-          console.error(`   4. Check email service: ${process.env.EMAIL_SERVICE || 'gmail'}`)
-          console.error('')
           console.error(`   Error: ${adminEmailResult?.message || 'Unknown error'}`)
-          console.error('=' .repeat(60))
-          console.error('⚠️ ADMIN MUST CHECK MESSAGES PAGE MANUALLY!')
-          console.error('')
         }
+
+        // 2. Send auto-reply confirmation email to customer
+        console.log('')
+        console.log('📤 [2/2] Sending auto-reply to customer...')
+        console.log(`   Customer Email: ${contactMessage.email}`)
+        const customerEmailResult = await sendContactConfirmation(contactMessage, null)
+
+        if (customerEmailResult && customerEmailResult.success) {
+          console.log('✅ Auto-reply email sent to customer!')
+          console.log(`   To: ${contactMessage.email}`)
+          console.log(`   MessageID: ${customerEmailResult.messageId}`)
+        } else {
+          console.error('⚠️ Customer auto-reply email FAILED')
+          console.error(`   Error: ${customerEmailResult?.message || 'Unknown error'}`)
+        }
+
+        console.log('')
+        console.log('=' .repeat(60))
+        console.log('📧 Email sending complete')
+        console.log('=' .repeat(60))
+        console.log('')
       } catch (emailError) {
         console.error('')
         console.error('💥 EXCEPTION: Email sending process crashed')
