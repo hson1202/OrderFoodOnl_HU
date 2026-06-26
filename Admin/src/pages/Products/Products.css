@@ -997,8 +997,8 @@
   .products-header {
     flex-direction: column;
     align-items: stretch;
-    gap: 16px;
-    padding: 20px;
+    gap: 12px;
+    padding: 16px;
   }
 
   .products-header h1 {
@@ -1006,25 +1006,45 @@
   }
 
   .header-actions {
-    flex-direction: column;
+    /* 2 nút nằm cạnh nhau, không stack dọc */
+    flex-direction: row;
     width: 100%;
+    gap: 8px;
   }
 
-  .refresh-btn,
-  .btn-add-product {
-    width: 100%;
+  .refresh-btn {
+    flex: 0 0 auto;
+    padding: 10px 14px;
+    white-space: nowrap;
     justify-content: center;
   }
 
+  .btn-add-product {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Status filter: cuộn ngang, tabs nhỏ hơn */
   .status-filter-tabs {
     gap: 6px;
     margin-bottom: 16px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .status-tab {
-    padding: 8px 12px;
-    font-size: 13px;
-    flex: 1;
+    padding: 7px 10px;
+    font-size: 12px;
+    flex: 0 0 auto; /* Không flex: 1 để tránh tabs bị co */
+    white-space: nowrap;
+  }
+
+  .tab-icon {
+    font-size: 14px;
   }
 
   .filters-section {
@@ -1037,6 +1057,26 @@
     width: 100%;
     min-width: auto;
   }
+
+  /* Fix "Status:" label nằm inline với select */
+  .filter-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .filter-box label {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1d1d1f;
+  }
+
+  .filter-box .filter-select {
+    flex: 1;
+  }
+
 
   .products-grid {
     grid-template-columns: 1fr;
@@ -1164,17 +1204,28 @@
     grid-template-columns: 1fr;
   }
 
+  /* Summary cards: 2 cột đều đặn */
   .products-summary {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 10px;
+  }
+
+  /* Card lẻ cuối cùng span full width */
+  .products-summary .summary-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
   .summary-card {
-    padding: 16px;
+    padding: 14px;
+  }
+
+  .summary-card h3 {
+    font-size: 11px;
+    letter-spacing: 0.3px;
   }
 
   .summary-card p {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -1184,24 +1235,55 @@
   }
 
   .products-header {
-    padding: 16px;
+    padding: 14px;
+    gap: 10px;
   }
 
   .products-header h1 {
     font-size: 18px;
   }
 
-  .status-filter-tabs {
-    flex-wrap: wrap; /* Wrap tabs on mobile */
+  /* Trên màn nhỏ: Refresh icon + text ngắn, Add Product đầy đủ */
+  .header-actions {
+    flex-direction: row;
     gap: 6px;
-    margin-bottom: 16px;
+  }
+
+  .refresh-btn {
+    flex: 0 0 auto;
+    padding: 9px 11px;
+    font-size: 13px;
+  }
+
+  .btn-add-product {
+    flex: 1;
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  /* Status tabs: cuộn ngang, KHÔNG wrap */
+  .status-filter-tabs {
+    flex-wrap: nowrap;
+    gap: 5px;
+    margin-bottom: 14px;
+    overflow-x: auto;
+    padding-bottom: 4px;
   }
 
   .status-tab {
-    padding: 8px 10px;
+    padding: 6px 9px;
+    font-size: 11px;
+    flex: 0 0 auto;
+    justify-content: center;
+    min-width: auto;
+  }
+
+  .tab-icon {
     font-size: 13px;
-    flex: 1 1 calc(50% - 6px); /* 2 columns on mobile */
-    justify-content: center; /* Center align content */
+  }
+
+  .tab-count {
+    font-size: 10px;
   }
 
   .products-grid {
@@ -1215,15 +1297,14 @@
   }
 
   .product-image {
-	  /* Mobile rất nhỏ: hình cũng to hơn chút nhưng vẫn vừa màn */
-	  width: 110px;
-	  min-width: 110px;
-	  height: 110px;
-	  border-radius: 0 8px 8px 0;
+    width: 105px;
+    min-width: 105px;
+    height: 105px;
+    border-radius: 0 8px 8px 0;
   }
 
   .product-image img {
-	  border-radius: 0 8px 8px 0;
+    border-radius: 0 8px 8px 0;
   }
 
   .product-content {
@@ -1263,7 +1344,26 @@
     font-size: 11px;
   }
 
+  /* Summary: 2 cột trên mobile nhỏ vẫn giữ được */
   .products-summary {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* Card lẻ cuối span full width */
+  .products-summary .summary-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .summary-card {
+    padding: 12px;
+  }
+
+  .summary-card h3 {
+    font-size: 10px;
+  }
+
+  .summary-card p {
+    font-size: 20px;
   }
 }

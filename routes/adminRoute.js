@@ -21,7 +21,8 @@ const adminRouter = express.Router();
 
 // Admin authentication routes
 adminRouter.post("/login", adminLogin);
-adminRouter.post("/signup", adminSignup);
+// Tắt route signup trên production để tránh rủi ro bảo mật
+// adminRouter.post("/signup", adminSignup);
 
 // Dashboard routes (protected with auth)
 adminRouter.get("/stats", authMiddleware, getDashboardStats);
