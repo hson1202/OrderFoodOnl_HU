@@ -122,18 +122,21 @@
 
 /* Loading State */
 .loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: 80px 20px;
 }
 
-.loading-spinner {
+.loading-container .loading-spinner {
   width: 60px;
   height: 60px;
   border: 5px solid var(--brand-border);
   border-top: 5px solid var(--brand-accent);
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  margin: 0 auto 20px;
+  margin: 0 0 20px;
 }
 
 @keyframes spin {

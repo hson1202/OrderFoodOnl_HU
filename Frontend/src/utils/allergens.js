@@ -17,6 +17,24 @@ export const ALLERGENS = {
   molluscs: { icon: '🐚', labelEN: 'Molluscs', labelVI: 'Nhuyễn thể', labelHU: 'Puhatestűek' },
 }
 
+// EU letter codes from menu.json / Hungarian menus (A = 1 … N = 14)
+const LETTER_TO_CODE = {
+  A: 'gluten',
+  B: 'crustaceans',
+  C: 'egg',
+  D: 'fish',
+  E: 'peanut',
+  F: 'soy',
+  G: 'milk',
+  H: 'nuts',
+  I: 'celery',
+  J: 'mustard',
+  K: 'sesame',
+  L: 'sulfites',
+  M: 'lupin',
+  N: 'molluscs',
+}
+
 // Map legacy EU numeric codes (used by old import scripts) to string codes.
 const NUMERIC_TO_CODE = {
   1: 'gluten',
@@ -41,7 +59,10 @@ export const normalizeAllergens = (allergens) => {
   return allergens
     .map((a) => {
       if (a === null || a === undefined) return null
-      const str = String(a).trim().toLowerCase()
+      const raw = String(a).trim()
+      const upper = raw.toUpperCase()
+      if (LETTER_TO_CODE[upper]) return LETTER_TO_CODE[upper]
+      const str = raw.toLowerCase()
       if (ALLERGENS[str]) return str
       const num = Number(str)
       if (Number.isInteger(num) && NUMERIC_TO_CODE[num]) return NUMERIC_TO_CODE[num]

@@ -30,7 +30,7 @@
   box-shadow: 0 0 0 3px rgba(226, 55, 68, 0.2);
 }
 
-.loading-spinner {
+.address-input-wrapper .loading-spinner {
   position: absolute;
   right: 12px;
   font-size: 14px;
