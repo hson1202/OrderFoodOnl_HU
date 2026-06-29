@@ -23,8 +23,10 @@ const adminRouter = express.Router();
 
 // Admin authentication routes
 adminRouter.post("/login", adminLogin);
-// Tắt route signup trên production để tránh rủi ro bảo mật
-// adminRouter.post("/signup", adminSignup);
+// Bootstrap admin đầu tiên — cần header X-Admin-Setup-Secret khớp ADMIN_SETUP_SECRET
+adminRouter.post("/setup", adminSignup);
+// Admin đã đăng nhập tạo admin mới
+adminRouter.post("/users/admin", authMiddleware, verifyAdmin, adminSignup);
 adminRouter.get("/session", authMiddleware, verifyAdmin, adminSessionCheck);
 
 // Dashboard routes (protected with auth)
